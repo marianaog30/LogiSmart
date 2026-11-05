@@ -1,5 +1,5 @@
 {
-  "name": "logiSmart - Telegram y agentes",
+  "name": "LogiSmart - Telegram, agentes y dashboard (exportación pública)",
   "nodes": [
     {
       "parameters": {},
@@ -627,7 +627,7 @@
     },
     {
       "parameters": {
-        "jsCode": "\nconst evento = $input.first().json;\nconst mensaje = evento.message;\n\n// Usuario autorizado para las pruebas\n// Configurar localmente los IDs numéricos autorizados. Vacío bloquea todas las solicitudes.\nconst usuariosPermitidos = [];\n\nif (!mensaje || !mensaje.from || !mensaje.chat) {\n  throw new Error(\"Evento de Telegram inválido\");\n}\n\nconst usuarioId = mensaje.from.id;\nconst chatId = mensaje.chat.id;\n\nif (!usuariosPermitidos.includes(usuarioId)) {\n  throw new Error(\"Usuario no autorizado\");\n}\n\nif (typeof mensaje.text !== \"string\" ||\n    !mensaje.text.trim()) {\n  throw new Error(\"Debes enviar un mensaje de texto\");\n}\n\nlet solicitud = mensaje.text.trim();\n\n// Quitar el comando /nuevo si existe\nsolicitud = solicitud.replace(\n  /^\\/nuevo(?:@\\w+)?\\s*/i,\n  \"\"\n).trim();\n\nif (!solicitud || solicitud.length > 1000) {\n  throw new Error(\"Solicitud vacía o demasiado larga\");\n}\n\nconst idEvento = evento.update_id;\n\nif (!Number.isSafeInteger(idEvento)) {\n  throw new Error(\"Identificador de evento inválido\");\n}\n\nreturn [{\n  json: {\n    caso_id: `LOG-${idEvento}`,\n    canal: \"telegram\",\n    usuario: `telegram_${usuarioId}`,\n    objetivo: \"cotizar_productos\",\n    solicitud: solicitud,\n    modo: \"SIMULADO\",\n    limite_costo_usd: 0.10,\n    chat_id: chatId,\n    usuario_id: usuarioId,\n    evento_id: idEvento\n  }\n}];\n"
+        "jsCode": "\nconst evento = $input.first().json;\nconst mensaje = evento.message;\n\n// Usuario autorizado para las pruebas\nconst usuariosPermitidos = []; // CONFIGURAR IDs autorizados solo en la instancia privada; vacío deniega acceso.\n\nif (!mensaje || !mensaje.from || !mensaje.chat) {\n  throw new Error(\"Evento de Telegram inválido\");\n}\n\nconst usuarioId = mensaje.from.id;\nconst chatId = mensaje.chat.id;\n\nif (!usuariosPermitidos.includes(usuarioId)) {\n  throw new Error(\"Usuario no autorizado\");\n}\n\nif (typeof mensaje.text !== \"string\" ||\n    !mensaje.text.trim()) {\n  throw new Error(\"Debes enviar un mensaje de texto\");\n}\n\nlet solicitud = mensaje.text.trim();\n\n// Quitar /nuevo o /new, conservando la autorización del usuario\nsolicitud = solicitud.replace(\n  /^\\/(?:nuevo|new)(?:@\\w+)?(?:\\s+|$)/i,\n  \"\"\n).trim();\n\nif (!solicitud || solicitud.length > 1000) {\n  throw new Error(\"Solicitud vacía o demasiado larga\");\n}\n\nconst idEvento = evento.update_id;\n\nif (!Number.isSafeInteger(idEvento)) {\n  throw new Error(\"Identificador de evento inválido\");\n}\n\nreturn [{\n  json: {\n    caso_id: `LOG-${idEvento}`,\n    canal: \"telegram\",\n    usuario: `telegram_${usuarioId}`,\n    objetivo: \"cotizar_productos\",\n    solicitud: solicitud,\n    modo: \"SIMULADO\",\n    limite_costo_usd: 0.10,\n    chat_id: chatId,\n    usuario_id: usuarioId,\n    evento_id: idEvento\n  }\n}];\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -641,7 +641,7 @@
     {
       "parameters": {
         "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}\n",
-        "text": "=\n{{\n  (() => {\n    const r = $('Orquestador 7 - Cierre y resultado final').first().json;\n\n    if (r.estado_final === 'PENDIENTE_APROBACION') {\n      return `LOGISMART - COTIZACIÓN SIMULADA\n\nFolio: ${r.caso_id}\nProductos: ${r.productos.join(', ')}\nTotal provisional: $${r.importe_total} ${r.moneda}\n\nEstado: PENDIENTE DE APROBACIÓN HUMANA\n\nEsta cotización es ficticia y requiere autorización.`;\n    }\n\n    return `LOGISMART - SOLICITUD NO COMPLETADA\n\nFolio: ${r.caso_id}\nEstado: ${r.estado_final}\n\nMotivo: ${(r.revision_tecnica?.hallazgos || r.advertencias || []).join('; ')}\n\nNo se ha solicitado aprobación humana.`;\n  })()\n}}\n",
+        "text": "={{ (() => {\n const r=$('Orquestador 7 - Cierre y resultado final').first().json;\n const roles=[['AGENTE_1_VALIDACION','Alfa · Validación de solicitud'],['AGENTE_2_CATALOGO_INVENTARIOS','Beta · Catálogo e inventario'],['AGENTE_3_COTIZACION','Gamma · Elaboración de cotización'],['AGENTE_4_CONTROL_CALIDAD','Omega · Auditoría técnica']];\n const trazas=Array.isArray(r.trazas)?r.trazas:[];\n const resumen=roles.map(([id,nombre])=>{\n  const ts=trazas.filter(x=>x.agente===id),t=ts[ts.length-1];\n  return nombre+'\\n'+(t?String(t.estado||'SIN ESTADO REGISTRADO'):'NO EJECUTADO / SIN TRAZA');\n }).join('\\n\\n');\n const cierres=trazas.filter(t=>t.agente==='ORQUESTADOR'&&t.etapa==='cierre');\n const cierreMaestro=cierres[cierres.length-1];\n const maestro='Maestro · Orquestación\\n'+(cierreMaestro?String(cierreMaestro.estado||'SIN ESTADO REGISTRADO'):'SIN TRAZA DE CIERRE');\n const monto=typeof r.importe_total==='number'&&Number.isFinite(r.importe_total)?r.importe_total.toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2}):'No disponible';\n const productos=Array.isArray(r.productos)?r.productos.join(', '):'No disponibles';\n const base='LOGISMART · COTIZACIÓN SIMULADA\\n\\nFolio: '+r.caso_id+'\\nEstado: '+r.estado_final+'\\nProductos: '+productos+'\\nTotal provisional: '+monto+' '+(r.moneda||'')+'\\n\\nEQUIPO DE AGENTES\\n\\n'+maestro+'\\n\\n'+resumen;\n const avisos=Array.isArray(r.revision_tecnica?.hallazgos)?r.revision_tecnica.hallazgos:Array.isArray(r.advertencias)?r.advertencias:[];\n const cierre=r.estado_final==='PENDIENTE_APROBACION'?'\\n\\nMaestro: la propuesta está lista para tu decisión. La aprobación final corresponde a una persona. Usa los botones para aprobar o rechazar.':'\\n\\nMaestro: no se solicitó aprobación humana. Motivo: '+(avisos.length?avisos.slice(0,3).map(x=>typeof x==='string'?x:JSON.stringify(x)).join('; ').slice(0,600):'Revisa el estado registrado.');\n return (base+cierre+'\\n\\nOperación ficticia. Resumen de etapas al finalizar el procesamiento.').slice(0,3900);\n})() }}",
         "replyMarkup": "inlineKeyboard",
         "inlineKeyboard": {
           "rows": [
@@ -680,8 +680,8 @@
       "parameters": {
         "dataTableId": {
           "__rl": true,
-          "value": "CONFIGURAR_ID_TABLA_LOGISMART",
-          "mode": "id"
+          "mode": "id",
+          "value": "CONFIGURAR_ID_TABLA_LOGISMART"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -865,7 +865,7 @@
                   {
                     "id": "1a4a1eb5-98aa-4185-8e4e-91188c4b6c69",
                     "leftValue": "={{\n  $json.message?.text || ''\n}}",
-                    "rightValue": "^(?:/nuevo(?:@\\w+)?(?:\\s|$)|[^/\\s][\\s\\S]*)",
+                    "rightValue": "^(?:/(?:nuevo|new)(?:@\\w+)?(?:\\s|$)|[^/\\s][\\s\\S]*)",
                     "operator": {
                       "type": "string",
                       "operation": "regex"
@@ -942,8 +942,8 @@
         "operation": "get",
         "dataTableId": {
           "__rl": true,
-          "value": "CONFIGURAR_ID_TABLA_LOGISMART",
-          "mode": "id"
+          "mode": "id",
+          "value": "CONFIGURAR_ID_TABLA_LOGISMART"
         },
         "filters": {
           "conditions": [
@@ -1115,8 +1115,8 @@
         "operation": "get",
         "dataTableId": {
           "__rl": true,
-          "value": "CONFIGURAR_ID_TABLA_LOGISMART",
-          "mode": "id"
+          "mode": "id",
+          "value": "CONFIGURAR_ID_TABLA_LOGISMART"
         },
         "filters": {
           "conditions": [
@@ -1190,8 +1190,8 @@
         "operation": "update",
         "dataTableId": {
           "__rl": true,
-          "value": "CONFIGURAR_ID_TABLA_LOGISMART",
-          "mode": "id"
+          "mode": "id",
+          "value": "CONFIGURAR_ID_TABLA_LOGISMART"
         },
         "matchType": "allConditions",
         "filters": {
@@ -1213,7 +1213,10 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
+            "caso_id": "=",
+            "usuario_id": "=",
             "estado_final": "={{ $json.estado_nuevo }}",
+            "version_propuesta": "=",
             "aprobacion_humana": "={{ $json.aprobacion_nueva }}"
           },
           "matchingColumns": [],
@@ -1344,6 +1347,69 @@
       ],
       "id": "31f4240f-a27d-42ae-8513-01e4c56329af",
       "name": "Registrar aprobación humana"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "CONFIGURAR_ID_TABLA_LOGISMART"
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        -1328,
+        640
+      ],
+      "id": "f9f4a719-06ad-4879-b3c6-d8f20b0d9116",
+      "name": "Leer historial LogiSmart",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Reemplaza el contenido de Preparar datos publicos, en modo Run Once for All Items.\nconst estados=new Set(['PENDIENTE_APROBACION','APROBADA','RECHAZADA','DETENIDO','ACLARACION_REQUERIDA','DEVUELTO','ERROR_INCONSISTENTE']);\nconst decisiones=new Set(['PENDIENTE','APROBADA','RECHAZADA','NO_SOLICITADA']);\nconst num=v=>typeof v==='number'&&Number.isFinite(v)&&v>=0?v:null;\nconst registros=[];let registros_excluidos=0;\nfor(const {json:f} of $input.all()){\n if(!f.caso_id)continue;\n let r;try{r=typeof f.resultado_json==='string'?JSON.parse(f.resultado_json):f.resultado_json}catch{registros_excluidos++;continue}\n if(!r||r.modo!=='SIMULADO'||!estados.has(f.estado_final)){registros_excluidos++;continue}\n const imported=r.origen==='DEMO_IMPORTADA_H5'&&r.lote==='H5_180_V1'&&/^DEMO-H5-\\d{4}$/.test(f.caso_id);\n const date=typeof f.fecha_registro==='string'?Date.parse(f.fecha_registro):NaN;\n registros.push({\n folio_publico:'MUESTRA-'+String(registros.length+1).padStart(3,'0'),\n fecha_registro:Number.isFinite(date)?new Date(date).toISOString():null,\n productos:Array.isArray(r.productos)?r.productos.filter(p=>['Producto A','Producto B'].includes(p)):[],\n importe_total:num(f.importe_total),moneda:f.moneda==='MXN'?'MXN':null,\n estado_final:f.estado_final,aprobacion_humana:decisiones.has(f.aprobacion_humana)?f.aprobacion_humana:null,\n duracion_total_ms:num(r.duracion_total_ms),\n origen:imported?'DEMO_IMPORTADA_H5':'WORKFLOW',\n completa_primer_intento:imported&&typeof r.completa_primer_intento==='boolean'?r.completa_primer_intento:null,\n sin_correcciones_auditoria:imported&&typeof r.sin_correcciones_auditoria==='boolean'?r.sin_correcciones_auditoria:null\n });\n}\nconst meta={fuente:'Data Table LogiSmart',datos_ficticios:true,consultado_en:new Date().toISOString(),zona_horaria:'America/Mexico_City'};\nlet query={};try{query=$('Webhook dashboard').first().json.query||{}}catch{}\nif(Object.prototype.hasOwnProperty.call(query,'folio')){\n const folio=String(query.folio||'').trim().toUpperCase();\n if(folio==='RESUMEN'){\n  const conteos=Object.fromEntries([...estados].map(e=>[e,registros.filter(r=>r.estado_final===e).length]));\n  return [{json:{...meta,tipo:'resumen',total_registros:registros.length,por_estado:conteos,importados_simulados:registros.filter(r=>r.origen==='DEMO_IMPORTADA_H5').length,nota:'Solo lectura; los importados no son ejecuciones de agentes.'}}];\n }\n if(!/^MUESTRA-[0-9]{3,}$/.test(folio))return [{json:{...meta,tipo:'error',encontrado:false,error:'FORMATO_INVALIDO',mensaje:'Usa el alias publico MUESTRA-001 del dashboard o RESUMEN.'}}];\n const registro=registros.find(r=>r.folio_publico===folio);\n return [{json:{...meta,tipo:'consulta_folio',encontrado:Boolean(registro),registro:registro||null,nota:'Alias de presentacion de la consulta actual; no es el folio operativo Telegram. No autoriza modificaciones.'}}];\n}\nreturn [{json:{...meta,total_registros:registros.length,registros_excluidos,registros}}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1104,
+        640
+      ],
+      "id": "2f7c38c2-4fb0-4272-beb8-191bc51c42d0",
+      "name": "Preparar datos públicos"
+    },
+    {
+      "parameters": {
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -880,
+        640
+      ],
+      "id": "d90bd8a3-46bf-4e50-a081-fcb74de7cb26",
+      "name": "Respond dashboard"
+    },
+    {
+      "parameters": {
+        "path": "logismart-dashboard",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        -1552,
+        640
+      ],
+      "id": "d3bdbed7-7326-455c-9b66-c866a25d0f2f",
+      "name": "Webhook dashboard"
     }
   ],
   "pinData": {},
@@ -1838,6 +1904,39 @@
     "Registrar aprobación humana": {
       "main": [
         []
+      ]
+    },
+    "Leer historial LogiSmart": {
+      "main": [
+        [
+          {
+            "node": "Preparar datos públicos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar datos públicos": {
+      "main": [
+        [
+          {
+            "node": "Respond dashboard",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook dashboard": {
+      "main": [
+        [
+          {
+            "node": "Leer historial LogiSmart",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
