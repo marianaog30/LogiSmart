@@ -1,15 +1,15 @@
 {
-  "name": "LogiSmart Solutions - Ecosistema multiagente de cotizaciones",
+  "name": "logiSmart - Telegram y agentes",
   "nodes": [
     {
       "parameters": {},
-      "id": "bfec4b42-b33a-44d9-8e49-00a932600525",
+      "id": "2519db81-c3a6-4778-afe5-246de1070134",
       "name": "Iniciar prueba manual",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        0,
-        288
+        1680,
+        272
       ]
     },
     {
@@ -62,12 +62,12 @@
         },
         "options": {}
       },
-      "id": "1d14d449-1ca4-4840-82f2-89c0754a4518",
+      "id": "a405ba2e-fdbb-4310-8b40-6604814af67f",
       "name": "Datos iniciales",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.5,
       "position": [
-        304,
+        1872,
         512
       ]
     },
@@ -75,13 +75,13 @@
       "parameters": {
         "jsCode": "const t0 = Date.now();\nconst s = $input.first().json;\nconst errores = [];\nif (!s.caso_id) errores.push('Falta caso_id');\nif (!s.solicitud || !String(s.solicitud).trim()) errores.push('Falta solicitud');\nif (s.modo !== 'SIMULADO') errores.push('Modo fuera de politica: solo se permite SIMULADO');\nif (s.objetivo !== 'cotizar_productos') errores.push('Objetivo fuera de politica: solo cotizar_productos');\nconst limite = Number(s.limite_costo_usd);\nif (!(limite > 0) || limite > 1) errores.push('limite_costo_usd invalido o fuera de politica (0 < x <= 1)');\nconst ok = errores.length === 0;\nconst traza = {\n  caso_id: s.caso_id || null,\n  agente: 'ORQUESTADOR',\n  etapa: 'apertura_y_validacion_de_caso',\n  estado: ok ? 'COMPLETADO' : 'DETENIDO',\n  resultado: ok ? 'Caso valido y dentro de politica (SIMULADO, cotizar_productos). Se asigna tarea al Agente 1.' : errores.join('; '),\n  fuentes: ['Datos iniciales'],\n  advertencias: [],\n  duracion_ms: Date.now() - t0,\n  referencia_consumo: { execution_id: $execution.id, tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Logica determinista: no consume tokens.' }\n};\nreturn [{ json: {\n  caso_id: s.caso_id, canal: s.canal, usuario: s.usuario, objetivo: s.objetivo,\n  solicitud: s.solicitud, modo: s.modo, limite_costo_usd: limite,\n  estado_flujo: ok ? 'OK' : 'DETENIDO',\n  motivo_detencion: ok ? null : errores.join('; '),\n  requiere_aclaracion: false,\n  advertencias: [],\n  trazas: [traza],\n  presupuesto: { limite_usd: limite, consumo_usd: null, llamadas_ia_realizadas: 0, estado: 'NO_VERIFICABLE', nota: 'El nodo AI Agent no expone tokens ni costo. Pendiente de configurar (consultar uso en el proveedor o usar un callback de uso). Se limita el gasto con maxTokens en cada modelo.' },\n  _t_inicio: t0,\n  _t_prep: Date.now()\n} }];"
       },
-      "id": "13ac4a22-d538-4e7b-a377-6ec9eb1773f6",
+      "id": "3f48ac6e-4c58-41a0-b141-761a5874bd9f",
       "name": "Orquestador 1 - Abrir y validar caso",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        528,
-        512
+        2096,
+        496
       ]
     },
     {
@@ -107,12 +107,12 @@
         },
         "options": {}
       },
-      "id": "196b7492-82d9-4b8f-88e8-73a9fc8066e6",
+      "id": "590e4832-742d-4b81-8b46-264208eafea1",
       "name": "Caso valido?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.4,
       "position": [
-        752,
+        2320,
         512
       ]
     },
@@ -125,12 +125,12 @@
           "systemMessage": "Eres el AGENTE 1 de LogiSmart Solutions: VALIDACION DE SOLICITUDES. Solo interpretas solicitudes de cotizacion.\nTu tarea:\n1. Interpretar la solicitud del cliente.\n2. Extraer cada producto mencionado y su cantidad entera, tal como aparecen en el texto. Usa el nombre como \"Producto A\", \"Producto B\", etc.\n3. Comprobar informacion faltante (producto sin cantidad, cantidad ambigua, solicitud sin productos).\n4. Devolver SOLO el JSON del formato indicado.\nReglas estrictas:\n- NO inventes productos, cantidades, precios ni datos. Si algo no esta en el texto, no lo agregues.\n- NO consultes ni menciones precios ni inventarios (eso lo hace otro agente).\n- Si falta informacion, pon requiere_aclaracion=true, lista lo que falta en informacion_faltante y redacta pregunta_aclaracion. En ese caso productos puede ir vacio o parcial.\n- Si la informacion esta completa: requiere_aclaracion=false, informacion_faltante=[] y pregunta_aclaracion=\"\".\n- Repite exactamente el caso_id recibido."
         }
       },
-      "id": "6011f1a2-45df-4be3-80ab-cf9e247d7ec1",
+      "id": "a37b3dc4-141d-43f6-bf50-1a76ac935094",
       "name": "Agente 1 - Validacion de solicitudes",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        832,
+        2736,
         432
       ]
     },
@@ -147,12 +147,12 @@
           "maxTokens": 1500
         }
       },
-      "id": "43728a9c-b2ba-453c-9361-c2d972bdfd25",
+      "id": "480e7c05-612c-4dae-9e3f-cb48a01d414a",
       "name": "Modelo Agente 1",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        848,
+        2752,
         656
       ]
     },
@@ -160,12 +160,12 @@
       "parameters": {
         "jsonSchemaExample": "{\"caso_id\":\"LOG-001\",\"productos\":[{\"nombre\":\"Producto A\",\"cantidad\":10}],\"informacion_faltante\":[],\"requiere_aclaracion\":false,\"pregunta_aclaracion\":\"\",\"advertencias\":[]}"
       },
-      "id": "fd050245-8c8e-4f50-be1b-88afd84ed338",
+      "id": "1a384e77-49a3-43ab-ab17-4bc0f6d33245",
       "name": "Formato salida Agente 1",
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        976,
+        2880,
         656
       ]
     },
@@ -173,12 +173,12 @@
       "parameters": {
         "jsCode": "const prev = $('Orquestador 1 - Abrir y validar caso').first().json;\nconst out = $input.first().json.output || {};\nconst dur = Date.now() - prev._t_prep;\nconst adv = Array.isArray(out.advertencias) ? out.advertencias.slice() : [];\nconst prods = Array.isArray(out.productos) ? out.productos : [];\nconst faltante = Array.isArray(out.informacion_faltante) ? out.informacion_faltante : [];\nlet estadoFlujo = 'OK';\nlet motivo = null;\nlet aclaracion = false;\nif (out.caso_id !== prev.caso_id) {\n  estadoFlujo = 'DETENIDO'; motivo = 'caso_id inconsistente: Agente 1 devolvio ' + out.caso_id + ' y el caso es ' + prev.caso_id;\n} else if (out.requiere_aclaracion === true || faltante.length > 0) {\n  estadoFlujo = 'DETENIDO'; aclaracion = true; motivo = 'Solicitud incompleta, se requiere aclaracion: ' + (out.pregunta_aclaracion || faltante.join('; '));\n} else if (prods.length === 0) {\n  estadoFlujo = 'DETENIDO'; motivo = 'El Agente 1 no extrajo ningun producto';\n} else {\n  for (const p of prods) {\n    const q = Number(p.cantidad);\n    if (!p.nombre || !(q > 0) || Math.floor(q) !== q) { estadoFlujo = 'DETENIDO'; aclaracion = true; motivo = 'Producto o cantidad invalida: ' + JSON.stringify(p); break; }\n    if (!String(prev.solicitud).includes(String(q))) { estadoFlujo = 'DETENIDO'; motivo = 'Cantidad ' + q + ' no aparece en la solicitud original (posible dato inventado)'; break; }\n  }\n}\nconst ok = estadoFlujo === 'OK';\nconst trazaAg = {\n  caso_id: prev.caso_id, agente: 'AGENTE_1_VALIDACION', etapa: 'validacion_de_solicitud',\n  estado: ok ? 'COMPLETADO' : 'DETENIDO',\n  resultado: ok ? { productos: prods } : motivo,\n  fuentes: ['solicitud original del caso'], advertencias: adv, duracion_ms: dur,\n  referencia_consumo: { execution_id: $execution.id, nodo: 'Agente 1 - Validacion de solicitudes', modelo: 'gpt-5-mini (Gateway credits)', tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Tokens/costo no expuestos por el nodo AI Agent: pendiente de configurar.' }\n};\nconst trazaOrq = {\n  caso_id: prev.caso_id, agente: 'ORQUESTADOR', etapa: 'revision_agente_1',\n  estado: ok ? 'COMPLETADO' : 'DETENIDO',\n  resultado: ok ? 'Salida de Agente 1 valida, mismo caso_id, cantidades presentes en la solicitud. Se asigna Agente 2.' : 'Proceso detenido: ' + motivo,\n  fuentes: ['Agente 1'], advertencias: [], duracion_ms: 0,\n  referencia_consumo: { execution_id: $execution.id, tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Logica determinista.' }\n};\nreturn [{ json: Object.assign({}, prev, {\n  estado_flujo: estadoFlujo, motivo_detencion: motivo, requiere_aclaracion: aclaracion,\n  agente1: out,\n  advertencias: prev.advertencias.concat(adv),\n  trazas: prev.trazas.concat([trazaAg, trazaOrq]),\n  presupuesto: Object.assign({}, prev.presupuesto, { llamadas_ia_realizadas: prev.presupuesto.llamadas_ia_realizadas + 1 }),\n  _t_prep: Date.now()\n}) }];"
       },
-      "id": "711a9f6d-844f-4f99-b8ba-3694bf5a6dda",
+      "id": "980c82af-5222-4580-8b9f-853bfb29a038",
       "name": "Orquestador 2 - Revisar Agente 1",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1184,
+        3088,
         432
       ]
     },
@@ -205,12 +205,12 @@
         },
         "options": {}
       },
-      "id": "13464805-ed59-41cc-8648-c440af81aaf3",
+      "id": "020d4b20-9b14-442a-b121-d599e9003e18",
       "name": "Agente 1 aprobado?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.4,
       "position": [
-        1408,
+        3312,
         432
       ]
     },
@@ -218,12 +218,12 @@
       "parameters": {
         "jsCode": "const s = $input.first().json;\nconst catalogo = {\n  fuente: 'catalogo_ficticio_logismart_v1',\n  moneda: 'MXN',\n  productos: {\n    a: { nombre: 'Producto A', precio: 120, inventario: 100 },\n    b: { nombre: 'Producto B', precio: 85, inventario: 80 }\n  }\n};\nconst trazaOrq = {\n  caso_id: s.caso_id, agente: 'ORQUESTADOR', etapa: 'asignacion_agente_2',\n  estado: 'COMPLETADO',\n  resultado: 'Se entrega al Agente 2 la lista de productos del Agente 1 y el catalogo autorizado (' + catalogo.fuente + ').',\n  fuentes: [catalogo.fuente], advertencias: [], duracion_ms: 0,\n  referencia_consumo: { execution_id: $execution.id, tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Logica determinista.' }\n};\nreturn [{ json: Object.assign({}, s, { catalogo: catalogo, trazas: s.trazas.concat([trazaOrq]), _t_prep: Date.now() }) }];"
       },
-      "id": "98b1ae2f-d0e4-4e2a-9a47-069627cc53a8",
+      "id": "c27e92a6-ab07-40ac-b3a1-317f9504339b",
       "name": "Orquestador 3 - Asignar Agente 2 y catalogo",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1360,
+        3264,
         368
       ]
     },
@@ -236,12 +236,12 @@
           "systemMessage": "Eres el AGENTE 2 de LogiSmart Solutions: CATALOGO E INVENTARIOS. Consultas unicamente el catalogo autorizado que viene en el mensaje.\nTu tarea, para cada producto solicitado:\n1. Buscarlo en el catalogo autorizado (las claves \"a\" y \"b\" corresponden a \"Producto A\" y \"Producto B\").\n2. Indicar si existe, su precio_unitario, moneda, inventario y si hay disponibilidad suficiente (inventario >= cantidad_solicitada).\n3. Conservar la referencia de la fuente: el campo \"fuente\" del catalogo.\nReglas estrictas:\n- NO inventes precios, inventarios ni productos. Usa solo los valores del catalogo.\n- Si un producto no existe en el catalogo: existe=false, disponible=false, y agregalo en productos_no_encontrados.\n- NO calcules totales ni cotices: eso lo hace otro agente.\n- Repite exactamente el caso_id recibido y la fuente del catalogo.\n- Devuelve SOLO el JSON del formato indicado, un elemento en items por cada producto solicitado."
         }
       },
-      "id": "4ddf8d3d-d7d6-4531-93ba-3347e095d54a",
+      "id": "ca524bad-7d80-4c1b-a03f-6bd9f3933eb0",
       "name": "Agente 2 - Catalogo e inventarios",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        1584,
+        3488,
         368
       ]
     },
@@ -258,12 +258,12 @@
           "maxTokens": 2000
         }
       },
-      "id": "f92eec2d-dbb5-4191-bcdb-c79a905ba695",
+      "id": "7874abf5-a526-490f-8d16-5996f4e2dd20",
       "name": "Modelo Agente 2",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        1600,
+        3504,
         592
       ]
     },
@@ -271,12 +271,12 @@
       "parameters": {
         "jsonSchemaExample": "{\"caso_id\":\"LOG-001\",\"fuente\":\"catalogo_ficticio_logismart_v1\",\"items\":[{\"producto\":\"Producto A\",\"cantidad_solicitada\":10,\"existe\":true,\"precio_unitario\":100,\"moneda\":\"MXN\",\"inventario\":50,\"disponible\":true}],\"productos_no_encontrados\":[],\"advertencias\":[]}"
       },
-      "id": "f8a62291-20a7-4cd7-af68-776dfab4ac79",
+      "id": "9a097a3c-0a85-4edc-88c4-0e45570c1439",
       "name": "Formato salida Agente 2",
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        1728,
+        3632,
         592
       ]
     },
@@ -284,12 +284,12 @@
       "parameters": {
         "jsCode": "const prev = $('Orquestador 3 - Asignar Agente 2 y catalogo').first().json;\nconst out = $input.first().json.output || {};\nconst dur = Date.now() - prev._t_prep;\nconst cat = prev.catalogo;\nconst norm = function (x) { return String(x || '').toLowerCase().replace('producto', '').trim(); };\nconst adv = Array.isArray(out.advertencias) ? out.advertencias.slice() : [];\nconst items = Array.isArray(out.items) ? out.items : [];\nconst errores = [];\nconst verificados = [];\nif (out.caso_id !== prev.caso_id) errores.push('caso_id inconsistente en Agente 2: ' + out.caso_id);\nif (out.fuente !== cat.fuente) errores.push('Fuente del catalogo no conservada por el Agente 2: ' + out.fuente);\nfor (const p of prev.agente1.productos) {\n  const k = norm(p.nombre);\n  const c = cat.productos[k];\n  const qty = Number(p.cantidad);\n  if (!c) { errores.push('Producto inexistente en el catalogo: ' + p.nombre); continue; }\n  if (qty > c.inventario) { errores.push('Sin inventario suficiente para ' + c.nombre + ': solicitado ' + qty + ', disponible ' + c.inventario); continue; }\n  const it = items.find(function (i) { return norm(i.producto) === k; });\n  if (!it) { errores.push('El Agente 2 no devolvio el producto ' + c.nombre); continue; }\n  if (Number(it.precio_unitario) !== c.precio) errores.push('Precio reportado por Agente 2 para ' + c.nombre + ' (' + it.precio_unitario + ') difiere del catalogo (' + c.precio + ')');\n  if (Number(it.inventario) !== c.inventario) errores.push('Inventario reportado por Agente 2 para ' + c.nombre + ' difiere del catalogo');\n  if (it.existe !== true || it.disponible !== true) errores.push('El Agente 2 no confirmo existencia/disponibilidad de ' + c.nombre);\n  verificados.push({ producto: c.nombre, cantidad: qty, precio_unitario: c.precio, moneda: cat.moneda, inventario: c.inventario, fuente: cat.fuente });\n}\nconst ok = errores.length === 0;\nconst motivo = ok ? null : errores.join('; ');\nconst trazaAg = {\n  caso_id: prev.caso_id, agente: 'AGENTE_2_CATALOGO_INVENTARIOS', etapa: 'consulta_catalogo_e_inventarios',\n  estado: ok ? 'COMPLETADO' : 'DETENIDO',\n  resultado: ok ? { items: verificados } : motivo,\n  fuentes: [cat.fuente], advertencias: adv, duracion_ms: dur,\n  referencia_consumo: { execution_id: $execution.id, nodo: 'Agente 2 - Catalogo e inventarios', modelo: 'gpt-5-mini (Gateway credits)', tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Tokens/costo no expuestos por el nodo AI Agent: pendiente de configurar.' }\n};\nconst trazaOrq = {\n  caso_id: prev.caso_id, agente: 'ORQUESTADOR', etapa: 'revision_agente_2',\n  estado: ok ? 'COMPLETADO' : 'DETENIDO',\n  resultado: ok ? 'Productos existentes, con inventario suficiente y precios identicos al catalogo autorizado. Se calcula la cotizacion.' : 'Proceso detenido: ' + motivo,\n  fuentes: [cat.fuente], advertencias: [], duracion_ms: 0,\n  referencia_consumo: { execution_id: $execution.id, tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Logica determinista.' }\n};\nreturn [{ json: Object.assign({}, prev, {\n  estado_flujo: ok ? 'OK' : 'DETENIDO', motivo_detencion: motivo,\n  agente2: out, items_verificados: verificados,\n  advertencias: prev.advertencias.concat(adv),\n  trazas: prev.trazas.concat([trazaAg, trazaOrq]),\n  presupuesto: Object.assign({}, prev.presupuesto, { llamadas_ia_realizadas: prev.presupuesto.llamadas_ia_realizadas + 1 }),\n  _t_prep: Date.now()\n}) }];"
       },
-      "id": "2bba04da-79bc-4e64-a936-1830af95acc8",
+      "id": "9bb24b67-d43d-4d42-9679-6a493b4561ce",
       "name": "Orquestador 4 - Revisar Agente 2",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1936,
+        3840,
         368
       ]
     },
@@ -316,12 +316,12 @@
         },
         "options": {}
       },
-      "id": "e99e6b88-5f9d-44ca-8f07-9c306a32ce5d",
+      "id": "d9e1476c-3d6d-4c71-a3cf-3e712ac6fe02",
       "name": "Agente 2 aprobado?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.4,
       "position": [
-        2160,
+        4064,
         368
       ]
     },
@@ -329,12 +329,12 @@
       "parameters": {
         "jsCode": "const s = $input.first().json;\nconst r2 = function (n) { return Math.round(n * 100) / 100; };\nconst lineas = s.items_verificados.map(function (i) {\n  return { producto: i.producto, cantidad: i.cantidad, precio_unitario: i.precio_unitario, subtotal: r2(i.cantidad * i.precio_unitario) };\n});\nconst subtotal = r2(lineas.reduce(function (a, l) { return a + l.subtotal; }, 0));\nconst cotizacion = {\n  caso_id: s.caso_id, lineas: lineas, subtotal: subtotal, impuestos: 0, envio: 0, descuentos: 0,\n  total: subtotal, moneda: s.catalogo.moneda, fuente: s.catalogo.fuente\n};\nconst trazaOrq = {\n  caso_id: s.caso_id, agente: 'ORQUESTADOR', etapa: 'calculo_determinista',\n  estado: 'COMPLETADO',\n  resultado: 'Subtotales y total calculados en Code (sin impuestos, envio ni descuentos): total ' + subtotal + ' ' + s.catalogo.moneda,\n  fuentes: [s.catalogo.fuente], advertencias: [], duracion_ms: 0,\n  referencia_consumo: { execution_id: $execution.id, tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Calculo determinista: no consume tokens.' }\n};\nreturn [{ json: Object.assign({}, s, { cotizacion: cotizacion, trazas: s.trazas.concat([trazaOrq]), _t_prep: Date.now() }) }];"
       },
-      "id": "0295b7fa-584b-493c-b9bd-7bda4d457a8b",
+      "id": "e7532577-b1c9-4e75-90a2-fd9250a74f92",
       "name": "Calculo determinista de cotizacion",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1888,
+        3792,
         288
       ]
     },
@@ -347,12 +347,12 @@
           "systemMessage": "Eres el AGENTE 3 de LogiSmart Solutions: ELABORACION DE COTIZACIONES. Redactas la propuesta comercial PROVISIONAL a partir de datos ya verificados y calculados por un nodo de calculo determinista.\nTu tarea:\n1. Recibir los datos verificados (lineas, subtotal, total, moneda).\n2. Generar la propuesta estructurada: titulo, resumen breve en espanol, lineas, cifras, condiciones y advertencias.\nReglas estrictas:\n- Copia las cifras EXACTAMENTE como llegan: no recalcules, no redondees, no cambies cantidades ni precios.\n- NO inventes descuentos, impuestos ni costos de envio: impuestos=0, envio=0, descuentos=0.\n- Incluye en condiciones que la cotizacion es provisional, simulada y pendiente de aprobacion humana.\n- NO autorices ni envies nada al cliente.\n- Repite exactamente el caso_id recibido.\n- Devuelve SOLO el JSON del formato indicado."
         }
       },
-      "id": "399f8d41-c241-43a0-afd2-8bdf7becd7f9",
+      "id": "604e7e07-f4b6-46ed-ace0-d8d0099f8280",
       "name": "Agente 3 - Elaboracion de cotizacion",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        2112,
+        4016,
         288
       ]
     },
@@ -369,12 +369,12 @@
           "maxTokens": 2500
         }
       },
-      "id": "68236f7a-ae83-46d5-ba2a-c104bf817868",
+      "id": "1f931e2d-aee7-4cdd-89da-ac45f2eafc96",
       "name": "Modelo Agente 3",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        2128,
+        4032,
         512
       ]
     },
@@ -382,12 +382,12 @@
       "parameters": {
         "jsonSchemaExample": "{\"caso_id\":\"LOG-001\",\"titulo\":\"Propuesta de cotizacion\",\"resumen\":\"Texto breve\",\"lineas\":[{\"producto\":\"Producto A\",\"cantidad\":10,\"precio_unitario\":100,\"subtotal\":1000}],\"subtotal\":1000,\"impuestos\":0,\"envio\":0,\"descuentos\":0,\"total\":1000,\"moneda\":\"MXN\",\"condiciones\":[\"Cotizacion provisional simulada\"],\"advertencias\":[]}"
       },
-      "id": "6ffb7687-fe21-4c40-bbdc-2da8c0105752",
+      "id": "662b4b1a-7c47-446f-96ee-f14a2b35a5ad",
       "name": "Formato salida Agente 3",
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        2256,
+        4160,
         512
       ]
     },
@@ -395,12 +395,12 @@
       "parameters": {
         "jsCode": "const prev = $('Calculo determinista de cotizacion').first().json;\nconst out = $input.first().json.output || {};\nconst dur = Date.now() - prev._t_prep;\nconst c = prev.cotizacion;\nconst norm = function (x) { return String(x || '').toLowerCase().replace('producto', '').trim(); };\nconst adv = Array.isArray(out.advertencias) ? out.advertencias.slice() : [];\nconst errores = [];\nif (out.caso_id !== prev.caso_id) errores.push('caso_id inconsistente en Agente 3: ' + out.caso_id);\nconst lin = Array.isArray(out.lineas) ? out.lineas : [];\nif (lin.length !== c.lineas.length) errores.push('El numero de lineas de la propuesta no coincide con el calculo');\nfor (const l of c.lineas) {\n  const m = lin.find(function (x) { return norm(x.producto) === norm(l.producto); });\n  if (!m) { errores.push('Falta la linea de ' + l.producto + ' en la propuesta'); continue; }\n  if (Number(m.cantidad) !== l.cantidad || Number(m.precio_unitario) !== l.precio_unitario || Number(m.subtotal) !== l.subtotal) errores.push('Cifras alteradas en la linea de ' + l.producto);\n}\nif (Number(out.subtotal) !== c.subtotal) errores.push('Subtotal de la propuesta (' + out.subtotal + ') difiere del calculo (' + c.subtotal + ')');\nif (Number(out.total) !== c.total) errores.push('Total de la propuesta (' + out.total + ') difiere del calculo (' + c.total + ')');\nif (Number(out.impuestos) !== 0 || Number(out.envio) !== 0 || Number(out.descuentos) !== 0) errores.push('La propuesta incluye impuestos, envio o descuentos no autorizados');\nif (out.moneda !== c.moneda) errores.push('Moneda inconsistente en la propuesta');\nconst ok = errores.length === 0;\nconst motivo = ok ? null : errores.join('; ');\nconst trazaAg = {\n  caso_id: prev.caso_id, agente: 'AGENTE_3_COTIZACION', etapa: 'elaboracion_de_cotizacion',\n  estado: ok ? 'COMPLETADO' : 'DETENIDO',\n  resultado: ok ? { subtotal: out.subtotal, total: out.total, moneda: out.moneda } : motivo,\n  fuentes: [c.fuente, 'Calculo determinista de cotizacion'], advertencias: adv, duracion_ms: dur,\n  referencia_consumo: { execution_id: $execution.id, nodo: 'Agente 3 - Elaboracion de cotizacion', modelo: 'gpt-5-mini (Gateway credits)', tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Tokens/costo no expuestos por el nodo AI Agent: pendiente de configurar.' }\n};\nconst trazaOrq = {\n  caso_id: prev.caso_id, agente: 'ORQUESTADOR', etapa: 'revision_agente_3',\n  estado: ok ? 'COMPLETADO' : 'DETENIDO',\n  resultado: ok ? 'Propuesta coincide con el calculo determinista. Se asigna control de calidad.' : 'Proceso detenido: ' + motivo,\n  fuentes: ['Agente 3', 'Calculo determinista'], advertencias: [], duracion_ms: 0,\n  referencia_consumo: { execution_id: $execution.id, tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Logica determinista.' }\n};\nreturn [{ json: Object.assign({}, prev, {\n  estado_flujo: ok ? 'OK' : 'DETENIDO', motivo_detencion: motivo,\n  agente3: out,\n  advertencias: prev.advertencias.concat(adv),\n  trazas: prev.trazas.concat([trazaAg, trazaOrq]),\n  presupuesto: Object.assign({}, prev.presupuesto, { llamadas_ia_realizadas: prev.presupuesto.llamadas_ia_realizadas + 1 }),\n  _t_prep: Date.now()\n}) }];"
       },
-      "id": "f1a96bc1-c9e6-43f7-ac6b-4931def53059",
+      "id": "63f6b91f-be6a-4fd7-a5ff-3911aa5cf2b7",
       "name": "Orquestador 5 - Revisar Agente 3",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2464,
+        4368,
         288
       ]
     },
@@ -427,12 +427,12 @@
         },
         "options": {}
       },
-      "id": "7af692cb-2759-421d-826f-0cef27d0f27f",
+      "id": "f2e927df-0e51-4ff9-a51e-a446d10efcb2",
       "name": "Agente 3 aprobado?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.4,
       "position": [
-        2688,
+        4592,
         288
       ]
     },
@@ -440,12 +440,12 @@
       "parameters": {
         "jsCode": "const s = $input.first().json;\nconst c = s.cotizacion;\nconst a3 = s.agente3;\nconst cat = s.catalogo;\nconst norm = function (x) { return String(x || '').toLowerCase().replace('producto', '').trim(); };\nconst r2 = function (n) { return Math.round(n * 100) / 100; };\nconst checks = [];\nconst chk = function (id, descripcion, ok, detalle) { checks.push({ id: id, descripcion: descripcion, ok: !!ok, detalle: detalle || '' }); };\nchk('caso_id_consistente', 'El caso_id es el mismo en el Agente 1, 2 y 3', [s.agente1.caso_id, s.agente2.caso_id, a3.caso_id, c.caso_id].every(function (x) { return x === s.caso_id; }));\nchk('productos_y_cantidades', 'Productos y cantidades de la cotizacion coinciden con lo extraido por el Agente 1', s.agente1.productos.every(function (p) {\n  const l = c.lineas.find(function (x) { return norm(x.producto) === norm(p.nombre); });\n  return l && l.cantidad === Number(p.cantidad);\n}) && s.agente1.productos.length === c.lineas.length);\nchk('precios_vs_catalogo', 'Cada precio unitario coincide con el catalogo autorizado', c.lineas.every(function (l) {\n  const k = norm(l.producto); return cat.productos[k] && cat.productos[k].precio === l.precio_unitario;\n}));\nchk('inventario_suficiente', 'Ninguna cantidad supera el inventario autorizado', c.lineas.every(function (l) {\n  const k = norm(l.producto); return cat.productos[k] && l.cantidad <= cat.productos[k].inventario;\n}));\nchk('subtotales', 'Cada subtotal = cantidad x precio unitario', c.lineas.every(function (l) { return r2(l.cantidad * l.precio_unitario) === l.subtotal; }));\nchk('total', 'El total = suma de subtotales', r2(c.lineas.reduce(function (a, l) { return a + l.subtotal; }, 0)) === c.total && c.total === c.subtotal);\nchk('sin_extras', 'No hay impuestos, envio ni descuentos inventados (cotizacion y propuesta)', c.impuestos === 0 && c.envio === 0 && c.descuentos === 0 && Number(a3.impuestos) === 0 && Number(a3.envio) === 0 && Number(a3.descuentos) === 0);\nchk('propuesta_coincide_calculo', 'La propuesta del Agente 3 tiene el mismo total y moneda que el calculo', Number(a3.total) === c.total && a3.moneda === c.moneda);\nchk('fuente_catalogo', 'La fuente del catalogo esta presente y coincide', c.fuente === cat.fuente && s.agente2.fuente === cat.fuente);\nchk('politica', 'Modo SIMULADO y moneda MXN', s.modo === 'SIMULADO' && c.moneda === 'MXN');\nconst trazaOrq = {\n  caso_id: s.caso_id, agente: 'ORQUESTADOR', etapa: 'validaciones_deterministas_qa',\n  estado: 'COMPLETADO',\n  resultado: checks.filter(function (x) { return x.ok; }).length + ' de ' + checks.length + ' validaciones deterministas aprobadas',\n  fuentes: [cat.fuente], advertencias: [], duracion_ms: 0,\n  referencia_consumo: { execution_id: $execution.id, tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Validaciones deterministas: no consumen tokens.' }\n};\nreturn [{ json: Object.assign({}, s, { checks_deterministas: checks, trazas: s.trazas.concat([trazaOrq]), _t_prep: Date.now() }) }];"
       },
-      "id": "fee4f068-3549-4c7d-b98f-d2dca410ffb7",
+      "id": "58d4cd07-9910-4458-8fc8-76f34290c81a",
       "name": "Validaciones deterministas QA",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2416,
+        4320,
         224
       ]
     },
@@ -458,12 +458,12 @@
           "systemMessage": "Eres el AGENTE 4 de LogiSmart Solutions: CONTROL DE CALIDAD TECNICO. Revisas la cotizacion provisional antes de la aprobacion humana.\nTu tarea:\n1. Revisar que productos y cantidades correspondan con la solicitud original.\n2. Verificar que los precios coincidan con el catalogo autorizado y que los calculos (subtotales y total) sean correctos.\n3. Comprobar que la fuente del catalogo este citada y que el caso_id sea consistente.\n4. Detectar errores, inconsistencias o datos inventados (descuentos, impuestos, envio).\n5. Emitir un dictamen: \"APROBADO_TECNICAMENTE\" o \"DEVUELTO\".\nReglas estrictas:\n- Si cualquier validacion determinista tiene ok=false o encuentras algun error, el dictamen es \"DEVUELTO\" y debes explicar cada problema en hallazgos.\n- Solo si todo es correcto: \"APROBADO_TECNICAMENTE\" con hallazgos=[].\n- NO autorizas acciones comerciales (enviar al cliente, aceptar pedido, cobrar): autoriza_accion_comercial SIEMPRE es false. La aprobacion es humana y esta pendiente.\n- NO modifiques la cotizacion ni inventes datos.\n- Repite exactamente el caso_id recibido y lista en fuentes_verificadas las fuentes que comprobaste.\n- Devuelve SOLO el JSON del formato indicado."
         }
       },
-      "id": "96f7cce9-b68e-43cf-a9c7-aae22b8aba96",
+      "id": "41efa415-b0bd-4a31-9d1f-69cba6ddb714",
       "name": "Agente 4 - Control de calidad",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        2640,
+        4544,
         224
       ]
     },
@@ -480,12 +480,12 @@
           "maxTokens": 2000
         }
       },
-      "id": "30e0d659-01a8-4bee-8d74-fb2a89002665",
+      "id": "e3a4166d-0721-49c1-92fe-b63c7cb10b42",
       "name": "Modelo Agente 4",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        2656,
+        4560,
         448
       ]
     },
@@ -493,12 +493,12 @@
       "parameters": {
         "jsonSchemaExample": "{\"caso_id\":\"LOG-001\",\"dictamen\":\"APROBADO_TECNICAMENTE\",\"hallazgos\":[],\"fuentes_verificadas\":[\"catalogo_ficticio_logismart_v1\"],\"advertencias\":[],\"autoriza_accion_comercial\":false}"
       },
-      "id": "985a9636-0350-4a6b-827f-4618cd740d92",
+      "id": "5c07a473-c165-4a59-a93d-cee842b6da08",
       "name": "Formato salida Agente 4",
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        2784,
+        4688,
         448
       ]
     },
@@ -506,25 +506,25 @@
       "parameters": {
         "jsCode": "const prev = $('Validaciones deterministas QA').first().json;\nconst out = $input.first().json.output || {};\nconst dur = Date.now() - prev._t_prep;\nconst adv = Array.isArray(out.advertencias) ? out.advertencias.slice() : [];\nconst hallazgos = Array.isArray(out.hallazgos) ? out.hallazgos.slice() : [];\nconst fallidos = prev.checks_deterministas.filter(function (x) { return !x.ok; });\nconst problemas = [];\nif (out.caso_id !== prev.caso_id) problemas.push('caso_id inconsistente en Agente 4: ' + out.caso_id);\nif (out.dictamen !== 'APROBADO_TECNICAMENTE' && out.dictamen !== 'DEVUELTO') problemas.push('Dictamen no reconocido: ' + out.dictamen);\nif (out.autoriza_accion_comercial !== false) problemas.push('El Agente 4 intento autorizar una accion comercial (no permitido)');\nif (fallidos.length > 0) problemas.push('Validaciones deterministas fallidas: ' + fallidos.map(function (x) { return x.id; }).join(', '));\nconst aprobado = out.dictamen === 'APROBADO_TECNICAMENTE' && problemas.length === 0;\nconst dictamen = aprobado ? 'APROBADO_TECNICAMENTE' : 'DEVUELTO';\nconst revision = {\n  dictamen: dictamen,\n  dictamen_agente_4: out.dictamen || null,\n  hallazgos: hallazgos.concat(problemas),\n  validaciones_deterministas: prev.checks_deterministas,\n  fuentes_verificadas: Array.isArray(out.fuentes_verificadas) ? out.fuentes_verificadas : [],\n  autoriza_accion_comercial: false\n};\nconst trazaAg = {\n  caso_id: prev.caso_id, agente: 'AGENTE_4_CONTROL_CALIDAD', etapa: 'control_de_calidad',\n  estado: 'COMPLETADO',\n  resultado: { dictamen: dictamen, hallazgos: revision.hallazgos },\n  fuentes: revision.fuentes_verificadas, advertencias: adv, duracion_ms: dur,\n  referencia_consumo: { execution_id: $execution.id, nodo: 'Agente 4 - Control de calidad', modelo: 'gpt-5-mini (Gateway credits)', tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Tokens/costo no expuestos por el nodo AI Agent: pendiente de configurar.' }\n};\nconst trazaOrq = {\n  caso_id: prev.caso_id, agente: 'ORQUESTADOR', etapa: 'revision_agente_4',\n  estado: aprobado ? 'COMPLETADO' : 'DEVUELTO',\n  resultado: aprobado ? 'Dictamen del Agente 4 y validaciones deterministas coinciden: APROBADO_TECNICAMENTE. Pasa a cierre con aprobacion humana pendiente.' : 'Cotizacion DEVUELTA: ' + revision.hallazgos.join('; '),\n  fuentes: ['Agente 4', 'Validaciones deterministas QA'], advertencias: [], duracion_ms: 0,\n  referencia_consumo: { execution_id: $execution.id, tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Logica determinista.' }\n};\nreturn [{ json: Object.assign({}, prev, {\n  estado_flujo: aprobado ? 'OK' : 'DEVUELTO',\n  motivo_detencion: aprobado ? null : revision.hallazgos.join('; '),\n  agente4: out, revision_tecnica: revision,\n  advertencias: prev.advertencias.concat(adv),\n  trazas: prev.trazas.concat([trazaAg, trazaOrq]),\n  presupuesto: Object.assign({}, prev.presupuesto, { llamadas_ia_realizadas: prev.presupuesto.llamadas_ia_realizadas + 1 }),\n  _t_prep: Date.now()\n}) }];"
       },
-      "id": "131ea6be-386b-4f2c-8a57-013e145449b0",
+      "id": "a7273fa1-f05d-4785-82e3-0bd0b91dd6ea",
       "name": "Orquestador 6 - Revisar Agente 4",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2992,
+        4896,
         224
       ]
     },
     {
       "parameters": {
-        "jsCode": "const s = $input.first().json;\nconst ahora = Date.now();\nconst agentesCompletados = s.trazas.filter(function (t) { return String(t.agente).indexOf('AGENTE_') === 0 && t.estado === 'COMPLETADO'; }).map(function (t) { return t.agente; });\nconst cot = s.cotizacion || null;\nconst dictamen = s.revision_tecnica ? s.revision_tecnica.dictamen : null;\nlet estadoFinal;\nif (s.estado_flujo === 'DETENIDO') {\n  estadoFinal = s.requiere_aclaracion ? 'ACLARACION_REQUERIDA' : 'DETENIDO';\n} else if (s.estado_flujo === 'DEVUELTO' || dictamen === 'DEVUELTO') {\n  estadoFinal = 'DEVUELTO';\n} else if (s.estado_flujo === 'OK' && dictamen === 'APROBADO_TECNICAMENTE' && agentesCompletados.length === 4 && cot) {\n  estadoFinal = 'PENDIENTE_APROBACION';\n} else {\n  estadoFinal = 'ERROR_INCONSISTENTE';\n}\nconst exito = estadoFinal === 'PENDIENTE_APROBACION';\nconst cierreTraza = {\n  caso_id: s.caso_id, agente: 'ORQUESTADOR', etapa: 'cierre',\n  estado: exito ? 'COMPLETADO' : estadoFinal,\n  resultado: exito ? 'Caso completo: 4 agentes ejecutados, revision tecnica aprobada. Estado PENDIENTE_APROBACION; aprobacion humana PENDIENTE.' : 'Caso cerrado sin exito: ' + (s.motivo_detencion || estadoFinal),\n  fuentes: ['trazas del caso'], advertencias: [], duracion_ms: ahora - s._t_prep,\n  referencia_consumo: { execution_id: $execution.id, tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Logica determinista.' }\n};\nconst advertencias = s.advertencias.slice();\nadvertencias.push('Consumo (tokens/costo) no disponible: pendiente de configurar. Presupuesto de ' + s.limite_costo_usd + ' USD no verificable automaticamente.');\nif (!exito && s.motivo_detencion) advertencias.push(s.motivo_detencion);\nconst lineas = cot ? cot.lineas : [];\nconst cantidades = {};\nconst precios = {};\nlineas.forEach(function (l) { cantidades[l.producto] = l.cantidad; precios[l.producto] = l.precio_unitario; });\nconst resultado = {\n  caso_id: s.caso_id,\n  estado_final: estadoFinal,\n  productos: lineas.map(function (l) { return l.producto; }),\n  cantidades: cantidades,\n  precios: precios,\n  detalle_lineas: lineas,\n  importe_total: exito ? cot.total : null,\n  moneda: cot ? cot.moneda : null,\n  revision_tecnica: s.revision_tecnica || { dictamen: 'NO_EJECUTADA', hallazgos: [s.motivo_detencion || 'Proceso detenido antes del control de calidad'] },\n  aprobacion_humana: 'PENDIENTE',\n  advertencias: advertencias,\n  modo: s.modo,\n  agentes_ejecutados: agentesCompletados,\n  presupuesto: s.presupuesto,\n  duracion_total_ms: ahora - s._t_inicio,\n  trazas: s.trazas.concat([cierreTraza])\n};\nreturn [{ json: resultado }];"
+        "jsCode": "const s = $input.first().json;\nconst ahora = Date.now();\nconst agentesCompletados = s.trazas.filter(function (t) { return String(t.agente).indexOf('AGENTE_') === 0 && t.estado === 'COMPLETADO'; }).map(function (t) { return t.agente; });\nconst cot = s.cotizacion || null;\nconst dictamen = s.revision_tecnica ? s.revision_tecnica.dictamen : null;\nlet estadoFinal;\nif (s.estado_flujo === 'DETENIDO') {\n  estadoFinal = s.requiere_aclaracion ? 'ACLARACION_REQUERIDA' : 'DETENIDO';\n} else if (s.estado_flujo === 'DEVUELTO' || dictamen === 'DEVUELTO') {\n  estadoFinal = 'DEVUELTO';\n} else if (s.estado_flujo === 'OK' && dictamen === 'APROBADO_TECNICAMENTE' && agentesCompletados.length === 4 && cot) {\n  estadoFinal = 'PENDIENTE_APROBACION';\n} else {\n  estadoFinal = 'ERROR_INCONSISTENTE';\n}\nconst exito = estadoFinal === 'PENDIENTE_APROBACION';\nconst cierreTraza = {\n  caso_id: s.caso_id, agente: 'ORQUESTADOR', etapa: 'cierre',\n  estado: exito ? 'COMPLETADO' : estadoFinal,\n  resultado: exito ? 'Caso completo: 4 agentes ejecutados, revision tecnica aprobada. Estado PENDIENTE_APROBACION; aprobacion humana PENDIENTE.' : 'Caso cerrado sin exito: ' + (s.motivo_detencion || estadoFinal),\n  fuentes: ['trazas del caso'], advertencias: [], duracion_ms: ahora - s._t_prep,\n  referencia_consumo: { execution_id: $execution.id, tokens_entrada: null, tokens_salida: null, costo_usd: null, nota: 'Logica determinista.' }\n};\nconst advertencias = s.advertencias.slice();\nadvertencias.push('Consumo (tokens/costo) no disponible: pendiente de configurar. Presupuesto de ' + s.limite_costo_usd + ' USD no verificable automaticamente.');\nif (!exito && s.motivo_detencion) advertencias.push(s.motivo_detencion);\nconst lineas = cot ? cot.lineas : [];\nconst cantidades = {};\nconst precios = {};\nlineas.forEach(function (l) { cantidades[l.producto] = l.cantidad; precios[l.producto] = l.precio_unitario; });\nconst resultado = {\n  caso_id: s.caso_id,\n  estado_final: estadoFinal,\n  productos: lineas.map(function (l) { return l.producto; }),\n  cantidades: cantidades,\n  precios: precios,\n  detalle_lineas: lineas,\n  importe_total: exito ? cot.total : null,\n  moneda: cot ? cot.moneda : null,\n  revision_tecnica: s.revision_tecnica || { dictamen: 'NO_EJECUTADA', hallazgos: [s.motivo_detencion || 'Proceso detenido antes del control de calidad'] },\naprobacion_humana: exito ? 'PENDIENTE' : 'NO_SOLICITADA',\n  advertencias: advertencias,\n  modo: s.modo,\n  agentes_ejecutados: agentesCompletados,\n  presupuesto: s.presupuesto,\n  duracion_total_ms: ahora - s._t_inicio,\n  trazas: s.trazas.concat([cierreTraza])\n};\nreturn [{ json: resultado }];"
       },
-      "id": "b89da1e6-8617-4b0e-82d0-b1ce18d042f4",
+      "id": "e96ac304-89ff-406f-878e-35c939c58424",
       "name": "Orquestador 7 - Cierre y resultado final",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2864,
+        4768,
         272
       ]
     },
@@ -535,12 +535,12 @@
         "width": 608,
         "color": 4
       },
-      "id": "e03887a7-26cc-49bd-9f0e-7a0db9a9c448",
+      "id": "dbce4772-3eac-4269-bf74-471afa28a9c8",
       "name": "Nota etapa 0",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        272,
+        1840,
         416
       ]
     },
@@ -551,12 +551,12 @@
         "width": 736,
         "color": 5
       },
-      "id": "ec5d64fd-0871-433f-a723-3575179398d5",
+      "id": "156993b9-9aa9-4403-8da2-9108ab8c0347",
       "name": "Nota etapa 1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        800,
+        2704,
         336
       ]
     },
@@ -567,12 +567,12 @@
         "width": 960,
         "color": 6
       },
-      "id": "a0508a39-11a0-483e-9f9e-abc7bf38f486",
+      "id": "8bc73c39-1227-4369-b04f-2448f0f544c3",
       "name": "Nota etapa 2",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1328,
+        3232,
         272
       ]
     },
@@ -583,12 +583,12 @@
         "width": 960,
         "color": 3
       },
-      "id": "fee4bd1d-1f37-4976-b12f-4d5d689d2b7e",
+      "id": "d44ff52a-34c8-443e-8c41-7251ac394416",
       "name": "Nota etapa 3",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1856,
+        3760,
         192
       ]
     },
@@ -599,14 +599,751 @@
         "width": 736,
         "color": 2
       },
-      "id": "5868cb17-967a-4aa5-849d-ef3ae9658e6e",
+      "id": "5c92970d-4fdf-4d54-8cf8-a1b2f29e1b41",
       "name": "Nota etapa 4",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2384,
+        4288,
         128
       ]
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message",
+          "callback_query"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.5,
+      "position": [
+        -1728,
+        224
+      ],
+      "id": "622701c5-b856-4913-a35b-d87fb2e03081",
+      "name": "Telegram Trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst evento = $input.first().json;\nconst mensaje = evento.message;\n\n// Usuario autorizado para las pruebas\n// Configurar localmente los IDs numéricos autorizados. Vacío bloquea todas las solicitudes.\nconst usuariosPermitidos = [];\n\nif (!mensaje || !mensaje.from || !mensaje.chat) {\n  throw new Error(\"Evento de Telegram inválido\");\n}\n\nconst usuarioId = mensaje.from.id;\nconst chatId = mensaje.chat.id;\n\nif (!usuariosPermitidos.includes(usuarioId)) {\n  throw new Error(\"Usuario no autorizado\");\n}\n\nif (typeof mensaje.text !== \"string\" ||\n    !mensaje.text.trim()) {\n  throw new Error(\"Debes enviar un mensaje de texto\");\n}\n\nlet solicitud = mensaje.text.trim();\n\n// Quitar el comando /nuevo si existe\nsolicitud = solicitud.replace(\n  /^\\/nuevo(?:@\\w+)?\\s*/i,\n  \"\"\n).trim();\n\nif (!solicitud || solicitud.length > 1000) {\n  throw new Error(\"Solicitud vacía o demasiado larga\");\n}\n\nconst idEvento = evento.update_id;\n\nif (!Number.isSafeInteger(idEvento)) {\n  throw new Error(\"Identificador de evento inválido\");\n}\n\nreturn [{\n  json: {\n    caso_id: `LOG-${idEvento}`,\n    canal: \"telegram\",\n    usuario: `telegram_${usuarioId}`,\n    objetivo: \"cotizar_productos\",\n    solicitud: solicitud,\n    modo: \"SIMULADO\",\n    limite_costo_usd: 0.10,\n    chat_id: chatId,\n    usuario_id: usuarioId,\n    evento_id: idEvento\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1232,
+        288
+      ],
+      "id": "778bc824-dc9c-4e21-852e-02afb63b3bfe",
+      "name": "Preparar solicitud telegram"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}\n",
+        "text": "=\n{{\n  (() => {\n    const r = $('Orquestador 7 - Cierre y resultado final').first().json;\n\n    if (r.estado_final === 'PENDIENTE_APROBACION') {\n      return `LOGISMART - COTIZACIÓN SIMULADA\n\nFolio: ${r.caso_id}\nProductos: ${r.productos.join(', ')}\nTotal provisional: $${r.importe_total} ${r.moneda}\n\nEstado: PENDIENTE DE APROBACIÓN HUMANA\n\nEsta cotización es ficticia y requiere autorización.`;\n    }\n\n    return `LOGISMART - SOLICITUD NO COMPLETADA\n\nFolio: ${r.caso_id}\nEstado: ${r.estado_final}\n\nMotivo: ${(r.revision_tecnica?.hallazgos || r.advertencias || []).join('; ')}\n\nNo se ha solicitado aprobación humana.`;\n  })()\n}}\n",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "✅ Aprobar cotización",
+                    "additionalFields": {
+                      "callback_data": "={{ 'APROBAR|' + $('Orquestador 7 - Cierre y resultado final').first().json.caso_id + '|1' }}"
+                    }
+                  },
+                  {
+                    "text": "❌ Rechazar cotización",
+                    "additionalFields": {
+                      "callback_data": "={{ 'RECHAZAR|' + $('Orquestador 7 - Cierre y resultado final').first().json.caso_id + '|1' }}"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        5296,
+        272
+      ],
+      "id": "547b0c78-a34d-4b9f-8e4e-a86d69751483",
+      "name": "Enviar resultado a Telegram"
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "value": "CONFIGURAR_ID_TABLA_LOGISMART",
+          "mode": "id"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "caso_id": "={{ $json.caso_id }}",
+            "usuario_id": "={{ String($('Preparar solicitud telegram').first().json.usuario_id) }}",
+            "chat_id": "={{ String($('Preparar solicitud telegram').first().json.chat_id) }}",
+            "solicitud": "={{ $('Preparar solicitud telegram').first().json.solicitud }}",
+            "estado_final": "={{ $json.estado_final }}",
+            "importe_total": "={{ $json.importe_total }}",
+            "moneda": "={{ $json.moneda ?? '' }}",
+            "aprobacion_humana": "={{ $json.aprobacion_humana }}",
+            "version_propuesta": "={{ 1 }}",
+            "fecha_registro": "={{ $now.toISO() }}",
+            "resultado_json": "={{ JSON.stringify($json) }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "caso_id",
+              "displayName": "caso_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "usuario_id",
+              "displayName": "usuario_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "solicitud",
+              "displayName": "solicitud",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "estado_final",
+              "displayName": "estado_final",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "importe_total",
+              "displayName": "importe_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "moneda",
+              "displayName": "moneda",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "aprobacion_humana",
+              "displayName": "aprobacion_humana",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "version_propuesta",
+              "displayName": "version_propuesta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "fecha_registro",
+              "displayName": "fecha_registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "resultado_json",
+              "displayName": "resultado_json",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        5040,
+        272
+      ],
+      "id": "468c1778-d871-4670-9ffa-54eabd8ca7b1",
+      "name": "Guardar caso LogiSmart"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 4
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{   $json.message?.text || '' }}",
+                    "rightValue": "^/estado(?:@\\w+)?(?:\\s|$)",
+                    "operator": {
+                      "type": "string",
+                      "operation": "regex"
+                    },
+                    "id": "1b33b97a-2056-4ae3-a268-afbdf9d56d25"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "estado"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 4
+                },
+                "conditions": [
+                  {
+                    "id": "1a4a1eb5-98aa-4185-8e4e-91188c4b6c69",
+                    "leftValue": "={{\n  $json.message?.text || ''\n}}",
+                    "rightValue": "^(?:/nuevo(?:@\\w+)?(?:\\s|$)|[^/\\s][\\s\\S]*)",
+                    "operator": {
+                      "type": "string",
+                      "operation": "regex"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "cotizacion"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.5,
+      "position": [
+        144,
+        176
+      ],
+      "id": "c1a62326-aa65-423c-bff4-d25cf31c44ad",
+      "name": "Identificar comando telegram"
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst evento = $input.first().json;\nconst mensaje = evento.message;\n\nif (!mensaje || typeof mensaje.text !== \"string\") {\n  throw new Error(\"Mensaje inválido\");\n}\n\nconst texto = mensaje.text.trim();\nconst partes = texto.split(/\\s+/);\nconst folio = (partes[1] || \"\").toUpperCase();\n\nreturn [{\n  json: {\n    caso_id_buscado: folio,\n    consulta_valida: /^LOG-\\d+$/.test(folio),\n    chat_id: String(mensaje.chat.id),\n    usuario_id: String(mensaje.from.id)\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        16
+      ],
+      "id": "afc7b96a-705c-4c45-8c94-64e50b09ef6e",
+      "name": "Preparar consulta de estado"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "id": "201a0436-27b2-4338-9240-6746eb43c332",
+              "leftValue": "={{ $json.consulta_valida }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.4,
+      "position": [
+        704,
+        16
+      ],
+      "id": "81c86ba9-bbc4-407d-8a3c-f53ef488c267",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "CONFIGURAR_ID_TABLA_LOGISMART",
+          "mode": "id"
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "caso_id",
+              "keyValue": "={{ $('Preparar consulta de estado').first().json.caso_id_buscado }}"
+            },
+            {
+              "keyName": "usuario_id",
+              "keyValue": "={{ $('Preparar consulta de estado').first().json.usuario_id }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        928,
+        -80
+      ],
+      "id": "3db9dc5f-e578-4a51-a075-0e36bac83cb4",
+      "name": "Consultar caso LogiSmart",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst fila = $input.first().json;\nconst consulta =\n  $('Preparar consulta de estado').first().json;\n\nif (!fila.caso_id) {\n  return [{\n    json: {\n      chat_id: consulta.chat_id,\n      texto: `No encontré una cotización accesible con el folio ${consulta.caso_id_buscado}.`\n    }\n  }];\n}\n\nif (\n  String(fila.usuario_id) !==\n  String(consulta.usuario_id)\n) {\n  return [{\n    json: {\n      chat_id: consulta.chat_id,\n      texto: \"No se encontró una cotización accesible.\"\n    }\n  }];\n}\n\nconst total = fila.importe_total == null\n  ? \"No disponible\"\n  : `$${Number(fila.importe_total).toLocaleString(\"es-MX\")} ${fila.moneda || \"MXN\"}`;\n\nreturn [{\n  json: {\n    chat_id: consulta.chat_id,\n    texto: `LOGISMART - CONSULTA DE COTIZACIÓN\n\nFolio: ${fila.caso_id}\nEstado: ${fila.estado_final}\nTotal: ${total}\nAprobación humana: ${fila.aprobacion_humana}\n\nOperación simulada.`\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1152,
+        -80
+      ],
+      "id": "40ec28ee-fb63-42de-b080-03f77c7d9d47",
+      "name": "Preparar respuesta estado"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chat_id }}",
+        "text": "={{ $json.texto }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1376,
+        -80
+      ],
+      "id": "41ab19ec-7861-4c08-bbac-7331f4b3cf5d",
+      "name": "Enviar estado a Telegram"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 4
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message?.message_id !== undefined }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    },
+                    "id": "dca1379e-256a-41d9-bf51-3c6ad586c5ad"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "mensaje"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 4
+                },
+                "conditions": [
+                  {
+                    "id": "e82c3c0f-f1fa-4d79-bebb-51d15b8777e8",
+                    "leftValue": "={{ $json.callback_query?.id !== undefined }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "boton"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.5,
+      "position": [
+        -1504,
+        224
+      ],
+      "id": "187fdc53-d4ff-4fc0-a4d8-4c161011ad39",
+      "name": "Identificar tipo de evento"
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst evento = $input.first().json;\nconst callback = evento.callback_query;\n\nif (!callback) {\n  throw new Error(\"No se recibió una pulsación de botón.\");\n}\n\nconst datos = String(callback.data || \"\");\nconst partes = datos.split(\"|\");\n\nconst accion = partes[0];\nconst caso_id = partes[1];\nconst version = Number(partes[2]);\n\nconst accionValida =\n  accion === \"APROBAR\" || accion === \"RECHAZAR\";\n\nconst folioValido = /^LOG-\\d+$/.test(caso_id || \"\");\n\nconst versionValida =\n  Number.isInteger(version) && version > 0;\n\nreturn [{\n  json: {\n    accion,\n    caso_id,\n    version,\n    usuario_id: String(callback.from.id),\n    chat_id: String(callback.message.chat.id),\n    callback_query_id: callback.id,\n    datos_validos:\n      accionValida && folioValido && versionValida\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1280,
+        224
+      ],
+      "id": "a84996c1-eb54-4fcb-85e8-388585210fdd",
+      "name": "Preparar decisión humana"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "id": "6cbda64a-803c-4a26-af67-be86c4032f20",
+              "leftValue": "={{ $json.datos_validos }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.4,
+      "position": [
+        -1056,
+        224
+      ],
+      "id": "bf42d01c-6c1c-401b-b897-90df9fd270d6",
+      "name": "Datos de decision validos"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "CONFIGURAR_ID_TABLA_LOGISMART",
+          "mode": "id"
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "caso_id",
+              "keyValue": "={{ $('Preparar decisión humana').first().json.caso_id }}"
+            }
+          ]
+        },
+        "limit": 1
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        -832,
+        224
+      ],
+      "id": "b4b1440f-ecf3-4f89-86bc-af3faf56911b",
+      "name": "Buscar cotización para aprobación",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst fila = $input.first().json;\n\nconst decision = $('Preparar decisión humana')\n  .first().json;\n\nconst existe = Boolean(fila.caso_id);\n\nconst usuarioAutorizado =\n  existe &&\n  String(fila.usuario_id) ===\n  String(decision.usuario_id);\n\nconst versionCorrecta =\n  existe &&\n  Number(fila.version_propuesta) ===\n  Number(decision.version);\n\nconst estadoPendiente =\n  fila.estado_final === 'PENDIENTE_APROBACION' &&\n  fila.aprobacion_humana === 'PENDIENTE';\n\nlet motivo = '';\n\nif (!existe) {\n  motivo = 'La cotización no existe.';\n} else if (!usuarioAutorizado) {\n  motivo = 'Usuario no autorizado.';\n} else if (!versionCorrecta) {\n  motivo = 'La versión de la cotización no coincide.';\n} else if (!estadoPendiente) {\n  motivo = 'La cotización ya fue procesada o no está pendiente.';\n}\n\nreturn [{\n  json: {\n    ...decision,\n    autorizado: motivo === '',\n    motivo,\n    estado_anterior: fila.estado_final,\n    estado_nuevo:\n      decision.accion === 'APROBAR'\n        ? 'APROBADA'\n        : 'RECHAZADA',\n    aprobacion_nueva:\n      decision.accion === 'APROBAR'\n        ? 'APROBADA'\n        : 'RECHAZADA'\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -608,
+        224
+      ],
+      "id": "00065570-bb37-4c23-9c29-87d0e0c3a411",
+      "name": "Validar decisión humana"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "id": "9c4339d2-bdbf-4410-bb9c-f392d079c486",
+              "leftValue": "={{ $json.autorizado }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.4,
+      "position": [
+        -384,
+        224
+      ],
+      "id": "eba5a54b-ba23-4348-bba6-259c6d241e10",
+      "name": "Decisión autorizada"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "dataTableId": {
+          "__rl": true,
+          "value": "CONFIGURAR_ID_TABLA_LOGISMART",
+          "mode": "id"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "caso_id",
+              "keyValue": "={{ $json.caso_id }}"
+            },
+            {
+              "keyName": "estado_final",
+              "keyValue": "PENDIENTE_APROBACION"
+            },
+            {
+              "keyName": "version_propuesta",
+              "keyValue": "={{ Number($json.version) }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "estado_final": "={{ $json.estado_nuevo }}",
+            "aprobacion_humana": "={{ $json.aprobacion_nueva }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "caso_id",
+              "displayName": "caso_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "usuario_id",
+              "displayName": "usuario_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "solicitud",
+              "displayName": "solicitud",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "estado_final",
+              "displayName": "estado_final",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "importe_total",
+              "displayName": "importe_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "moneda",
+              "displayName": "moneda",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "aprobacion_humana",
+              "displayName": "aprobacion_humana",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "version_propuesta",
+              "displayName": "version_propuesta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "fecha_registro",
+              "displayName": "fecha_registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "resultado_json",
+              "displayName": "resultado_json",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "dryRun": false
+        }
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        -160,
+        224
+      ],
+      "id": "31f4240f-a27d-42ae-8513-01e4c56329af",
+      "name": "Registrar aprobación humana"
     }
   ],
   "pinData": {},
@@ -624,13 +1361,7 @@
     },
     "Datos iniciales": {
       "main": [
-        [
-          {
-            "node": "Orquestador 1 - Abrir y validar caso",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Orquestador 1 - Abrir y validar caso": {
@@ -924,6 +1655,190 @@
           }
         ]
       ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Identificar tipo de evento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar solicitud telegram": {
+      "main": [
+        [
+          {
+            "node": "Orquestador 1 - Abrir y validar caso",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Orquestador 7 - Cierre y resultado final": {
+      "main": [
+        [
+          {
+            "node": "Guardar caso LogiSmart",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar caso LogiSmart": {
+      "main": [
+        [
+          {
+            "node": "Enviar resultado a Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Identificar comando telegram": {
+      "main": [
+        [
+          {
+            "node": "Preparar consulta de estado",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Preparar solicitud telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar consulta de estado": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Consultar caso LogiSmart",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar caso LogiSmart": {
+      "main": [
+        [
+          {
+            "node": "Preparar respuesta estado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar respuesta estado": {
+      "main": [
+        [
+          {
+            "node": "Enviar estado a Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Identificar tipo de evento": {
+      "main": [
+        [
+          {
+            "node": "Identificar comando telegram",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Preparar decisión humana",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar decisión humana": {
+      "main": [
+        [
+          {
+            "node": "Datos de decision validos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Datos de decision validos": {
+      "main": [
+        [
+          {
+            "node": "Buscar cotización para aprobación",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar cotización para aprobación": {
+      "main": [
+        [
+          {
+            "node": "Validar decisión humana",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar decisión humana": {
+      "main": [
+        [
+          {
+            "node": "Decisión autorizada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Decisión autorizada": {
+      "main": [
+        [
+          {
+            "node": "Registrar aprobación humana",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Registrar aprobación humana": {
+      "main": [
+        []
+      ]
     }
   },
   "active": false,
@@ -933,26 +1848,15 @@
   },
   "nodeGroups": [
     {
-      "id": "869b3dcb-d96e-46d5-b9eb-2df18a550280",
-      "name": "Abrir caso",
-      "nodeIds": [
-        "1d14d449-1ca4-4840-82f2-89c0754a4518",
-        "13ac4a22-d538-4e7b-a377-6ec9eb1773f6",
-        "196b7492-82d9-4b8f-88e8-73a9fc8066e6",
-        "e03887a7-26cc-49bd-9f0e-7a0db9a9c448"
-      ],
-      "description": "Recibe la solicitud de prueba y el orquestador comprueba politica, modo simulado y limite de costo"
-    },
-    {
       "id": "4a280657-f1cd-4889-b16c-ac2bccd44f57",
       "name": "Validar solicitud",
       "nodeIds": [
-        "6011f1a2-45df-4be3-80ab-cf9e247d7ec1",
-        "43728a9c-b2ba-453c-9361-c2d972bdfd25",
-        "fd050245-8c8e-4f50-be1b-88afd84ed338",
-        "711a9f6d-844f-4f99-b8ba-3694bf5a6dda",
-        "13464805-ed59-41cc-8648-c440af81aaf3",
-        "ec5d64fd-0871-433f-a723-3575179398d5"
+        "a37b3dc4-141d-43f6-bf50-1a76ac935094",
+        "480e7c05-612c-4dae-9e3f-cb48a01d414a",
+        "1a384e77-49a3-43ab-ab17-4bc0f6d33245",
+        "980c82af-5222-4580-8b9f-853bfb29a038",
+        "020d4b20-9b14-442a-b121-d599e9003e18",
+        "156993b9-9aa9-4403-8da2-9108ab8c0347"
       ],
       "description": "Interpreta el texto del cliente, extrae productos y cantidades y detiene el caso si falta informacion"
     },
@@ -960,13 +1864,13 @@
       "id": "3a78b97b-1c1a-4a34-b483-04e977ab6ebd",
       "name": "Consultar catalogo",
       "nodeIds": [
-        "98b1ae2f-d0e4-4e2a-9a47-069627cc53a8",
-        "4ddf8d3d-d7d6-4531-93ba-3347e095d54a",
-        "f92eec2d-dbb5-4191-bcdb-c79a905ba695",
-        "f8a62291-20a7-4cd7-af68-776dfab4ac79",
-        "2bba04da-79bc-4e64-a936-1830af95acc8",
-        "e99e6b88-5f9d-44ca-8f07-9c306a32ce5d",
-        "a0508a39-11a0-483e-9f9e-abc7bf38f486"
+        "c27e92a6-ab07-40ac-b3a1-317f9504339b",
+        "ca524bad-7d80-4c1b-a03f-6bd9f3933eb0",
+        "7874abf5-a526-490f-8d16-5996f4e2dd20",
+        "9a097a3c-0a85-4edc-88c4-0e45570c1439",
+        "9bb24b67-d43d-4d42-9679-6a493b4561ce",
+        "d9e1476c-3d6d-4c71-a3cf-3e712ac6fe02",
+        "8bc73c39-1227-4369-b04f-2448f0f544c3"
       ],
       "description": "Contrasta productos con el catalogo autorizado: existencia, precio e inventario disponible"
     },
@@ -974,13 +1878,13 @@
       "id": "ce0d930e-60b1-4d64-805b-a68d4816933c",
       "name": "Elaborar cotizacion",
       "nodeIds": [
-        "0295b7fa-584b-493c-b9bd-7bda4d457a8b",
-        "399f8d41-c241-43a0-afd2-8bdf7becd7f9",
-        "68236f7a-ae83-46d5-ba2a-c104bf817868",
-        "6ffb7687-fe21-4c40-bbdc-2da8c0105752",
-        "f1a96bc1-c9e6-43f7-ac6b-4931def53059",
-        "7af692cb-2759-421d-826f-0cef27d0f27f",
-        "fee4bd1d-1f37-4976-b12f-4d5d689d2b7e"
+        "e7532577-b1c9-4e75-90a2-fd9250a74f92",
+        "604e7e07-f4b6-46ed-ace0-d8d0099f8280",
+        "1f931e2d-aee7-4cdd-89da-ac45f2eafc96",
+        "662b4b1a-7c47-446f-96ee-f14a2b35a5ad",
+        "63f6b91f-be6a-4fd7-a5ff-3911aa5cf2b7",
+        "f2e927df-0e51-4ff9-a51e-a446d10efcb2",
+        "d44ff52a-34c8-443e-8c41-7251ac394416"
       ],
       "description": "Calcula importes de forma determinista y redacta la propuesta provisional sin alterar cifras"
     },
@@ -988,12 +1892,12 @@
       "id": "d0ec714c-11bf-4112-a769-a471ce33b12b",
       "name": "Controlar calidad",
       "nodeIds": [
-        "fee4f068-3549-4c7d-b98f-d2dca410ffb7",
-        "96f7cce9-b68e-43cf-a9c7-aae22b8aba96",
-        "30e0d659-01a8-4bee-8d74-fb2a89002665",
-        "985a9636-0350-4a6b-827f-4618cd740d92",
-        "131ea6be-386b-4f2c-8a57-013e145449b0",
-        "5868cb17-967a-4aa5-849d-ef3ae9658e6e"
+        "58d4cd07-9910-4458-8fc8-76f34290c81a",
+        "41efa415-b0bd-4a31-9d1f-69cba6ddb714",
+        "e3a4166d-0721-49c1-92fe-b63c7cb10b42",
+        "5c07a473-c165-4a59-a93d-cee842b6da08",
+        "a7273fa1-f05d-4785-82e3-0bd0b91dd6ea",
+        "5c92970d-4fdf-4d54-8cf8-a1b2f29e1b41"
       ],
       "description": "Revisa propuesta con reglas fijas y un agente revisor, y emite dictamen tecnico sin autorizar ventas"
     }
