@@ -15,3 +15,13 @@ En Actions → Verificar y publicar LogiSmart → Run workflow, activar `probar_
 ## Validación pública
 
 Abrir la URL de Pages, confirmar conteo, fecha, filtros y reset, historial y avisos. Autorizar el hostname de Pages en ElevenLabs conservando los orígenes existentes. Probar consulta de folio y resumen con consentimiento del usuario; conservar resultado de herramienta y respuesta sin publicar conversaciones completas. La interacción por voz exige aceptación y permiso de micrófono del usuario.
+
+## Ejecuciones conservadas
+
+- Bloqueo deliberado comprobado: https://github.com/marianaog30/LogiSmart/actions/runs/42273907767 — verificar falló y publicar quedó omitido. Los datos del repositorio permanecieron intactos.
+- Datos correctos y despliegue exitoso: https://github.com/marianaog30/LogiSmart/actions/runs/42274092137.
+- URL pública: https://marianaog30.github.io/LogiSmart/.
+- Verificación pública: 188 registros cargados, búsqueda de MUESTRA-008 devuelve una fila (120 MXN, aprobada, importada simulada), reset restaura 188. El widget oficial muestra sus controles; dominio marianaog30.github.io autorizado conservando hosts previos.
+- La repetición de las dos consultas desde el widget público requiere la aceptación de términos por la usuaria. No se presenta como conversación pública ya comprobada hasta realizarla.
+
+Referencia de configuración: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages.
