@@ -1,0 +1,44 @@
+name: Verificar y publicar LogiSmart
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      probar_fallo:
+        description: 'Demostrar bloqueo: altera un dato solo en el runner; no publica'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Inyectar inconsistencia deliberada solo en prueba manual
+        if: ${{ inputs.probar_fallo == true }}
+        run: node -e "const fs=require('fs');const p='web/datos/cotizaciones.json';const d=JSON.parse(fs.readFileSync(p));d.total_registros++;fs.writeFileSync(p,JSON.stringify(d));"
+      - name: Validar datos, fórmulas y archivos
+        run: node scripts/validar.mjs
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: web
+  publicar:
+    needs: verificar
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - uses: actions/deploy-pages@v4
+        id: deployment

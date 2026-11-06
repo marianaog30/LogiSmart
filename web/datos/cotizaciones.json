@@ -1,0 +1,2898 @@
+{
+  "fuente": "Data Table LogiSmart",
+  "datos_ficticios": true,
+  "consultado_en": "2026-11-06T18:44:02.639Z",
+  "zona_horaria": "America/Mexico_City",
+  "total_registros": 188,
+  "registros_excluidos": 0,
+  "registros": [
+    {
+      "folio_publico": "MUESTRA-001",
+      "fecha_registro": "2026-11-04T18:57:46.389Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 8550,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 33083,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-002",
+      "fecha_registro": "2026-11-04T18:57:56.165Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 8550,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 32201,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-003",
+      "fecha_registro": "2026-11-04T19:11:37.264Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 8550,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 39460,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-004",
+      "fecha_registro": "2026-11-04T19:32:16.096Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 8550,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 30446,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-005",
+      "fecha_registro": "2026-11-04T19:34:14.872Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3250,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 45122,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-006",
+      "fecha_registro": "2026-11-04T23:38:28.087Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3250,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 28074,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-007",
+      "fecha_registro": "2026-11-05T00:26:24.440Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3250,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 33341,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-008",
+      "fecha_registro": "2026-10-01T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 120,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 15000,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-009",
+      "fecha_registro": "2026-10-01T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1020,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 22919,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-010",
+      "fecha_registro": "2026-10-01T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-011",
+      "fecha_registro": "2026-10-01T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 2640,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 38757,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-012",
+      "fecha_registro": "2026-10-01T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1700,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 46676,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-013",
+      "fecha_registro": "2026-10-01T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DETENIDO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-014",
+      "fecha_registro": "2026-10-02T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1560,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 62514,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-015",
+      "fecha_registro": "2026-10-02T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 255,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 70433,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-016",
+      "fecha_registro": "2026-10-02T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 4430,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 78352,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-017",
+      "fecha_registro": "2026-10-02T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 480,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 86271,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-018",
+      "fecha_registro": "2026-10-02T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-019",
+      "fecha_registro": "2026-10-03T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 4030,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 102109,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-020",
+      "fecha_registro": "2026-10-03T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 3000,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 110028,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-021",
+      "fecha_registro": "2026-10-03T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-022",
+      "fecha_registro": "2026-10-03T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 1505,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 125866,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-023",
+      "fecha_registro": "2026-10-03T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1920,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 133785,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-024",
+      "fecha_registro": "2026-10-04T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 170,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 141704,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-025",
+      "fecha_registro": "2026-10-04T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 4705,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 149623,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-026",
+      "fecha_registro": "2026-10-04T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 840,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 157542,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-027",
+      "fecha_registro": "2026-10-04T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 850,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 165461,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-028",
+      "fecha_registro": "2026-10-04T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 4305,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 173380,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-029",
+      "fecha_registro": "2026-10-05T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-030",
+      "fecha_registro": "2026-10-05T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1530,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 24218,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-031",
+      "fecha_registro": "2026-10-05T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 1780,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 32137,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-032",
+      "fecha_registro": "2026-10-05T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DETENIDO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-033",
+      "fecha_registro": "2026-10-05T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 85,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 47975,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-034",
+      "fecha_registro": "2026-10-06T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 1380,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 55894,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-035",
+      "fecha_registro": "2026-10-06T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1200,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 63813,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-036",
+      "fecha_registro": "2026-10-06T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 765,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 71732,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-037",
+      "fecha_registro": "2026-10-06T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-038",
+      "fecha_registro": "2026-10-06T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 120,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 87570,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-039",
+      "fecha_registro": "2026-10-07T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1445,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 95489,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-040",
+      "fecha_registro": "2026-10-07T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DETENIDO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-041",
+      "fecha_registro": "2026-10-07T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 2640,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 111327,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-042",
+      "fecha_registro": "2026-10-07T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 2125,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 119246,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-043",
+      "fecha_registro": "2026-10-07T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 1655,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 127165,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-044",
+      "fecha_registro": "2026-10-08T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1560,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 135084,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-045",
+      "fecha_registro": "2026-10-08T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-046",
+      "fecha_registro": "2026-10-08T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 4855,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 150922,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-047",
+      "fecha_registro": "2026-10-08T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 480,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 158841,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-048",
+      "fecha_registro": "2026-10-08T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-049",
+      "fecha_registro": "2026-10-08T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 2330,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 174679,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-050",
+      "fecha_registro": "2026-10-09T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 3000,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 17598,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-051",
+      "fecha_registro": "2026-10-09T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 2040,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 25517,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-052",
+      "fecha_registro": "2026-10-09T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 1930,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 33436,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-053",
+      "fecha_registro": "2026-10-09T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1920,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 41355,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-054",
+      "fecha_registro": "2026-10-09T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 595,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 49274,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-055",
+      "fecha_registro": "2026-10-10T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 5130,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 57193,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-056",
+      "fecha_registro": "2026-10-10T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-057",
+      "fecha_registro": "2026-10-10T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1275,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 73031,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-058",
+      "fecha_registro": "2026-10-10T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 2605,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 80950,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-059",
+      "fecha_registro": "2026-10-10T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DETENIDO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-060",
+      "fecha_registro": "2026-10-11T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1955,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 96788,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-061",
+      "fecha_registro": "2026-10-11T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 2205,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 104707,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-062",
+      "fecha_registro": "2026-10-11T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 2280,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 112626,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-063",
+      "fecha_registro": "2026-10-11T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 510,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 120545,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-064",
+      "fecha_registro": "2026-10-11T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-065",
+      "fecha_registro": "2026-10-12T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1200,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 136383,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-066",
+      "fecha_registro": "2026-10-12T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1190,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 144302,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-067",
+      "fecha_registro": "2026-10-12T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-068",
+      "fecha_registro": "2026-10-12T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 120,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 160140,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-069",
+      "fecha_registro": "2026-10-12T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1870,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 168059,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-070",
+      "fecha_registro": "2026-10-13T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 2480,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 175978,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-071",
+      "fecha_registro": "2026-10-13T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 2640,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 18897,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-072",
+      "fecha_registro": "2026-10-13T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-073",
+      "fecha_registro": "2026-10-13T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 2080,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 34735,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-074",
+      "fecha_registro": "2026-10-13T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1560,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 42654,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-075",
+      "fecha_registro": "2026-10-14T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-076",
+      "fecha_registro": "2026-10-14T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 5280,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 58492,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-077",
+      "fecha_registro": "2026-10-14T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 480,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 66411,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-078",
+      "fecha_registro": "2026-10-14T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1785,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 74330,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-079",
+      "fecha_registro": "2026-10-14T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 2755,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 82249,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-080",
+      "fecha_registro": "2026-10-15T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 3000,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 90168,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-081",
+      "fecha_registro": "2026-10-15T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 340,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 98087,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-082",
+      "fecha_registro": "2026-10-15T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 2355,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 106006,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-083",
+      "fecha_registro": "2026-10-15T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-084",
+      "fecha_registro": "2026-10-15T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1020,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 121844,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-085",
+      "fecha_registro": "2026-10-15T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 5555,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 129763,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-086",
+      "fecha_registro": "2026-10-16T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DETENIDO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-087",
+      "fecha_registro": "2026-10-16T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1700,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 145601,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-088",
+      "fecha_registro": "2026-10-16T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3030,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 153520,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-089",
+      "fecha_registro": "2026-10-16T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 3360,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 161439,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-090",
+      "fecha_registro": "2026-10-16T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 255,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 169358,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-091",
+      "fecha_registro": "2026-10-17T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-092",
+      "fecha_registro": "2026-10-17T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 2280,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 20196,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-093",
+      "fecha_registro": "2026-10-17T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 935,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 28115,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-094",
+      "fecha_registro": "2026-10-17T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-095",
+      "fecha_registro": "2026-10-17T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1200,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 43953,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-096",
+      "fecha_registro": "2026-10-18T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1615,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 51872,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-097",
+      "fecha_registro": "2026-10-18T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3305,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 59791,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-098",
+      "fecha_registro": "2026-10-18T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 120,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 67710,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-099",
+      "fecha_registro": "2026-10-18T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-100",
+      "fecha_registro": "2026-10-18T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 2905,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 83548,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-101",
+      "fecha_registro": "2026-10-19T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 2640,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 91467,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-102",
+      "fecha_registro": "2026-10-19T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-103",
+      "fecha_registro": "2026-10-19T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 2505,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 107305,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-104",
+      "fecha_registro": "2026-10-19T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1560,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 115224,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-105",
+      "fecha_registro": "2026-10-19T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1530,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 123143,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-106",
+      "fecha_registro": "2026-10-20T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3580,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 131062,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-107",
+      "fecha_registro": "2026-10-20T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 480,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 138981,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-108",
+      "fecha_registro": "2026-10-20T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 85,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 146900,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-109",
+      "fecha_registro": "2026-10-20T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3180,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 154819,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-110",
+      "fecha_registro": "2026-10-20T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-111",
+      "fecha_registro": "2026-10-21T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 765,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 170657,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-112",
+      "fecha_registro": "2026-10-21T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 2780,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 178576,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-113",
+      "fecha_registro": "2026-10-21T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DETENIDO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-114",
+      "fecha_registro": "2026-10-21T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1445,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 29414,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-115",
+      "fecha_registro": "2026-10-21T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3855,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 37333,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-116",
+      "fecha_registro": "2026-10-22T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 840,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 45252,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-117",
+      "fecha_registro": "2026-10-22T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 2125,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 53171,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-118",
+      "fecha_registro": "2026-10-22T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-119",
+      "fecha_registro": "2026-10-22T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 3360,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 69009,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-120",
+      "fecha_registro": "2026-10-22T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 680,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 76928,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-121",
+      "fecha_registro": "2026-10-22T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-122",
+      "fecha_registro": "2026-10-23T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 2280,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 92766,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-123",
+      "fecha_registro": "2026-10-23T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1360,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 100685,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-124",
+      "fecha_registro": "2026-10-23T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 530,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 108604,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-125",
+      "fecha_registro": "2026-10-23T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1200,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 116523,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-126",
+      "fecha_registro": "2026-10-23T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 2040,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 124442,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-127",
+      "fecha_registro": "2026-10-24T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3730,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 132361,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-128",
+      "fecha_registro": "2026-10-24T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 120,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 140280,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-129",
+      "fecha_registro": "2026-10-24T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-130",
+      "fecha_registro": "2026-10-24T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3330,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 156118,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-131",
+      "fecha_registro": "2026-10-24T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 2640,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 164037,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-132",
+      "fecha_registro": "2026-10-25T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DETENIDO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-133",
+      "fecha_registro": "2026-10-25T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 805,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 179875,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-134",
+      "fecha_registro": "2026-10-25T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1560,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 22794,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-135",
+      "fecha_registro": "2026-10-25T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1955,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 30713,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-136",
+      "fecha_registro": "2026-10-25T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 4005,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 38632,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-137",
+      "fecha_registro": "2026-10-26T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-138",
+      "fecha_registro": "2026-10-26T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 510,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 54470,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-139",
+      "fecha_registro": "2026-10-26T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3605,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 62389,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-140",
+      "fecha_registro": "2026-10-26T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DETENIDO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-141",
+      "fecha_registro": "2026-10-26T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1190,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 78227,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-142",
+      "fecha_registro": "2026-10-27T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3205,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 86146,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-143",
+      "fecha_registro": "2026-10-27T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1920,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 94065,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-144",
+      "fecha_registro": "2026-10-27T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1870,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 101984,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-145",
+      "fecha_registro": "2026-10-27T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-146",
+      "fecha_registro": "2026-10-27T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 840,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 117822,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-147",
+      "fecha_registro": "2026-10-28T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 425,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 125741,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-148",
+      "fecha_registro": "2026-10-28T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-149",
+      "fecha_registro": "2026-10-28T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 3360,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 141579,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-150",
+      "fecha_registro": "2026-10-28T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1105,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 149498,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-151",
+      "fecha_registro": "2026-10-28T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3480,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 157417,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-152",
+      "fecha_registro": "2026-10-29T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 2280,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 165336,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-153",
+      "fecha_registro": "2026-10-29T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1785,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 173255,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-154",
+      "fecha_registro": "2026-10-29T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 955,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 16174,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-155",
+      "fecha_registro": "2026-10-29T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1200,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 24093,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-156",
+      "fecha_registro": "2026-10-29T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-157",
+      "fecha_registro": "2026-10-29T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 4155,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 39931,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-158",
+      "fecha_registro": "2026-10-30T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 120,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 47850,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-159",
+      "fecha_registro": "2026-10-30T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DETENIDO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-160",
+      "fecha_registro": "2026-10-30T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 3755,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 63688,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-161",
+      "fecha_registro": "2026-10-30T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 2640,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 71607,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-162",
+      "fecha_registro": "2026-10-30T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1700,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 79526,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-163",
+      "fecha_registro": "2026-10-31T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 1230,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 87445,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-164",
+      "fecha_registro": "2026-10-31T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-165",
+      "fecha_registro": "2026-10-31T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 255,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 103283,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-166",
+      "fecha_registro": "2026-10-31T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 4430,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 111202,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-167",
+      "fecha_registro": "2026-10-31T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-168",
+      "fecha_registro": "2026-11-01T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 935,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 127040,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-169",
+      "fecha_registro": "2026-11-01T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 4030,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 134959,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-170",
+      "fecha_registro": "2026-11-01T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 3000,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 142878,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-171",
+      "fecha_registro": "2026-11-01T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1615,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 150797,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-172",
+      "fecha_registro": "2026-11-01T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-173",
+      "fecha_registro": "2026-11-02T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1920,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 166635,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-174",
+      "fecha_registro": "2026-11-02T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 170,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 174554,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-175",
+      "fecha_registro": "2026-11-02T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "ACLARACION_REQUERIDA",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": false,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-176",
+      "fecha_registro": "2026-11-02T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 840,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 25392,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-177",
+      "fecha_registro": "2026-11-02T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 850,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 33311,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-178",
+      "fecha_registro": "2026-11-03T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 4305,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 41230,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-179",
+      "fecha_registro": "2026-11-03T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 3360,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 49149,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-180",
+      "fecha_registro": "2026-11-03T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": 1530,
+      "moneda": "MXN",
+      "estado_final": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "duracion_total_ms": 57068,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-181",
+      "fecha_registro": "2026-11-03T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 1780,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 64987,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-182",
+      "fecha_registro": "2026-11-03T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 2280,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 72906,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-183",
+      "fecha_registro": "2026-11-04T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DEVUELTO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": false
+    },
+    {
+      "folio_publico": "MUESTRA-184",
+      "fecha_registro": "2026-11-04T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 1380,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 88744,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-185",
+      "fecha_registro": "2026-11-04T18:00:00.000Z",
+      "productos": [
+        "Producto A"
+      ],
+      "importe_total": 1200,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 96663,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-186",
+      "fecha_registro": "2026-11-04T18:00:00.000Z",
+      "productos": [
+        "Producto B"
+      ],
+      "importe_total": null,
+      "moneda": "MXN",
+      "estado_final": "DETENIDO",
+      "aprobacion_humana": "NO_SOLICITADA",
+      "duracion_total_ms": null,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-187",
+      "fecha_registro": "2026-11-04T18:00:00.000Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 4580,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 112501,
+      "origen": "DEMO_IMPORTADA_H5",
+      "completa_primer_intento": true,
+      "sin_correcciones_auditoria": true
+    },
+    {
+      "folio_publico": "MUESTRA-188",
+      "fecha_registro": "2026-11-05T02:59:59.994Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 7020,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 38768,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    }
+  ]
+}
