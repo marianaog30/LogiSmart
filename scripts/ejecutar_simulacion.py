@@ -9,7 +9,7 @@ def main():
     run_id=os.environ['GITHUB_RUN_ID']
     if not run_id.isdigit(): raise SystemExit('Identificador de ejecución inválido.')
     body={'repository':os.environ['GITHUB_REPOSITORY'],'run_id':run_id,'modo':'SIMULADO','producto_a':a,'producto_b':b}
-    request=urllib.request.Request('https://mariana30.app.n8n.cloud/webhook/logismart-github-simulacion',data=json.dumps(body).encode(),headers={'Content-Type':'application/json','X-LogiSmart-Key':key},method='POST')
+    request=urllib.request.Request('https://mariana30.app.n8n.cloud/webhook/logismart-github-simulacion',data=json.dumps(body).encode(),headers={'Content-Type':'application/json','LogiSmart-key':key},method='POST')
     try:
         with urllib.request.urlopen(request,timeout=110) as response: result=json.load(response)
     except urllib.error.HTTPError as e:
