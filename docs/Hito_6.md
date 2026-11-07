@@ -30,20 +30,19 @@ El workflow **Verificar y publicar LogiSmart** se activa por cambios en main y m
 
 Para repetir la evidencia sin tocar datos persistentes: ejecutar el workflow de publicación con `probar_fallo=true`, comprobar publicación omitida y repetir con false. Conservar los enlaces de ambas ejecuciones. La falla se elimina al acabar el runner; la ejecución siguiente usa el JSON correcto.
 
-## Comprobación pública y pendiente de cierre
+## Comprobación pública realizada — 6 de noviembre de 2026
 
-El dominio de Pages está autorizado en ElevenLabs; el widget oficial se mantiene conectado al servicio y la consulta usa la herramienta n8n de solo lectura. Ver controles visibles no prueba una conversación completa. La usuaria confirmó que aún no ha realizado la prueba desde la web pública; las pruebas locales anteriores no la sustituyen.
+La usuaria realizó las dos consultas por texto en el widget oficial de https://marianaog30.github.io/LogiSmart/. Se revisaron las respuestas visibles en esa misma página y se contrastaron con el historial y el resumen del dashboard:
 
-Prueba pendiente que realiza Mariana:
+| Prueba | Resultado observado | Contraste |
+|---|---|---|
+| MUESTRA-008 | Producto A, importe provisional 120 MXN, APROBADA/APROBADA, origen DEMO_IMPORTADA_H5 | Coincide con la fila del dashboard; el asistente advierte que tiempos, evaluaciones y decisiones son simulados. |
+| Resumen | 190 registros: 52 pendientes, 78 aprobadas, 20 rechazadas, 10 detenidas, 14 con aclaración, 16 devueltas, 0 inconsistentes | Coincide con las barras y el total del dashboard; la suma es 190. Informa que 180 son casos importados simulados. |
 
-1. Abrir Pages y elegir Consultar por texto.
-2. Leer y aceptar personalmente el aviso de ElevenLabs si desea continuar.
-3. Escribir `Sí, acepto. Consulta MUESTRA-008`. Contrastar con la fila del dashboard: Producto A, 120 MXN, origen importado/simulado. Si el estado cambia en n8n, actualizar el corte antes de comparar.
-4. Pedir `Dame el resumen general de cotizaciones`. Comparar contra la exportación recién actualizada; el agente consulta n8n en vivo y puede responder un dato más reciente.
-5. Conservar solo una ficha de resultado: fecha, caso, coincidencia, resultado de herramienta y captura sanitizada si procede. No subir exportaciones completas de conversaciones ni datos de acceso.
+La prueba confirma interacción por texto desde Pages, no solo presencia del widget. No se publica la conversación completa ni ningún dato de acceso. El detalle de invocación de herramienta no se muestra en este widget; esta evidencia registra la respuesta observable y su coincidencia, no una exportación del historial privado del proveedor. No se realizó una nueva prueba de voz pública.
 
-El Hito 6 permanece **pendiente de esa comprobación pública del asistente**, incluso si Actions y Pages pasan. La medición del costo de modelos n8n corresponde al pendiente del Hito 7, no se presenta como requisito ya resuelto del Hito 6.
+**Hito 6: comprobaciones funcionales solicitadas verificadas**, junto con los enlaces de fallo, recuperación, actualización y despliegue conservados. Los costos reales y su control para los modelos de n8n continúan pendientes en el Hito 7.
 
 ## Prueba del mecanismo de actualización — 6 de noviembre de 2026
 
-[Ejecución de lectura, validación, commit y publicación](https://github.com/marianaog30/LogiSmart/actions/runs/42320519192). El job actualizar pasó las pruebas del exportador, obtuvo 190 registros y superó el validador del dashboard. Guardó la exportación en el commit `3d48c3e`, con consulta de la fuente a las 18:49:08 de Ciudad de México. El corte conserva MUESTRA-189 como rechazada y MUESTRA-190 como aprobada; sus importes provisionales son 3,510 y 495 MXN. Son datos ficticios. La comprobación visual de Pages debe leer ese mismo corte; la prueba del widget público aún corresponde a Mariana.
+[Ejecución de lectura, validación, commit y publicación](https://github.com/marianaog30/LogiSmart/actions/runs/42320519192). El job actualizar pasó las pruebas del exportador, obtuvo 190 registros y superó el validador del dashboard. Guardó la exportación en el commit `3d48c3e`, con consulta de la fuente a las 18:49:08 de Ciudad de México. El corte conserva MUESTRA-189 como rechazada y MUESTRA-190 como aprobada; sus importes provisionales son 3,510 y 495 MXN. Son datos ficticios. La comprobación visual de Pages leyó ese corte y la usuaria completó la prueba pública por texto descrita arriba.
