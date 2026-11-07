@@ -1,0 +1,23 @@
+name: Verificar consumo real - Hito 7
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: logismart-simulacion-telegram
+  cancel-in-progress: false
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v6
+      - name: Cargar skills y comprobar caso ficticio
+        run: python3 scripts/hito7.py --precontrol 2 3 "$GITHUB_RUN_ID"
+      - name: Ejecutar flujo medible con presupuesto de 0.10 USD
+        env:
+          N8N_SIMULATION_KEY: ${{ secrets.N8N_SIMULATION_KEY }}
+          PRODUCTO_A: '2'
+          PRODUCTO_B: '3'
+          CONTROL_COSTOS: 'true'
+        run: python3 scripts/ejecutar_simulacion.py
