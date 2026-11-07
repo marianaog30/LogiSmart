@@ -51,3 +51,12 @@ Justificación: propósito/contratos específicos de LogiSmart, reglas cargadas 
 ## Bitácora
 
 Inicial: carpetas skills/loops del repositorio contenían solamente instrucciones pendientes. Corrección: dos SKILL.md aplicados por adaptador, loops, pruebas, carga trazable y integración previa al webhook. Resultado verificable: ver ejecución CI y `evidencias/ejecucion.json`. Pendiente fuera del alcance local: medición y control del consumo de proveedores n8n.
+
+## Ejecuciones verificadas — 6 de noviembre de 2026
+
+- [Pruebas de skills y loops correctas, con artifact](https://github.com/marianaog30/LogiSmart/actions/runs/42318711346): cuatro métodos de prueba cubren mejora V1/V2, reutilización, permisos, costo desconocido, exceso de presupuesto, operación prohibida, inventario y decisión humana. Registra carga real de los SKILL.md.
+- [Integración operativa correcta](https://github.com/marianaog30/LogiSmart/actions/runs/42318843067): precontrol de ambos skills → n8n → cuatro agentes → envío Telegram confirmado por n8n. Entrada ficticia 2 A y 3 B; la consulta pública posterior devuelve MUESTRA-190, total provisional 495 MXN, PENDIENTE_APROBACION y decisión humana PENDIENTE. El modelo no pulsó aprobar/rechazar.
+- La exportación pública posterior a esa prueba contiene 190 casos; MUESTRA-189 conserva RECHAZADA/RECHAZADA por 3,510 MXN. De los 190, 180 son casos importados con evaluaciones simuladas; no son 190 ejecuciones de agentes verificadas.
+- [Publicación validada de la exportación anterior de 189 casos](https://github.com/marianaog30/LogiSmart/actions/runs/42318711527). La exportación final de 190 se valida y publica por el mismo workflow; conservar su ejecución más reciente en Actions.
+
+Límite de herramientas locales: el validador general del skill-creator no pudo ejecutarse porque ese intérprete carece de PyYAML. Se validó la estructura mínima del frontmatter y las reglas con Python estándar; las pruebas funcionales sí se ejecutaron tanto localmente como en GitHub. La comprobación del dashboard con Node se realizó en Actions, no en el equipo local, donde `node` no está en PATH.

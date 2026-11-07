@@ -1,0 +1,4 @@
+2026-11-07T00:32:32.2724995Z {"skill": "skills/logismart-cotizar/SKILL.md", "version": "1.0.0", "sha256": "a810faa3bd4d9a885db12746f1a7400b67835cd6b66c8603b2262b8513b46af2", "resultado": "VALIDADA"}
+2026-11-07T00:32:32.2762157Z {"skill": "skills/logismart-revisar/SKILL.md", "version": "1.0.0", "sha256": "b32a27deab9f610b7700cf6acc8a6eb3a81bfe4a13237f8e5032ec140439cce7", "resultado": "LIBERADA"}
+2026-11-07T00:32:32.2764792Z Dos skills cargados desde SKILL.md; loops ejecutados y evidencia sanitizada guardada.
+2026-11-07T00:32:58.7932932Z Cotización ficticia procesada y envío Telegram confirmado por n8n. Aprobación humana pendiente.
