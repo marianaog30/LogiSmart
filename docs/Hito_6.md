@@ -43,3 +43,7 @@ Prueba pendiente que realiza Mariana:
 5. Conservar solo una ficha de resultado: fecha, caso, coincidencia, resultado de herramienta y captura sanitizada si procede. No subir exportaciones completas de conversaciones ni datos de acceso.
 
 El Hito 6 permanece **pendiente de esa comprobación pública del asistente**, incluso si Actions y Pages pasan. La medición del costo de modelos n8n corresponde al pendiente del Hito 7, no se presenta como requisito ya resuelto del Hito 6.
+
+## Prueba del mecanismo de actualización — 6 de noviembre de 2026
+
+[Ejecución de lectura, validación, commit y publicación](https://github.com/marianaog30/LogiSmart/actions/runs/42320519192). El job actualizar pasó las pruebas del exportador, obtuvo 190 registros y superó el validador del dashboard. Guardó la exportación en el commit `3d48c3e`, con consulta de la fuente a las 18:49:08 de Ciudad de México. El corte conserva MUESTRA-189 como rechazada y MUESTRA-190 como aprobada; sus importes provisionales son 3,510 y 495 MXN. Son datos ficticios. La comprobación visual de Pages debe leer ese mismo corte; la prueba del widget público aún corresponde a Mariana.
