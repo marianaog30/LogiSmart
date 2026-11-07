@@ -9,7 +9,8 @@ def main():
     run_id=os.environ['GITHUB_RUN_ID']
     if not run_id.isdigit(): raise SystemExit('Identificador de ejecución inválido.')
     body={'repository':os.environ['GITHUB_REPOSITORY'],'run_id':run_id,'modo':'SIMULADO','producto_a':a,'producto_b':b}
-    request=urllib.request.Request('https://mariana30.app.n8n.cloud/webhook/logismart-github-simulacion',data=json.dumps(body).encode(),headers={'Content-Type':'application/json','LogiSmart-key':key},method='POST')
+    endpoint='https://mariana30.app.n8n.cloud/webhook/logismart-h7-cotizacion' if os.environ.get('CONTROL_COSTOS')=='true' else 'https://mariana30.app.n8n.cloud/webhook/logismart-github-simulacion'
+    request=urllib.request.Request(endpoint,data=json.dumps(body).encode(),headers={'Content-Type':'application/json','LogiSmart-key':key},method='POST')
     try:
         with urllib.request.urlopen(request,timeout=110) as response: result=json.load(response)
     except urllib.error.HTTPError as e:
@@ -21,6 +22,12 @@ def main():
         raise SystemExit('n8n no confirmó el envío; revisar su historial privado.')
     if result.get('estado_final')!='PENDIENTE_APROBACION' or result.get('aprobacion_humana')!='PENDIENTE':
         raise SystemExit('Se envió el resultado, pero el caso no quedó pendiente de aprobación; revisar agentes en n8n.')
+    if os.environ.get('CONTROL_COSTOS')=='true':
+        from decimal import Decimal
+        cost=result.get('costo_calculado_usd')
+        if result.get('llamadas_medidas')!=4 or type(cost) not in (int,float) or not Decimal('0')<=Decimal(str(cost))<=Decimal('0.10'):
+            raise SystemExit('Costo no verificable o fuera del presupuesto; revisar ejecución.')
+        print(f"Consumo reportado por proveedor: entrada={result.get('tokens_entrada')}, salida={result.get('tokens_salida')}. Costo calculado={cost} USD; no factura.")
     print('Cotización ficticia procesada y envío Telegram confirmado por n8n. Aprobación humana pendiente.')
 
 if __name__=='__main__': main()
