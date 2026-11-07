@@ -13,4 +13,4 @@ La página usa `web/datos/cotizaciones.json`, una exportación sanitizada fictic
 
 Validación local: `node scripts/validar.mjs`. GitHub Actions ejecuta esa misma revisión antes de desplegar únicamente `web/`. Pages no mantiene n8n en ejecución.
 
-Los skills y loops se cargan mediante el adaptador de Maestro antes de la simulación de GitHub; no son carga nativa de los prompts n8n. El Hito 6 aún requiere la prueba de folio y resumen desde el widget de Pages con aceptación personal del aviso. Ver el checklist y las evidencias en docs/Hito_6.md.
+Los skills y loops se cargan mediante el adaptador de Maestro antes de la simulación de GitHub; no son carga nativa de los prompts n8n. El Hito 6 tiene verificadas la publicación, actualización y las consultas de folio y resumen desde el widget público de Pages. Ver el checklist y las evidencias en docs/Hito_6.md.
