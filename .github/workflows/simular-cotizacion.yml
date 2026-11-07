@@ -23,6 +23,17 @@ jobs:
     timeout-minutes: 4
     steps:
       - uses: actions/checkout@v6
+      - name: Cargar skills y ejecutar precontrol local de Maestro
+        env:
+          PRODUCTO_A: ${{ inputs.producto_a }}
+          PRODUCTO_B: ${{ inputs.producto_b }}
+        run: python3 scripts/hito7.py --precontrol "$PRODUCTO_A" "$PRODUCTO_B" "$GITHUB_RUN_ID"
+      - name: Guardar traza sanitizada del precontrol
+        uses: actions/upload-artifact@v4
+        with:
+          name: precontrol-maestro
+          path: evidencias/precontrol_actual.json
+          retention-days: 30
       - name: Ejecutar cuatro agentes en n8n y confirmar envío a Telegram
         env:
           N8N_SIMULATION_KEY: ${{ secrets.N8N_SIMULATION_KEY }}

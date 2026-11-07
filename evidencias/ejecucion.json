@@ -1,0 +1,296 @@
+{
+  "tipo": "PRUEBAS_DETERMINISTAS_FICTICIAS",
+  "ejecucion_n8n": false,
+  "calidad_v1_v2_mismo_caso": {
+    "estado": "VALIDADA",
+    "propuesta": {
+      "caso_id": "H7-CASO-001",
+      "modo": "SIMULADO",
+      "datos_ficticios": true,
+      "fuente": "catalogo_ficticio_logismart_v1",
+      "moneda": "MXN",
+      "lineas": [
+        {
+          "producto": "Producto A",
+          "cantidad": 8,
+          "precio_centavos": 12000,
+          "subtotal_centavos": 96000
+        },
+        {
+          "producto": "Producto B",
+          "cantidad": 30,
+          "precio_centavos": 8500,
+          "subtotal_centavos": 255000
+        }
+      ],
+      "total_centavos": 351000,
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE"
+    },
+    "traza": [
+      {
+        "evento": "skill_cargado",
+        "responsable": "Maestro",
+        "ruta": "skills/logismart-cotizar/SKILL.md",
+        "version": "1.0.0",
+        "sha256": "a810faa3bd4d9a885db12746f1a7400b67835cd6b66c8603b2262b8513b46af2"
+      },
+      {
+        "caso_id": "H7-CASO-001",
+        "version_propuesta": "V1",
+        "iteracion": 1,
+        "diagnostico": [
+          "total_centavos"
+        ],
+        "validacion": "FALLIDA",
+        "total_centavos": 1,
+        "costo_api_usd": 0,
+        "costo_adicional_api_usd": 0,
+        "duracion_acumulada_ms": 0.073
+      },
+      {
+        "caso_id": "H7-CASO-001",
+        "version_propuesta": "V2",
+        "iteracion": 2,
+        "diagnostico": [],
+        "validacion": "CORRECTA",
+        "total_centavos": 351000,
+        "costo_api_usd": 0,
+        "costo_adicional_api_usd": 0,
+        "duracion_acumulada_ms": 0.101
+      }
+    ]
+  },
+  "seguridad_sanitizacion": {
+    "estado": "LIBERADA",
+    "propuesta": {
+      "caso_id": "H7-CASO-001",
+      "modo": "SIMULADO",
+      "datos_ficticios": true,
+      "fuente": "catalogo_ficticio_logismart_v1",
+      "moneda": "MXN",
+      "lineas": [
+        {
+          "producto": "Producto A",
+          "cantidad": 8,
+          "precio_centavos": 12000,
+          "subtotal_centavos": 96000
+        },
+        {
+          "producto": "Producto B",
+          "cantidad": 30,
+          "precio_centavos": 8500,
+          "subtotal_centavos": 255000
+        }
+      ],
+      "total_centavos": 351000,
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE"
+    },
+    "traza": [
+      {
+        "evento": "skill_cargado",
+        "responsable": "Maestro",
+        "ruta": "skills/logismart-revisar/SKILL.md",
+        "version": "1.0.0",
+        "sha256": "b32a27deab9f610b7700cf6acc8a6eb3a81bfe4a13237f8e5032ec140439cce7"
+      },
+      {
+        "caso_id": "H7-CASO-001",
+        "iteracion": 1,
+        "decision": "SANITIZAR_Y_REVISAR",
+        "campos_extra_eliminados": 1,
+        "lineas_con_extras": false,
+        "operacion_ejecutada": true,
+        "costo_api_usd": 0,
+        "costo_adicional_api_usd": 0,
+        "duracion_acumulada_ms": 0.065
+      },
+      {
+        "caso_id": "H7-CASO-001",
+        "iteracion": 2,
+        "decision": "LIBERAR",
+        "campos_extra_eliminados": 0,
+        "lineas_con_extras": false,
+        "operacion_ejecutada": true,
+        "costo_api_usd": 0,
+        "costo_adicional_api_usd": 0,
+        "duracion_acumulada_ms": 0.092
+      }
+    ]
+  },
+  "segundo_caso": {
+    "calidad": {
+      "estado": "VALIDADA",
+      "propuesta": {
+        "caso_id": "H7-CASO-002",
+        "modo": "SIMULADO",
+        "datos_ficticios": true,
+        "fuente": "catalogo_ficticio_logismart_v1",
+        "moneda": "MXN",
+        "lineas": [
+          {
+            "producto": "Producto A",
+            "cantidad": 2,
+            "precio_centavos": 12000,
+            "subtotal_centavos": 24000
+          },
+          {
+            "producto": "Producto B",
+            "cantidad": 3,
+            "precio_centavos": 8500,
+            "subtotal_centavos": 25500
+          }
+        ],
+        "total_centavos": 49500,
+        "estado_final": "PENDIENTE_APROBACION",
+        "aprobacion_humana": "PENDIENTE"
+      },
+      "traza": [
+        {
+          "evento": "skill_cargado",
+          "responsable": "Maestro",
+          "ruta": "skills/logismart-cotizar/SKILL.md",
+          "version": "1.0.0",
+          "sha256": "a810faa3bd4d9a885db12746f1a7400b67835cd6b66c8603b2262b8513b46af2"
+        },
+        {
+          "caso_id": "H7-CASO-002",
+          "version_propuesta": "V1",
+          "iteracion": 1,
+          "diagnostico": [],
+          "validacion": "CORRECTA",
+          "total_centavos": 49500,
+          "costo_api_usd": 0,
+          "costo_adicional_api_usd": 0,
+          "duracion_acumulada_ms": 0.06
+        }
+      ]
+    },
+    "seguridad": {
+      "estado": "LIBERADA",
+      "propuesta": {
+        "caso_id": "H7-CASO-002",
+        "modo": "SIMULADO",
+        "datos_ficticios": true,
+        "fuente": "catalogo_ficticio_logismart_v1",
+        "moneda": "MXN",
+        "lineas": [
+          {
+            "producto": "Producto A",
+            "cantidad": 2,
+            "precio_centavos": 12000,
+            "subtotal_centavos": 24000
+          },
+          {
+            "producto": "Producto B",
+            "cantidad": 3,
+            "precio_centavos": 8500,
+            "subtotal_centavos": 25500
+          }
+        ],
+        "total_centavos": 49500,
+        "estado_final": "PENDIENTE_APROBACION",
+        "aprobacion_humana": "PENDIENTE"
+      },
+      "traza": [
+        {
+          "evento": "skill_cargado",
+          "responsable": "Maestro",
+          "ruta": "skills/logismart-revisar/SKILL.md",
+          "version": "1.0.0",
+          "sha256": "b32a27deab9f610b7700cf6acc8a6eb3a81bfe4a13237f8e5032ec140439cce7"
+        },
+        {
+          "caso_id": "H7-CASO-002",
+          "iteracion": 1,
+          "decision": "LIBERAR",
+          "campos_extra_eliminados": 0,
+          "lineas_con_extras": false,
+          "operacion_ejecutada": true,
+          "costo_api_usd": 0,
+          "costo_adicional_api_usd": 0,
+          "duracion_acumulada_ms": 0.056
+        }
+      ]
+    },
+    "limite": "Costos API n8n no medidos por este precontrol local."
+  },
+  "sin_permiso": {
+    "estado": "DETENIDO_PERMISOS",
+    "propuesta": null,
+    "traza": [
+      {
+        "evento": "skill_cargado",
+        "responsable": "Maestro",
+        "ruta": "skills/logismart-revisar/SKILL.md",
+        "version": "1.0.0",
+        "sha256": "b32a27deab9f610b7700cf6acc8a6eb3a81bfe4a13237f8e5032ec140439cce7"
+      },
+      {
+        "iteracion": 1,
+        "decision": "DETENIDO_PERMISOS",
+        "operacion_ejecutada": false,
+        "costo_api_usd": 0
+      }
+    ]
+  },
+  "costo_desconocido": {
+    "estado": "DETENIDO_COSTO_NO_VERIFICABLE",
+    "propuesta": null,
+    "traza": [
+      {
+        "evento": "skill_cargado",
+        "responsable": "Maestro",
+        "ruta": "skills/logismart-revisar/SKILL.md",
+        "version": "1.0.0",
+        "sha256": "b32a27deab9f610b7700cf6acc8a6eb3a81bfe4a13237f8e5032ec140439cce7"
+      },
+      {
+        "iteracion": 1,
+        "decision": "DETENIDO_COSTO_NO_VERIFICABLE",
+        "operacion_ejecutada": false,
+        "costo_api_usd": 0
+      }
+    ]
+  },
+  "presupuesto_excedido": {
+    "estado": "DETENIDO_PRESUPUESTO",
+    "propuesta": null,
+    "traza": [
+      {
+        "evento": "skill_cargado",
+        "responsable": "Maestro",
+        "ruta": "skills/logismart-revisar/SKILL.md",
+        "version": "1.0.0",
+        "sha256": "b32a27deab9f610b7700cf6acc8a6eb3a81bfe4a13237f8e5032ec140439cce7"
+      },
+      {
+        "iteracion": 1,
+        "decision": "DETENIDO_PRESUPUESTO",
+        "operacion_ejecutada": false,
+        "costo_api_usd": 0
+      }
+    ]
+  },
+  "operacion_prohibida": {
+    "estado": "DETENIDO_OPERACION",
+    "propuesta": null,
+    "traza": [
+      {
+        "evento": "skill_cargado",
+        "responsable": "Maestro",
+        "ruta": "skills/logismart-revisar/SKILL.md",
+        "version": "1.0.0",
+        "sha256": "b32a27deab9f610b7700cf6acc8a6eb3a81bfe4a13237f8e5032ec140439cce7"
+      },
+      {
+        "iteracion": 1,
+        "decision": "DETENIDO_OPERACION",
+        "operacion_ejecutada": false,
+        "costo_api_usd": 0
+      }
+    ]
+  },
+  "limite": "API 0 USD solo para estos loops locales, sin llamadas a proveedores; no incluye infraestructura ni ejecución n8n."
+}

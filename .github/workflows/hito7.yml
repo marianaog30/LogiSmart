@@ -1,0 +1,28 @@
+name: Hito 7 - skills y loops verificables
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**'
+      - 'scripts/hito7.py'
+      - 'tests/test_hito7.py'
+      - '.github/workflows/hito7.yml'
+permissions:
+  contents: read
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v6
+      - name: Comprobar corrección, reutilización y detenciones
+        run: python3 -m unittest discover -s tests -p 'test_hito7.py' -v
+      - name: Ejecutar dos loops y registrar carga real de skills
+        run: python3 scripts/hito7.py
+      - name: Conservar evidencia sanitizada
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidencia-hito7
+          path: evidencias/ejecucion.json
+          retention-days: 30
