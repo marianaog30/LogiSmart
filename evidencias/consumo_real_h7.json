@@ -1,0 +1,13 @@
+{
+  "fecha": "2026-11-10",
+  "run_url": "https://github.com/marianaog30/LogiSmart/actions/runs/42910200113",
+  "tipo": "PRUEBA_API_REAL",
+  "tokens_entrada": 2509,
+  "tokens_salida": 543,
+  "llamadas_medidas": 4,
+  "costo_calculado_usd": 0.00171325,
+  "presupuesto_usd": 0.1,
+  "enviado_telegram": true,
+  "aprobacion_humana": "PENDIENTE",
+  "limite": "Costo calculado, no factura. No certifica la entrada directa de Telegram."
+}
