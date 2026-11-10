@@ -15,7 +15,7 @@ Las fuentes son el catálogo ficticio de los nodos «Orquestador 3 - Asignar Age
 | Calidad de negocio | Solicitud estructurada y propuesta opcional; Maestro | Generar con catálogo → comparar campos/cálculos/fuente → diagnosticar → recalcular derivados → validar. Liberar solo si coincide con la solicitud y continúa pendiente de decisión humana. | Máximo 3 evaluaciones totales, 5 s, 0 USD de API local. Retorno a comparación tras corrección. Cantidad/producto ambiguo: ACLARACION_REQUERIDA. Identidad/decisión alterada: detener. Agotamiento: LIMITE_AGOTADO. |
 | Seguridad y costo local | Propuesta, autorización explícita, operación y consumo; Maestro | Evaluar permiso/presupuesto → ejecutar validación permitida → registrar consumo → revisar resultado → liberar o detener. Campos adicionales se eliminan sin registrar valores. | Máximo 3 evaluaciones totales, 5 s, 0 USD de API. Retorno a validación tras sanitizar. No otorgar permisos ni repetir red. Costo desconocido: DETENIDO_COSTO_NO_VERIFICABLE; exceso: DETENIDO_PRESUPUESTO; agotamiento: LIMITE_AGOTADO. |
 
-El presupuesto cero corresponde exclusivamente al adaptador determinista: no llama APIs. No es el costo total del sistema ni incluye infraestructura de GitHub. Los agentes de n8n realizan llamadas a proveedores con consumo/costo todavía no verificable. Su límite nominal no prueba un control monetario efectivo. No declarar completo un control integral de costos de n8n hasta capturar uso real y configurar tarifas verificadas.
+El presupuesto cero corresponde exclusivamente al adaptador determinista: no llama APIs. No es el costo total del sistema ni incluye infraestructura de GitHub. Desde el 10 de noviembre, la entrada de GitHub usa el flujo separado de consumo medible descrito al final. La entrada directa del bot de Telegram conserva su flujo anterior: no se declara control integral del gasto de todos los canales.
 
 ## Evidencia de mejora y reutilización
 
@@ -46,11 +46,11 @@ Escala 0–4; entrega mínima 16/20 y ningún aspecto <3. Evaluación del alcanc
 | Loop calidad | 4 | 4 | 4 | 4 | 3 | 19/20 |
 | Loop seguridad y costo local | 4 | 4 | 4 | 3 | 3 | 18/20 |
 
-Justificación: propósito/contratos específicos de LogiSmart, reglas cargadas con hash, mejora V1→V2 y reutilización comprobables, límites y estados ejecutables. Utilidad=3 porque el catálogo es de prueba. Control del costo=3 dentro de este alcance local; no califica ni certifica gasto de proveedores n8n. Revisión docente pendiente. Si la evaluación exige presupuesto medido de toda la cadena LLM, ese requisito sigue pendiente.
+Justificación: propósito/contratos específicos de LogiSmart, reglas cargadas con hash, mejora V1→V2 y reutilización comprobables, límites y estados ejecutables. Utilidad=3 porque el catálogo es de prueba. Control del costo=3 dentro de este alcance local; no califica ni certifica gasto de proveedores n8n. Revisión docente pendiente. La medición real de la cadena de cuatro agentes invocada desde GitHub se verificó el 10 de noviembre; la migración de la entrada directa de Telegram sigue pendiente.
 
 ## Bitácora
 
-Inicial: carpetas skills/loops del repositorio contenían solamente instrucciones pendientes. Corrección: dos SKILL.md aplicados por adaptador, loops, pruebas, carga trazable y integración previa al webhook. Resultado verificable: ver ejecución CI y `evidencias/ejecucion.json`. Pendiente fuera del alcance local: medición y control del consumo de proveedores n8n.
+Inicial: carpetas skills/loops del repositorio contenían solamente instrucciones pendientes. Corrección: dos SKILL.md aplicados por adaptador, loops, pruebas, carga trazable y integración previa al webhook. Resultado verificable: ver ejecución CI y `evidencias/ejecucion.json`. Ampliación del 10 de noviembre: medición y control por caso en la entrada GitHub; entrada directa Telegram pendiente.
 
 ## Ejecuciones verificadas — 6 de noviembre de 2026
 
@@ -60,3 +60,15 @@ Inicial: carpetas skills/loops del repositorio contenían solamente instruccione
 - [Publicación validada de la exportación anterior de 189 casos](https://github.com/marianaog30/LogiSmart/actions/runs/42318711527). La exportación final de 190 se valida y publica por el mismo workflow; conservar su ejecución más reciente en Actions.
 
 Límite de herramientas locales: el validador general del skill-creator no pudo ejecutarse porque ese intérprete carece de PyYAML. Se validó la estructura mínima del frontmatter y las reglas con Python estándar; las pruebas funcionales sí se ejecutaron tanto localmente como en GitHub. La comprobación del dashboard con Node se realizó en Actions, no en el equipo local, donde `node` no está en PATH.
+
+## Consumo medible — 10 de noviembre de 2026
+
+[Prueba real correcta](https://github.com/marianaog30/LogiSmart/actions/runs/42910200113): skills → n8n → cuatro llamadas OpenAI → registro → envío Telegram confirmado; aprobación humana pendiente. Caso ficticio 2 A + 3 B, total provisional 495 MXN. OpenAI reportó 2,509 tokens de entrada y 543 de salida. Costo calculado: **0.00171325 USD**, inferior al presupuesto de 0.10 USD. Es cálculo por tarifa, no factura ni costo total de infraestructura.
+
+Modelo fijo gpt-5-mini-2025-08-07. Tarifa estándar consultada el 6 de noviembre: entrada 0.25 USD/millón, entrada cacheada 0.025 USD/millón y salida 2 USD/millón. Fórmula: (entrada − cacheada) × 0.25/1,000,000 + cacheada × 0.025/1,000,000 + salida × 2/1,000,000. Fuente: https://developers.openai.com/api/docs/models/gpt-5-mini . La política se detiene desde el 14 de noviembre a las 06:00 UTC hasta verificar tarifas; no es renovación automática.
+
+Antes de cada generación se solicita conteo al proveedor y se reserva entrada completa + máximo 2,500 tokens de salida. Si consumo acumulado + reserva supera 0.10 USD, se detiene antes de generar. Después exige usage real consistente y comprueba la reserva. Máximo cuatro generaciones, sin reintentos automáticos, control de tiempo de 150 s y timeout por petición. Ausencia de conteo o usage, respuesta incompleta, tarifa vencida o exceso de presupuesto detienen la cadena. Las cuatro generaciones son etapas, no cuatro iteraciones de los loops locales.
+
+La primera prueba falló en Contar tokens 1 por requisito de JSON explícito en input; no alcanzó la generación. Se corrigió la entrada de las cuatro etapas y se verificó la prueba enlazada. Exportación importable sanitizada: n8n/LogiSmart_H7_Consumo_Medible.json. Requiere reconfigurar credenciales y tabla al importar; no incluye claves. El workflow simular-cotizacion.yml utiliza ahora CONTROL_COSTOS=true para esta ruta. Las claves de OpenAI permanecen en n8n.
+
+Límite: el flujo original que recibe mensajes directamente de Telegram no ha migrado a esta medición. La prueba confirma el envío por la API de Telegram; no sustituye la revisión humana del mensaje.
