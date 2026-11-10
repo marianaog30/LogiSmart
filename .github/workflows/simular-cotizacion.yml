@@ -36,6 +36,7 @@ jobs:
           retention-days: 30
       - name: Ejecutar cuatro agentes en n8n y confirmar envío a Telegram
         env:
+          CONTROL_COSTOS: 'true'
           N8N_SIMULATION_KEY: ${{ secrets.N8N_SIMULATION_KEY }}
           PRODUCTO_A: ${{ inputs.producto_a }}
           PRODUCTO_B: ${{ inputs.producto_b }}
