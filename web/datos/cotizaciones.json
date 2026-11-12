@@ -1,9 +1,9 @@
 {
   "fuente": "Data Table LogiSmart",
   "datos_ficticios": true,
-  "consultado_en": "2026-11-07T00:49:08.994Z",
+  "consultado_en": "2026-11-12T00:53:17.192Z",
   "zona_horaria": "America/Mexico_City",
-  "total_registros": 190,
+  "total_registros": 192,
   "registros_excluidos": 0,
   "registros": [
     {
@@ -2922,6 +2922,38 @@
       "estado_final": "APROBADA",
       "aprobacion_humana": "APROBADA",
       "duracion_total_ms": 22513,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-191",
+      "fecha_registro": "2026-11-10T21:59:15.884Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 495,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 16111,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-192",
+      "fecha_registro": "2026-11-12T00:18:57.514Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 495,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 10892,
       "origen": "WORKFLOW",
       "completa_primer_intento": null,
       "sin_correcciones_auditoria": null
