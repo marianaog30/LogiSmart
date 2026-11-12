@@ -15,7 +15,7 @@ Las fuentes son el catálogo ficticio de los nodos «Orquestador 3 - Asignar Age
 | Calidad de negocio | Solicitud estructurada y propuesta opcional; Maestro | Generar con catálogo → comparar campos/cálculos/fuente → diagnosticar → recalcular derivados → validar. Liberar solo si coincide con la solicitud y continúa pendiente de decisión humana. | Máximo 3 evaluaciones totales, 5 s, 0 USD de API local. Retorno a comparación tras corrección. Cantidad/producto ambiguo: ACLARACION_REQUERIDA. Identidad/decisión alterada: detener. Agotamiento: LIMITE_AGOTADO. |
 | Seguridad y costo local | Propuesta, autorización explícita, operación y consumo; Maestro | Evaluar permiso/presupuesto → ejecutar validación permitida → registrar consumo → revisar resultado → liberar o detener. Campos adicionales se eliminan sin registrar valores. | Máximo 3 evaluaciones totales, 5 s, 0 USD de API. Retorno a validación tras sanitizar. No otorgar permisos ni repetir red. Costo desconocido: DETENIDO_COSTO_NO_VERIFICABLE; exceso: DETENIDO_PRESUPUESTO; agotamiento: LIMITE_AGOTADO. |
 
-El presupuesto cero corresponde exclusivamente al adaptador determinista: no llama APIs. No es el costo total del sistema ni incluye infraestructura de GitHub. Desde el 10 de noviembre, la entrada de GitHub usa el flujo separado de consumo medible descrito al final. La entrada directa del bot de Telegram conserva su flujo anterior: no se declara control integral del gasto de todos los canales.
+El presupuesto cero corresponde exclusivamente al adaptador determinista: no llama APIs. No es el costo total del sistema ni incluye infraestructura de GitHub. Desde el 10 de noviembre, la entrada de GitHub usa el flujo separado de consumo medible descrito al final. El 11 de noviembre se publicó también la medición en la entrada directa de Telegram; su prueba de recepción y envío posterior a la instalación se registra por separado.
 
 ## Evidencia de mejora y reutilización
 
@@ -46,11 +46,11 @@ Escala 0–4; entrega mínima 16/20 y ningún aspecto <3. Evaluación del alcanc
 | Loop calidad | 4 | 4 | 4 | 4 | 3 | 19/20 |
 | Loop seguridad y costo local | 4 | 4 | 4 | 3 | 3 | 18/20 |
 
-Justificación: propósito/contratos específicos de LogiSmart, reglas cargadas con hash, mejora V1→V2 y reutilización comprobables, límites y estados ejecutables. Utilidad=3 porque el catálogo es de prueba. Control del costo=3 dentro de este alcance local; no califica ni certifica gasto de proveedores n8n. Revisión docente pendiente. La medición real de la cadena de cuatro agentes invocada desde GitHub se verificó el 10 de noviembre; la migración de la entrada directa de Telegram sigue pendiente.
+Justificación: propósito/contratos específicos de LogiSmart, reglas cargadas con hash, mejora V1→V2 y reutilización comprobables, límites y estados ejecutables. Utilidad=3 porque el catálogo es de prueba. Control del costo=3 dentro de este alcance local; no califica ni certifica gasto de proveedores n8n. Revisión docente pendiente. La medición real de la cadena de cuatro agentes invocada desde GitHub se verificó el 10 de noviembre; la entrada directa de Telegram se actualizó el 11 de noviembre y requiere su comprobación final de recepción/envío.
 
 ## Bitácora
 
-Inicial: carpetas skills/loops del repositorio contenían solamente instrucciones pendientes. Corrección: dos SKILL.md aplicados por adaptador, loops, pruebas, carga trazable y integración previa al webhook. Resultado verificable: ver ejecución CI y `evidencias/ejecucion.json`. Ampliación del 10 de noviembre: medición y control por caso en la entrada GitHub; entrada directa Telegram pendiente.
+Inicial: carpetas skills/loops del repositorio contenían solamente instrucciones pendientes. Corrección: dos SKILL.md aplicados por adaptador, loops, pruebas, carga trazable y integración previa al webhook. Resultado verificable: ver ejecución CI y `evidencias/ejecucion.json`. Ampliación del 10 de noviembre: medición y control por caso en la entrada GitHub; entrada directa Telegram publicada el 11 de noviembre, recepción/envío real por comprobar.
 
 ## Ejecuciones verificadas — 6 de noviembre de 2026
 
@@ -71,4 +71,14 @@ Antes de cada generación se solicita conteo al proveedor y se reserva entrada c
 
 La primera prueba falló en Contar tokens 1 por requisito de JSON explícito en input; no alcanzó la generación. Se corrigió la entrada de las cuatro etapas y se verificó la prueba enlazada. Exportación importable sanitizada: n8n/LogiSmart_H7_Consumo_Medible.json. Requiere reconfigurar credenciales y tabla al importar; no incluye claves. El workflow simular-cotizacion.yml utiliza ahora CONTROL_COSTOS=true para esta ruta. Las claves de OpenAI permanecen en n8n.
 
-Límite: el flujo original que recibe mensajes directamente de Telegram no ha migrado a esta medición. La prueba confirma el envío por la API de Telegram; no sustituye la revisión humana del mensaje.
+Actualización del 11 de noviembre: el flujo original de Telegram ya fue migrado y publicado con contexto y medición. La prueba previa de GitHub confirma envío por su ruta; no demuestra por sí sola la recepción/envío del bot tras esta nueva instalación.
+
+## Instalación en Telegram — 11 de noviembre de 2026
+
+Se respaldó la versión publicada de 54 nodos mediante clon inactivo independiente y exportación JSON privada verificada (SHA-256 3d3890d0f97b78ab4a9045e559d611a0d5e5fb499cc57c3537e09ec87120b69f). Tras reconciliar las configuraciones con el respaldo, se publicó «Telegram - Contexto empresarial y consumo medible», con 64 nodos y un solo Telegram Trigger. Los nodos de aprobación humana y preparación pública del dashboard conservaron sus parámetros.
+
+La rama /empresa, /agentes y /logistica explica el negocio sin generar una cotización ni llamar al modelo. Las cuatro etapas de cotización añaden un fragmento del documento de contexto antes de contar tokens; registran versión 1.0.0 y hash. El archivo completo está adjunto, indexado y publicado en ElevenLabs. El documento no fija importes, stock ni estados vigentes.
+
+Antes de instalar, un laboratorio manual sin Telegram Trigger, webhooks, envíos ni tablas verificó /empresa y una cotización ficticia de 2 A + 3 B: 495 MXN; cuatro generaciones reales, 2,837 tokens de entrada y 598 de salida, costo calculado 0.00190525 USD < 0.10 USD. Mensaje Telegram simulado, sin decisión humana. Las pruebas sintéticas adicionales comprobaron contexto incluido, igualdad del input contado/generado, JSON explícito, bloqueo de presupuesto insuficiente y usuario no autorizado; no se presentan como llamadas reales.
+
+Después de publicar, la consulta del dashboard devolvió JSON válido con 191 registros ficticios, sin exclusiones. La recepción real de /empresa y una cotización desde el bot siguen pendientes de comprobar con un mensaje del usuario. No declarar verificado el recorrido Telegram completo solo por la publicación. La política de tarifa vigente se detiene desde 2026-11-14T06:00:00Z hasta revisar precios.
