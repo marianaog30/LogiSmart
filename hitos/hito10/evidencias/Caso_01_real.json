@@ -1,0 +1,75 @@
+{
+  "caso_id": "H10-CASO-01",
+  "fecha_utc": "2026-11-10T21:59:15.884Z",
+  "estado": "PENDIENTE_APROBACION",
+  "importe_mxn": 495,
+  "cantidades": {
+    "Producto A": 2,
+    "Producto B": 3
+  },
+  "aprobacion_humana": "PENDIENTE",
+  "presupuesto": {
+    "limite_usd": 0.1,
+    "consumo_unidades": 68530,
+    "consumo_usd": 0.00171325,
+    "llamadas_ia_realizadas": 4,
+    "estado": "MEDICION_DIRECTA",
+    "medicion_directa": true,
+    "registros": [
+      {
+        "agente": 1,
+        "modelo": "gpt-5-mini-2025-08-07",
+        "tokens_entrada": 351,
+        "tokens_cache": 0,
+        "tokens_salida": 77,
+        "tokens_total": 428,
+        "costo_usd": 0.00024175,
+        "reserva_usd": 0.00508775,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "tarifa_consultada": "2026-11-06",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 2,
+        "modelo": "gpt-5-mini-2025-08-07",
+        "tokens_entrada": 437,
+        "tokens_cache": 0,
+        "tokens_salida": 139,
+        "tokens_total": 576,
+        "costo_usd": 0.00038725,
+        "reserva_usd": 0.00510925,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "tarifa_consultada": "2026-11-06",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 3,
+        "modelo": "gpt-5-mini-2025-08-07",
+        "tokens_entrada": 456,
+        "tokens_cache": 0,
+        "tokens_salida": 250,
+        "tokens_total": 706,
+        "costo_usd": 0.000614,
+        "reserva_usd": 0.005114,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "tarifa_consultada": "2026-11-06",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 4,
+        "modelo": "gpt-5-mini-2025-08-07",
+        "tokens_entrada": 1265,
+        "tokens_cache": 0,
+        "tokens_salida": 77,
+        "tokens_total": 1342,
+        "costo_usd": 0.00047025,
+        "reserva_usd": 0.00531625,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "tarifa_consultada": "2026-11-06",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      }
+    ]
+  },
+  "fuente": "respaldo Data Table 2026-11-12; SHA-256 eddabc102b789aec70d5ac847ae98b8fafb67eb619e41ae2e00c9c2b3862eb9f",
+  "version": "anterior al control H8"
+}

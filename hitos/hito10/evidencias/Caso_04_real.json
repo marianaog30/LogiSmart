@@ -1,0 +1,212 @@
+{
+  "caso_id": "H10-CASO-04",
+  "fecha_utc": "2026-11-13T23:12:02.000Z",
+  "run_url": "https://github.com/marianaog30/LogiSmart/actions/runs/43525239946",
+  "estado": "PENDIENTE_APROBACION",
+  "importe_mxn": 650,
+  "cantidades": {
+    "Producto A": 4,
+    "Producto B": 2
+  },
+  "aprobacion_humana": "PENDIENTE",
+  "presupuesto": {
+    "limite_usd": 0.1,
+    "consumo_unidades": 79250,
+    "consumo_usd": 0.00198125,
+    "llamadas_ia_realizadas": 4,
+    "estado": "MEDICION_DIRECTA",
+    "medicion_directa": true,
+    "registros": [
+      {
+        "agente": 1,
+        "modelo": "gpt-5-mini-2025-08-07",
+        "tokens_entrada": 549,
+        "tokens_cache": 0,
+        "tokens_salida": 77,
+        "tokens_total": 626,
+        "costo_usd": 0.00029125,
+        "reserva_usd": 0.00513725,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "tarifa_consultada": "2026-11-06",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 2,
+        "modelo": "gpt-5-mini-2025-08-07",
+        "tokens_entrada": 634,
+        "tokens_cache": 0,
+        "tokens_salida": 139,
+        "tokens_total": 773,
+        "costo_usd": 0.0004365,
+        "reserva_usd": 0.0051585,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "tarifa_consultada": "2026-11-06",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 3,
+        "modelo": "gpt-5-mini-2025-08-07",
+        "tokens_entrada": 653,
+        "tokens_cache": 0,
+        "tokens_salida": 228,
+        "tokens_total": 881,
+        "costo_usd": 0.00061925,
+        "reserva_usd": 0.00516325,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "tarifa_consultada": "2026-11-06",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 4,
+        "modelo": "gpt-5-mini-2025-08-07",
+        "tokens_entrada": 1441,
+        "tokens_cache": 0,
+        "tokens_salida": 137,
+        "tokens_total": 1578,
+        "costo_usd": 0.00063425,
+        "reserva_usd": 0.00536025,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "tarifa_consultada": "2026-11-06",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      }
+    ]
+  },
+  "trazas": [
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "apertura_y_validacion_de_caso",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "AGENTE_1_VALIDACION",
+      "etapa": "validacion_de_solicitud",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "revision_agente_1",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "asignacion_agente_2",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "AGENTE_2_CATALOGO_INVENTARIOS",
+      "etapa": "consulta_catalogo_e_inventarios",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "revision_agente_2",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "calculo_determinista",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "AGENTE_3_COTIZACION",
+      "etapa": "elaboracion_de_cotizacion",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "revision_agente_3",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "validaciones_deterministas_qa",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "AGENTE_4_CONTROL_CALIDAD",
+      "etapa": "control_de_calidad",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "revision_agente_4",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "cierre",
+      "estado": "COMPLETADO"
+    }
+  ],
+  "revision_tecnica": {
+    "dictamen": "APROBADO_TECNICAMENTE",
+    "dictamen_agente_4": "APROBADO_TECNICAMENTE",
+    "hallazgos": [],
+    "validaciones_deterministas": [
+      {
+        "id": "caso_id_consistente",
+        "descripcion": "El caso_id es el mismo en el Agente 1, 2 y 3",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "productos_y_cantidades",
+        "descripcion": "Productos y cantidades de la cotizacion coinciden con lo extraido por el Agente 1",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "precios_vs_catalogo",
+        "descripcion": "Cada precio unitario coincide con el catalogo autorizado",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "inventario_suficiente",
+        "descripcion": "Ninguna cantidad supera el inventario autorizado",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "subtotales",
+        "descripcion": "Cada subtotal = cantidad x precio unitario",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "total",
+        "descripcion": "El total = suma de subtotales",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "sin_extras",
+        "descripcion": "No hay impuestos, envio ni descuentos inventados (cotizacion y propuesta)",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "propuesta_coincide_calculo",
+        "descripcion": "La propuesta del Agente 3 tiene el mismo total y moneda que el calculo",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "fuente_catalogo",
+        "descripcion": "La fuente del catalogo esta presente y coincide",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "politica",
+        "descripcion": "Modo SIMULADO y moneda MXN",
+        "ok": true,
+        "detalle": ""
+      }
+    ],
+    "fuentes_verificadas": [
+      "catalogo_ficticio_logismart_v1"
+    ],
+    "autoriza_accion_comercial": false
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "subtotal_conocido_usd": 0.05189975,
+  "base_100_casos_openai_usd": 0.18605,
+  "mayor_consumo_100_casos_openai_usd": 0.33488999999999997,
+  "pruebas": [
+    "subtotal conciliado",
+    "selector recalcula",
+    "cero válido",
+    "ausente permanece no disponible"
+  ],
+  "motor": "artifact-tool; Excel nativo no abierto"
+}

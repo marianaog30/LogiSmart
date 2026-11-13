@@ -1,0 +1,23 @@
+{
+  "comparacion_id": "H10-OPT-01",
+  "antes": "H10-CASO-04",
+  "despues": "H10-CASO-05",
+  "misma_entrada_comercial": true,
+  "mismo_importe_mxn": true,
+  "antes_usd": "0.00198125",
+  "despues_usd": "0.002005",
+  "delta_usd": "0.00002375",
+  "delta_pct": "1.198738170347003154574132492",
+  "gamma_entrada_antes": 653,
+  "gamma_entrada_despues": 527,
+  "gamma_salida_antes": 228,
+  "gamma_salida_despues": 315,
+  "gamma_costo_antes": "0.00061925",
+  "gamma_costo_despues": "0.00076175",
+  "qa_antes": 10,
+  "qa_despues": 10,
+  "qa_total": 10,
+  "decision": "RESTAURAR_V1; no ahorro demostrado",
+  "restauracion": "Gamma V1 reintroducido mediante comparación exacta de código y publicado en ruta GitHub; Telegram conserva costos",
+  "limite": "Una comparación pareada; otras salidas varían. No demuestra causalidad ni ahorro generalizable. Identificadores operativos distintos por deduplicación; misma comparación comercial."
+}

@@ -1,0 +1,367 @@
+{
+  "casos": [
+    {
+      "caso_id": "H10-CASO-01",
+      "fecha_utc": "2026-11-10T21:59:15.884Z",
+      "registros": [
+        {
+          "agente": 1,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 351,
+          "tokens_cache": 0,
+          "tokens_salida": 77,
+          "tokens_total": 428,
+          "costo_usd": 0.00024175,
+          "reserva_usd": 0.00508775,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 2,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 437,
+          "tokens_cache": 0,
+          "tokens_salida": 139,
+          "tokens_total": 576,
+          "costo_usd": 0.00038725,
+          "reserva_usd": 0.00510925,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 3,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 456,
+          "tokens_cache": 0,
+          "tokens_salida": 250,
+          "tokens_total": 706,
+          "costo_usd": 0.000614,
+          "reserva_usd": 0.005114,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 4,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 1265,
+          "tokens_cache": 0,
+          "tokens_salida": 77,
+          "tokens_total": 1342,
+          "costo_usd": 0.00047025,
+          "reserva_usd": 0.00531625,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        }
+      ],
+      "costo_usd": "0.00171325",
+      "cantidades": {
+        "Producto A": 2,
+        "Producto B": 3
+      },
+      "estado_cierre": "PENDIENTE_APROBACION",
+      "fuente": "respaldo Data Table 2026-11-12; SHA-256 eddabc102b789aec70d5ac847ae98b8fafb67eb619e41ae2e00c9c2b3862eb9f",
+      "version": "anterior al control H8",
+      "importe_mxn": 495,
+      "categoria": "OPERACION",
+      "entrada": 2509,
+      "salida": 543
+    },
+    {
+      "caso_id": "H10-CASO-02",
+      "fecha_utc": "2026-11-12T00:18:57.514Z",
+      "registros": [
+        {
+          "agente": 1,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 439,
+          "tokens_cache": 0,
+          "tokens_salida": 76,
+          "tokens_total": 515,
+          "costo_usd": 0.00026175,
+          "reserva_usd": 0.00510975,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 2,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 527,
+          "tokens_cache": 0,
+          "tokens_salida": 138,
+          "tokens_total": 665,
+          "costo_usd": 0.00040775,
+          "reserva_usd": 0.00513175,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 3,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 545,
+          "tokens_cache": 0,
+          "tokens_salida": 223,
+          "tokens_total": 768,
+          "costo_usd": 0.00058225,
+          "reserva_usd": 0.00513625,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 4,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 1324,
+          "tokens_cache": 0,
+          "tokens_salida": 76,
+          "tokens_total": 1400,
+          "costo_usd": 0.000483,
+          "reserva_usd": 0.005331,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        }
+      ],
+      "costo_usd": "0.00173475",
+      "cantidades": {
+        "Producto A": 2,
+        "Producto B": 3
+      },
+      "estado_cierre": "PENDIENTE_APROBACION",
+      "fuente": "respaldo Data Table 2026-11-12; SHA-256 eddabc102b789aec70d5ac847ae98b8fafb67eb619e41ae2e00c9c2b3862eb9f",
+      "version": "anterior al control H8",
+      "importe_mxn": 495,
+      "categoria": "OPERACION",
+      "entrada": 2835,
+      "salida": 513
+    },
+    {
+      "caso_id": "H10-CASO-03",
+      "fecha_utc": "2026-11-13T03:23:59.000Z",
+      "registros": [
+        {
+          "agente": 1,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 549,
+          "tokens_cache": 0,
+          "tokens_salida": 77,
+          "tokens_total": 626,
+          "costo_usd": 0.00029125,
+          "reserva_usd": 0.00513725,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 2,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 634,
+          "tokens_cache": 0,
+          "tokens_salida": 139,
+          "tokens_total": 773,
+          "costo_usd": 0.0004365,
+          "reserva_usd": 0.0051585,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 3,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 653,
+          "tokens_cache": 0,
+          "tokens_salida": 213,
+          "tokens_total": 866,
+          "costo_usd": 0.00058925,
+          "reserva_usd": 0.00516325,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 4,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 1426,
+          "tokens_cache": 0,
+          "tokens_salida": 96,
+          "tokens_total": 1522,
+          "costo_usd": 0.0005485,
+          "reserva_usd": 0.0053565,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        }
+      ],
+      "costo_usd": "0.0018655",
+      "cantidades": {
+        "Producto A": 3,
+        "Producto B": 4
+      },
+      "estado_cierre": "PENDIENTE_APROBACION",
+      "fuente": "https://github.com/marianaog30/LogiSmart/actions/runs/43358652867",
+      "version": "H8-1.0.0; Telegram con costos",
+      "importe_mxn": 700,
+      "categoria": "OPERACION",
+      "entrada": 3262,
+      "salida": 525
+    },
+    {
+      "caso_id": "H10-CASO-04",
+      "fecha_utc": "2026-11-13T23:12:02.000Z",
+      "registros": [
+        {
+          "agente": 1,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 549,
+          "tokens_cache": 0,
+          "tokens_salida": 77,
+          "tokens_total": 626,
+          "costo_usd": 0.00029125,
+          "reserva_usd": 0.00513725,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 2,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 634,
+          "tokens_cache": 0,
+          "tokens_salida": 139,
+          "tokens_total": 773,
+          "costo_usd": 0.0004365,
+          "reserva_usd": 0.0051585,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 3,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 653,
+          "tokens_cache": 0,
+          "tokens_salida": 228,
+          "tokens_total": 881,
+          "costo_usd": 0.00061925,
+          "reserva_usd": 0.00516325,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 4,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 1441,
+          "tokens_cache": 0,
+          "tokens_salida": 137,
+          "tokens_total": 1578,
+          "costo_usd": 0.00063425,
+          "reserva_usd": 0.00536025,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        }
+      ],
+      "costo_usd": "0.00198125",
+      "cantidades": {
+        "Producto A": 4,
+        "Producto B": 2
+      },
+      "estado_cierre": "PENDIENTE_APROBACION",
+      "fuente": "https://github.com/marianaog30/LogiSmart/actions/runs/43525239946",
+      "version": "H8-1.0.0; Telegram con costos",
+      "importe_mxn": 650,
+      "categoria": "OPERACION",
+      "entrada": 3277,
+      "salida": 581
+    },
+    {
+      "caso_id": "H10-CASO-05",
+      "fecha_utc": "2026-11-13T23:26:15.000Z",
+      "registros": [
+        {
+          "agente": 1,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 549,
+          "tokens_cache": 0,
+          "tokens_salida": 77,
+          "tokens_total": 626,
+          "costo_usd": 0.00029125,
+          "reserva_usd": 0.00513725,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 2,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 634,
+          "tokens_cache": 0,
+          "tokens_salida": 139,
+          "tokens_total": 773,
+          "costo_usd": 0.0004365,
+          "reserva_usd": 0.0051585,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 3,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 527,
+          "tokens_cache": 0,
+          "tokens_salida": 315,
+          "tokens_total": 842,
+          "costo_usd": 0.00076175,
+          "reserva_usd": 0.00513175,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        },
+        {
+          "agente": 4,
+          "modelo": "gpt-5-mini-2025-08-07",
+          "tokens_entrada": 1446,
+          "tokens_cache": 0,
+          "tokens_salida": 77,
+          "tokens_total": 1523,
+          "costo_usd": 0.0005155,
+          "reserva_usd": 0.0053615,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+          "tarifa_consultada": "2026-11-06",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+        }
+      ],
+      "costo_usd": "0.002005",
+      "cantidades": {
+        "Producto A": 4,
+        "Producto B": 2
+      },
+      "estado_cierre": "PENDIENTE_APROBACION",
+      "fuente": "https://github.com/marianaog30/LogiSmart/actions/runs/43527040620",
+      "version": "Gamma V2 experimental, restaurada a V1 tras comparación",
+      "importe_mxn": 650,
+      "categoria": "EXPERIMENTO_DESARROLLO",
+      "entrada": 3156,
+      "salida": 608
+    }
+  ],
+  "ejecuciones_completas": 5,
+  "casos_con_cantidades_distintas": 3,
+  "llamadas_medidas": 20,
+  "subtotal_openai_usd": "0.00929975",
+  "subtotal_llm_elevenlabs_usd": "0.0426",
+  "subtotal_usd_conocido": "0.05189975",
+  "costo_integral_usd": null,
+  "criterio_tres_casos_distintos": true,
+  "criterio_voz": false,
+  "corte": "2026-11-13",
+  "filas_costos": 49,
+  "subtotal_openai_operacion_usd": "0.00729475",
+  "subtotal_openai_experimento_desarrollo_usd": "0.00200500"
+}

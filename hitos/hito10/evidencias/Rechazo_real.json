@@ -1,0 +1,14 @@
+{
+  "caso_id": "H10-ERROR-01",
+  "run_url": "https://github.com/marianaog30/LogiSmart/actions/runs/43359007060",
+  "producto_a": 101,
+  "producto_b": 4,
+  "estado": "ACLARACION_REQUERIDA",
+  "resultado_github": "failure esperado",
+  "etapa": "precontrol de Maestro",
+  "paso_n8n": "skipped",
+  "llamadas_llm": 0,
+  "costo_llm_usd": "0",
+  "costo_plataforma_usd": null,
+  "nota": "Cero llamadas LLM comprobado por paso externo omitido; no significa costo total cero."
+}

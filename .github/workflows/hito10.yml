@@ -1,0 +1,34 @@
+name: Hito 10 - auditar costos sin API
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'hitos/hito10/**'
+      - '.github/workflows/hito10.yml'
+permissions:
+  contents: read
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reconstruir y auditar registro sin llamadas externas
+        working-directory: hitos/hito10
+        run: |
+          python3 preparar_registro.py
+          python3 auditar_costos.py
+          node probar_mensaje.cjs
+          node probar_gamma.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: registro-costos-sanitizado
+          path: |
+            hitos/hito10/costos.csv
+            hitos/hito10/registro_resumen.json
+            hitos/hito10/evidencias/Comparacion_Gamma.json
+          retention-days: 30
