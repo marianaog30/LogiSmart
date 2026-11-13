@@ -2,13 +2,13 @@
 
 **Mariana Orozco · 12 de noviembre de 2026.**
 
-Estado: **controles implementados y pruebas documentadas; queda una comprobación complementaria de autenticación HTTP sin concluir**. No presentar esta entrega como certificación de seguridad ni como prueba de concurrencia.
+Estado: **controles implementados y verificados en el alcance descrito**. No presentar esta entrega como certificación de seguridad ni como prueba de concurrencia.
 
 ## Matriz contra la guía
 
 | Control | Implementación | Evidencia y alcance |
 |---|---|---|
-| Acceso y alcance | Usuarios autorizados en Telegram; Header Auth para GitHub; solo modo SIMULADO. Ruta antigua de GitHub despublicada. | Pruebas del código de acceso; estado de publicación observado. POST anónimo devolvió 403, pero no se contrastó su procedencia: NO CONCLUYENTE. |
+| Acceso y alcance | Usuarios autorizados en Telegram; Header Auth para GitHub; solo modo SIMULADO. Ruta antigua de GitHub despublicada. | Pruebas del código de acceso; estado de publicación observado. POST anónimo vacío devolvió 403; respuesta de autorización contrastada, sin bloqueo de intermediario. |
 | Datos y privacidad | Contrato cerrado de productos/cantidades, máximo 1000 caracteres, cantidades acotadas al catálogo. Texto canónico antes del modelo. Exportación con lista de campos permitidos. | Pruebas locales; consulta pública real de 192 registros, sin campos fuera de lista. 4 filas sin identificador contabilizadas como excluidas. |
 | Inyección | Instrucciones explícitas en las cuatro etapas de ambos flujos; texto/documentos como datos no confiables. Gramática limitada para cotizar y patrón cerrado para consultar folios. | Inyección bloqueada en pruebas locales y laboratorio. Consulta real de folio malicioso: FORMATO_INVALIDO. Mariana reportó rechazo y detención por prompt injection en WALL-E; no se inspeccionó su transcripción. |
 | Fuentes y veracidad | Catálogo fijo autorizado, cálculo determinista y diez validaciones antes de liberar la propuesta. | Pruebas del nodo QA: propuesta válida, precio, total y fuente alterados. |
@@ -26,7 +26,7 @@ Estado: **controles implementados y pruebas documentadas; queda una comprobació
 - `evidencias/Verificacion_n8n.json` y los archivos N8N: laboratorio manual real, sin Telegram Trigger, credenciales ni nodos de OpenAI.
 - `evidencias/Consulta_*_real.json`: respuestas del endpoint desplegado; entrada válida, acción no permitida e inyección.
 - `evidencias/Prueba_WALL_E_reportada.json`: reporte de Mariana, separado de la inspección técnica.
-- `evidencias/Acceso_sin_credencial_real.json`: 403 observado, clasificación NO_CONCLUYENTE.
+- `evidencias/Acceso_sin_credencial_real.json`: 403 de autorización contrastado, clasificación PASS. No se enviaron secretos.
 
 Reproducir con Node.js estándar: `node pruebas/ejecutar_todas.mjs`. No requiere claves ni realiza llamadas de red. Se ejecutó con el runtime Node de herramientas; el equipo no tenía node en PATH. El laboratorio de n8n se usa como otra vía de comprobación.
 
@@ -40,11 +40,17 @@ El historial de deduplicación es finito y dependiente de la instancia/nodo. No 
 
 Los JSON se reconstruyeron a partir de copias conservadas y cambios observados/aplicados en el editor. No son un volcado nuevo de la base de datos de n8n. La versión importable sanitizada queda desactivada y requiere reconfigurar credenciales, usuarios y Data Table. La restauración en otra instancia aún no está probada. El estado persistente interno de Remove Duplicates no forma parte del JSON de workflow.
 
-La política de tarifas de OpenAI se detiene desde el 14 de noviembre de 2026 a las 06:00 UTC hasta revisar precios. No se renovó ni desactivó ese control. No se iniciaron las muestras ni las proyecciones de los Hitos 9 y 10.
+La política de tarifas de OpenAI se detiene desde el 14 de noviembre de 2026 a las 06:00 UTC hasta revisar precios. No se renovó ni desactivó ese control. No se iniciaron las muestras ni las proyecciones de los Hitos 9 y 10 durante este cierre. La siguiente fase es el Hito 9.
 
-## Comprobación pendiente
+## Comprobación HTTP completada
 
-Contrastar que el 403 del POST sin credencial procede del mecanismo de autenticación esperado, conservando únicamente una respuesta de error sanitizada. La revisión automática rechazó esta comprobación adicional por límite de uso; no fue una negativa de Mariana ni una determinación de que el código fuera inseguro. No se ejecutó ese intento ni se usó otra vía para eludir el control.
+Se retomó la prueba por el mismo mecanismo de revisión autorizado cuando volvió a estar disponible: POST con cuerpo vacío y sin Header Auth al endpoint protegido. Resultado HTTP 403, respuesta que indica autorización y ausencia del indicador de bloqueo de intermediario. Evidencia fechada 2026-11-13T01:24:13Z, correspondiente al 12 de noviembre en Ciudad de México. No se enviaron secretos ni una cotización válida.
+
+La revisión automática había interrumpido la comprobación anterior por límite de uso; ese intento no se ejecutó ni se eludió. La verificación complementaria quedó resuelta.
+
+## Verificación en GitHub
+
+[46 pruebas correctas y artifact conservado](https://github.com/marianaog30/LogiSmart/actions/runs/43341831826). También pasó la validación/publicación del sitio: https://github.com/marianaog30/LogiSmart/actions/runs/43341831723 . Los logs confirman los grupos de 20, 17 y 9; no son 66 controles distintos.
 
 La autorización del navegador tuvo una interrupción anterior; Mariana reabrió n8n y se continuó por el acceso autorizado. La publicación de controles, el laboratorio y las consultas públicas posteriores sí se realizaron.
 

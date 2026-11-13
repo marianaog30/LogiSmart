@@ -1,0 +1,4 @@
+2026-11-13T01:02:44.1042132Z 20 pruebas locales correctas. Sin llamadas API ni decisiones reales.
+2026-11-13T01:02:44.1187789Z 17 pruebas de nodos correctas; no se ejecutaron llamadas HTTP.
+2026-11-13T01:02:44.1252654Z 9 pruebas de consulta correctas.
+2026-11-13T01:02:44.1256132Z Total: 46 pruebas locales correctas. Las 20 ejecutadas también en n8n son un subconjunto, no 20 pruebas adicionales.

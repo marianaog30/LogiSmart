@@ -1,0 +1,9 @@
+{
+  "http_status": 403,
+  "respuesta_indica_autorizacion": true,
+  "bloqueo_intermediario": false,
+  "resultado": "PASS",
+  "prueba": "POST sin Header Auth y cuerpo vacío",
+  "fecha_utc": "2026-11-13T01:24:13.326348+00:00",
+  "secretos_enviados": false
+}

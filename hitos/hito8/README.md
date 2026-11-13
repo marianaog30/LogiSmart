@@ -11,4 +11,4 @@ Las exportaciones están desactivadas y sanitizadas. Antes de importar, configur
 
 La carpeta `privado/` y el ZIP privado contienen configuraciones restaurables y copias de código anteriores; no deben publicarse. El ZIP público excluye esa carpeta. No se extrajeron claves API.
 
-Queda una comprobación complementaria de autenticación HTTP pendiente por límite de herramienta. No se declara seguridad universal ni restauración/concurrencia probadas. Se mantiene el orden: no desarrollar Hitos 9/10 hasta resolver el cierre de Hito 8.
+La comprobación complementaria de autenticación HTTP quedó resuelta: 403 de autorización contrastado, sin secretos enviados. No se declara seguridad universal ni restauración/concurrencia probadas. Hito 8 cerrado dentro del alcance documentado; sigue el Hito 9.

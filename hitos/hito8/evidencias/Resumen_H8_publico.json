@@ -1,7 +1,7 @@
 {
   "fecha": "2026-11-12",
   "autora": "Mariana Orozco",
-  "estado": "IMPLEMENTADO_CON_COMPROBACION_COMPLEMENTARIA_PENDIENTE",
+  "estado": "IMPLEMENTADO_Y_VERIFICADO_EN_ALCANCE_DOCUMENTADO",
   "pruebas_locales": 46,
   "pruebas_en_n8n_subconjunto": 20,
   "deduplicacion_n8n": {
@@ -22,10 +22,21 @@
     "resultado": "rechazo y conversación detenida por prompt injection",
     "transcripcion_inspeccionada": false
   },
-  "pendiente": "El 403 observado sin credenciales no se atribuye al mecanismo de autenticación hasta contrastar su procedencia. Comprobación adicional no ejecutada por límite de revisión automática.",
   "limites": [
     "No se probó concurrencia ni restauración en otra instancia.",
     "El historial de deduplicación es finito y no forma parte del JSON.",
     "No se iniciaron los Hitos 9 y 10."
-  ]
+  ],
+  "acceso_http_sin_credencial": {
+    "status": 403,
+    "respuesta_indica_autorizacion": true,
+    "bloqueo_intermediario": false,
+    "resultado": "PASS"
+  },
+  "github_actions": {
+    "run_id": 43341831826,
+    "resultado": "success",
+    "pruebas": 46,
+    "artifact": "hito8-guardrails-resultados"
+  }
 }
