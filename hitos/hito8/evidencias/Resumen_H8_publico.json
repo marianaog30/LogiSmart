@@ -1,0 +1,31 @@
+{
+  "fecha": "2026-11-12",
+  "autora": "Mariana Orozco",
+  "estado": "IMPLEMENTADO_CON_COMPROBACION_COMPLEMENTARIA_PENDIENTE",
+  "pruebas_locales": 46,
+  "pruebas_en_n8n_subconjunto": 20,
+  "deduplicacion_n8n": {
+    "primera_operacion": 1,
+    "segunda_operacion": 0,
+    "segundo_evento_descartado": 1,
+    "prueba": "secuencial, datos sintéticos, sin OpenAI ni Telegram"
+  },
+  "consulta_publica_real": {
+    "registros": 192,
+    "excluidos": 4,
+    "fuera_de_lista": 0,
+    "accion_aprobar": "ENTRADA_NO_PERMITIDA",
+    "inyeccion_en_folio": "FORMATO_INVALIDO"
+  },
+  "WALL_E": {
+    "fuente": "Reporte de Mariana",
+    "resultado": "rechazo y conversación detenida por prompt injection",
+    "transcripcion_inspeccionada": false
+  },
+  "pendiente": "El 403 observado sin credenciales no se atribuye al mecanismo de autenticación hasta contrastar su procedencia. Comprobación adicional no ejecutada por límite de revisión automática.",
+  "limites": [
+    "No se probó concurrencia ni restauración en otra instancia.",
+    "El historial de deduplicación es finito y no forma parte del JSON.",
+    "No se iniciaron los Hitos 9 y 10."
+  ]
+}

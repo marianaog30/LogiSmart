@@ -1,0 +1,30 @@
+name: Hito 8 - guardrails sin llamadas API
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'hitos/hito8/**'
+      - 'n8n/**'
+      - '.github/workflows/hito8.yml'
+permissions:
+  contents: read
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preparar fuente sanitizada de nodos y salida de pruebas
+        run: |
+          mkdir -p hitos/hito8/n8n hitos/hito8/evidencias
+          cp n8n/LogiSmart_Ecosistema_Agentes.json hitos/hito8/n8n/LogiSmart_Ecosistema_Agentes_H8.json
+      - name: Probar controles sin modelos ni mensajes
+        run: node hitos/hito8/pruebas/ejecutar_todas.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hito8-guardrails-resultados
+          path: hitos/hito8/evidencias/
