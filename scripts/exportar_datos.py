@@ -6,7 +6,7 @@ from pathlib import Path
 import re
 import urllib.request
 
-ENDPOINT = 'https://mariana30.app.n8n.cloud/webhook/logismart-dashboard'
+ENDPOINT = 'https://orozco08.app.n8n.cloud/webhook/logismart-dashboard'
 CAMPOS = ('folio_publico', 'fecha_registro', 'productos', 'importe_total', 'moneda',
           'estado_final', 'aprobacion_humana', 'duracion_total_ms', 'origen',
           'completa_primer_intento', 'sin_correcciones_auditoria')
