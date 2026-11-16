@@ -1,10 +1,10 @@
 {
   "fuente": "Data Table LogiSmart",
   "datos_ficticios": true,
-  "consultado_en": "2026-11-12T00:53:17.192Z",
+  "consultado_en": "2026-11-16T17:32:47.252Z",
   "zona_horaria": "America/Mexico_City",
-  "total_registros": 192,
-  "registros_excluidos": 0,
+  "total_registros": 195,
+  "registros_excluidos": 4,
   "registros": [
     {
       "folio_publico": "MUESTRA-001",
@@ -2954,6 +2954,54 @@
       "estado_final": "APROBADA",
       "aprobacion_humana": "APROBADA",
       "duracion_total_ms": 10892,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-193",
+      "fecha_registro": "2026-11-13T03:23:59.187Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 700,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 13196,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-194",
+      "fecha_registro": "2026-11-13T23:12:02.487Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 650,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 13689,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-195",
+      "fecha_registro": "2026-11-13T23:26:14.912Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 650,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 14098,
       "origen": "WORKFLOW",
       "completa_primer_intento": null,
       "sin_correcciones_auditoria": null
