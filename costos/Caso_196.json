@@ -1,0 +1,483 @@
+{
+  "catalogo_descriptivo_version": "1.1",
+  "unidad_venta": "paquete",
+  "caso_id": "MUESTRA-196",
+  "estado_final": "PENDIENTE_APROBACION",
+  "productos": [
+    "Producto A",
+    "Producto B"
+  ],
+  "cantidades": {
+    "Producto A": 2,
+    "Producto B": 3
+  },
+  "precios": {
+    "Producto A": 120,
+    "Producto B": 85
+  },
+  "detalle_lineas": [
+    {
+      "producto": "Producto A",
+      "cantidad": 2,
+      "precio_unitario": 120,
+      "subtotal": 240
+    },
+    {
+      "producto": "Producto B",
+      "cantidad": 3,
+      "precio_unitario": 85,
+      "subtotal": 255
+    }
+  ],
+  "importe_total": 495,
+  "moneda": "MXN",
+  "revision_tecnica": {
+    "dictamen": "APROBADO_TECNICAMENTE",
+    "dictamen_agente_4": "APROBADO_TECNICAMENTE",
+    "hallazgos": [],
+    "validaciones_deterministas": [
+      {
+        "id": "caso_id_consistente",
+        "descripcion": "El caso_id es el mismo en el Agente 1, 2 y 3",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "productos_y_cantidades",
+        "descripcion": "Productos y cantidades de la cotizacion coinciden con lo extraido por el Agente 1",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "precios_vs_catalogo",
+        "descripcion": "Cada precio unitario coincide con el catalogo autorizado",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "inventario_suficiente",
+        "descripcion": "Ninguna cantidad supera el inventario autorizado",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "subtotales",
+        "descripcion": "Cada subtotal = cantidad x precio unitario",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "total",
+        "descripcion": "El total = suma de subtotales",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "sin_extras",
+        "descripcion": "No hay impuestos, envio ni descuentos inventados (cotizacion y propuesta)",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "propuesta_coincide_calculo",
+        "descripcion": "La propuesta del Agente 3 tiene el mismo total y moneda que el calculo",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "fuente_catalogo",
+        "descripcion": "La fuente del catalogo esta presente y coincide",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "politica",
+        "descripcion": "Modo SIMULADO y moneda MXN",
+        "ok": true,
+        "detalle": ""
+      }
+    ],
+    "fuentes_verificadas": [
+      "catalogo_ficticio_logismart_v1"
+    ],
+    "autoriza_accion_comercial": false
+  },
+  "aprobacion_humana": "PENDIENTE",
+  "advertencias": [
+    "Tokens reportados por OpenAI; costo calculado con tarifa estándar consultada el 2026-11-14, no factura. Presupuesto por caso: 0.1 USD. Sin reintentos automáticos."
+  ],
+  "modo": "SIMULADO",
+  "agentes_ejecutados": [
+    "AGENTE_1_VALIDACION",
+    "AGENTE_2_CATALOGO_INVENTARIOS",
+    "AGENTE_3_COTIZACION",
+    "AGENTE_4_CONTROL_CALIDAD"
+  ],
+  "presupuesto": {
+    "limite_usd": 0.1,
+    "consumo_unidades": 32076,
+    "consumo_usd": 0.0008019,
+    "llamadas_ia_realizadas": 4,
+    "estado": "MEDICION_DIRECTA",
+    "medicion_directa": true,
+    "registros": [
+      {
+        "agente": 1,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 550,
+        "tokens_cache": 0,
+        "tokens_salida": 96,
+        "tokens_total": 646,
+        "costo_usd": 0.0001401,
+        "reserva_usd": 0.0015825,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-14",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 2,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 635,
+        "tokens_cache": 0,
+        "tokens_salida": 182,
+        "tokens_total": 817,
+        "costo_usd": 0.00020445,
+        "reserva_usd": 0.00159525,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-14",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 3,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 654,
+        "tokens_cache": 0,
+        "tokens_salida": 186,
+        "tokens_total": 840,
+        "costo_usd": 0.0002097,
+        "reserva_usd": 0.0015981,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-14",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 4,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 1351,
+        "tokens_cache": 0,
+        "tokens_salida": 75,
+        "tokens_total": 1426,
+        "costo_usd": 0.00024765,
+        "reserva_usd": 0.00170265,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-14",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      }
+    ]
+  },
+  "duracion_total_ms": 15370,
+  "trazas": [
+    {
+      "caso_id": "MUESTRA-196",
+      "agente": "ORQUESTADOR",
+      "etapa": "apertura_y_validacion_de_caso",
+      "estado": "COMPLETADO",
+      "resultado": "Caso valido y dentro de politica (SIMULADO, cotizar_productos). Se asigna tarea al Agente 1.",
+      "fuentes": [
+        "Datos iniciales"
+      ],
+      "advertencias": [],
+      "duracion_ms": 1,
+      "referencia_consumo": {
+        "tokens_entrada": null,
+        "tokens_salida": null,
+        "costo_usd": null,
+        "nota": "Logica determinista: no consume tokens."
+      }
+    },
+    {
+      "caso_id": "MUESTRA-196",
+      "agente": "AGENTE_1_VALIDACION",
+      "etapa": "validacion_de_solicitud",
+      "estado": "COMPLETADO",
+      "resultado": {
+        "productos": [
+          {
+            "nombre": "Producto A",
+            "cantidad": 2
+          },
+          {
+            "nombre": "Producto B",
+            "cantidad": 3
+          }
+        ]
+      },
+      "fuentes": [
+        "solicitud original del caso"
+      ],
+      "advertencias": [],
+      "duracion_ms": 4312,
+      "referencia_consumo": {
+        "agente": 1,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 550,
+        "tokens_cache": 0,
+        "tokens_salida": 96,
+        "tokens_total": 646,
+        "costo_usd": 0.0001401,
+        "reserva_usd": 0.0015825,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-14",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      }
+    },
+    {
+      "caso_id": "MUESTRA-196",
+      "agente": "ORQUESTADOR",
+      "etapa": "revision_agente_1",
+      "estado": "COMPLETADO",
+      "resultado": "Salida de Agente 1 valida, mismo caso_id, cantidades presentes en la solicitud. Se asigna Agente 2.",
+      "fuentes": [
+        "Agente 1"
+      ],
+      "advertencias": [],
+      "duracion_ms": 0,
+      "referencia_consumo": {
+        "tokens_entrada": null,
+        "tokens_salida": null,
+        "costo_usd": null,
+        "nota": "Logica determinista."
+      }
+    },
+    {
+      "caso_id": "MUESTRA-196",
+      "agente": "ORQUESTADOR",
+      "etapa": "asignacion_agente_2",
+      "estado": "COMPLETADO",
+      "resultado": "Se entrega al Agente 2 la lista de productos del Agente 1 y el catalogo autorizado (catalogo_ficticio_logismart_v1).",
+      "fuentes": [
+        "catalogo_ficticio_logismart_v1"
+      ],
+      "advertencias": [],
+      "duracion_ms": 0,
+      "referencia_consumo": {
+        "tokens_entrada": null,
+        "tokens_salida": null,
+        "costo_usd": null,
+        "nota": "Logica determinista."
+      }
+    },
+    {
+      "caso_id": "MUESTRA-196",
+      "agente": "AGENTE_2_CATALOGO_INVENTARIOS",
+      "etapa": "consulta_catalogo_e_inventarios",
+      "estado": "COMPLETADO",
+      "resultado": {
+        "items": [
+          {
+            "producto": "Producto A",
+            "cantidad": 2,
+            "precio_unitario": 120,
+            "moneda": "MXN",
+            "inventario": 100,
+            "fuente": "catalogo_ficticio_logismart_v1"
+          },
+          {
+            "producto": "Producto B",
+            "cantidad": 3,
+            "precio_unitario": 85,
+            "moneda": "MXN",
+            "inventario": 80,
+            "fuente": "catalogo_ficticio_logismart_v1"
+          }
+        ]
+      },
+      "fuentes": [
+        "catalogo_ficticio_logismart_v1"
+      ],
+      "advertencias": [],
+      "duracion_ms": 5138,
+      "referencia_consumo": {
+        "agente": 2,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 635,
+        "tokens_cache": 0,
+        "tokens_salida": 182,
+        "tokens_total": 817,
+        "costo_usd": 0.00020445,
+        "reserva_usd": 0.00159525,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-14",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      }
+    },
+    {
+      "caso_id": "MUESTRA-196",
+      "agente": "ORQUESTADOR",
+      "etapa": "revision_agente_2",
+      "estado": "COMPLETADO",
+      "resultado": "Productos existentes, con inventario suficiente y precios identicos al catalogo autorizado. Se calcula la cotizacion.",
+      "fuentes": [
+        "catalogo_ficticio_logismart_v1"
+      ],
+      "advertencias": [],
+      "duracion_ms": 0,
+      "referencia_consumo": {
+        "tokens_entrada": null,
+        "tokens_salida": null,
+        "costo_usd": null,
+        "nota": "Logica determinista."
+      }
+    },
+    {
+      "caso_id": "MUESTRA-196",
+      "agente": "ORQUESTADOR",
+      "etapa": "calculo_determinista",
+      "estado": "COMPLETADO",
+      "resultado": "Subtotales y total calculados en Code (sin impuestos, envio ni descuentos): total 495 MXN",
+      "fuentes": [
+        "catalogo_ficticio_logismart_v1"
+      ],
+      "advertencias": [],
+      "duracion_ms": 0,
+      "referencia_consumo": {
+        "tokens_entrada": null,
+        "tokens_salida": null,
+        "costo_usd": null,
+        "nota": "Calculo determinista: no consume tokens."
+      }
+    },
+    {
+      "caso_id": "MUESTRA-196",
+      "agente": "AGENTE_3_COTIZACION",
+      "etapa": "elaboracion_de_cotizacion",
+      "estado": "COMPLETADO",
+      "resultado": {
+        "subtotal": 495,
+        "total": 495,
+        "moneda": "MXN"
+      },
+      "fuentes": [
+        "catalogo_ficticio_logismart_v1",
+        "Calculo determinista de cotizacion"
+      ],
+      "advertencias": [],
+      "duracion_ms": 3669,
+      "referencia_consumo": {
+        "agente": 3,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 654,
+        "tokens_cache": 0,
+        "tokens_salida": 186,
+        "tokens_total": 840,
+        "costo_usd": 0.0002097,
+        "reserva_usd": 0.0015981,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-14",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      }
+    },
+    {
+      "caso_id": "MUESTRA-196",
+      "agente": "ORQUESTADOR",
+      "etapa": "revision_agente_3",
+      "estado": "COMPLETADO",
+      "resultado": "Propuesta coincide con el calculo determinista. Se asigna control de calidad.",
+      "fuentes": [
+        "Agente 3",
+        "Calculo determinista"
+      ],
+      "advertencias": [],
+      "duracion_ms": 0,
+      "referencia_consumo": {
+        "tokens_entrada": null,
+        "tokens_salida": null,
+        "costo_usd": null,
+        "nota": "Logica determinista."
+      }
+    },
+    {
+      "caso_id": "MUESTRA-196",
+      "agente": "ORQUESTADOR",
+      "etapa": "validaciones_deterministas_qa",
+      "estado": "COMPLETADO",
+      "resultado": "10 de 10 validaciones deterministas aprobadas",
+      "fuentes": [
+        "catalogo_ficticio_logismart_v1"
+      ],
+      "advertencias": [],
+      "duracion_ms": 0,
+      "referencia_consumo": {
+        "tokens_entrada": null,
+        "tokens_salida": null,
+        "costo_usd": null,
+        "nota": "Validaciones deterministas: no consumen tokens."
+      }
+    },
+    {
+      "caso_id": "MUESTRA-196",
+      "agente": "AGENTE_4_CONTROL_CALIDAD",
+      "etapa": "control_de_calidad",
+      "estado": "COMPLETADO",
+      "resultado": {
+        "dictamen": "APROBADO_TECNICAMENTE",
+        "hallazgos": []
+      },
+      "fuentes": [
+        "catalogo_ficticio_logismart_v1"
+      ],
+      "advertencias": [],
+      "duracion_ms": 2216,
+      "referencia_consumo": {
+        "agente": 4,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 1351,
+        "tokens_cache": 0,
+        "tokens_salida": 75,
+        "tokens_total": 1426,
+        "costo_usd": 0.00024765,
+        "reserva_usd": 0.00170265,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-14",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      }
+    },
+    {
+      "caso_id": "MUESTRA-196",
+      "agente": "ORQUESTADOR",
+      "etapa": "revision_agente_4",
+      "estado": "COMPLETADO",
+      "resultado": "Dictamen del Agente 4 y validaciones deterministas coinciden: APROBADO_TECNICAMENTE. Pasa a cierre con aprobacion humana pendiente.",
+      "fuentes": [
+        "Agente 4",
+        "Validaciones deterministas QA"
+      ],
+      "advertencias": [],
+      "duracion_ms": 0,
+      "referencia_consumo": {
+        "tokens_entrada": null,
+        "tokens_salida": null,
+        "costo_usd": null,
+        "nota": "Logica determinista."
+      }
+    },
+    {
+      "caso_id": "MUESTRA-196",
+      "agente": "ORQUESTADOR",
+      "etapa": "cierre",
+      "estado": "COMPLETADO",
+      "resultado": "Caso completo: 4 agentes ejecutados, revision tecnica aprobada. Estado PENDIENTE_APROBACION; aprobacion humana PENDIENTE.",
+      "fuentes": [
+        "trazas del caso"
+      ],
+      "advertencias": [],
+      "duracion_ms": 7,
+      "referencia_consumo": {
+        "tokens_entrada": null,
+        "tokens_salida": null,
+        "costo_usd": null,
+        "nota": "Logica determinista."
+      }
+    }
+  ]
+}

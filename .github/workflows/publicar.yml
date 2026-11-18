@@ -2,8 +2,14 @@ name: Verificar y publicar LogiSmart
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '23 */6 * * *'
   workflow_dispatch:
     inputs:
+      actualizar_datos:
+        description: 'Consultar historial sanitizado de n8n antes de publicar'
+        type: boolean
+        default: true
       probar_fallo:
         description: 'Demostrar bloqueo: altera un dato solo en el runner; no publica'
         type: boolean
@@ -21,11 +27,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Actualizar datos públicos desde n8n
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.actualizar_datos == true) }}
+        run: python3 scripts/exportar_datos.py
       - name: Inyectar inconsistencia deliberada solo en prueba manual
         if: ${{ inputs.probar_fallo == true }}
         run: node -e "const fs=require('fs');const p='web/datos/cotizaciones.json';const d=JSON.parse(fs.readFileSync(p));d.total_registros++;fs.writeFileSync(p,JSON.stringify(d));"
       - name: Validar datos, fórmulas y archivos
         run: node scripts/validar.mjs
+      - name: Auditar costos sin duplicaciones
+        run: python3 scripts/auditar_costos.py
       - uses: actions/upload-pages-artifact@v4
         with:
           path: web

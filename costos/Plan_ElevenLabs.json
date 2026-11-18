@@ -1,0 +1,14 @@
+{
+  "consultado": "2026-11-17",
+  "fuente": "https://elevenlabs.io/app/subscription/agents",
+  "plan_actual": "Free",
+  "cuota_usd_mes": 0,
+  "creditos_usados": 10000,
+  "creditos_limite": 10000,
+  "minutos_incluidos": 15,
+  "concurrencia": 4,
+  "tarifa_publicada_usd_minuto": "0.08",
+  "tarifa_texto_usd_mensaje": "0.0030",
+  "llm": "Separado según uso/modelo; no se deduce factura desde costo reportado",
+  "limite": "No se asume habilitación de excedentes en Free ni se contrata otro plan; créditos agotados. Tarifa publicada no equivale a importe cobrado por las sesiones históricas."
+}

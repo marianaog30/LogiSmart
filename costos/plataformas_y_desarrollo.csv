@@ -1,0 +1,10 @@
+﻿servicio,concepto,cuota,moneda,estado,fuente,fecha,limite
+GitHub Actions,Cómputo runner estándar en repositorio público,0,USD,INCLUIDO_VERIFICADO,https://docs.github.com/en/billing/concepts/product-billing/github-actions,2026-11-17,No cubre almacenamiento extra ni runners grandes; facturación global no inspeccionada
+GitHub Pages,Hosting estático en repositorio público,0,USD,INCLUIDO_VERIFICADO,https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages,2026-11-17,No ejecuta n8n; no incluye APIs ni dominio personalizado
+ElevenLabs,Plan actual Free,0,USD,CUOTA_VERIFICADA,https://elevenlabs.io/app/subscription/agents,2026-11-17,15 minutos; 10000/10000 créditos utilizados; no extrapolar servicio ilimitado
+ElevenLabs,Plataforma sesiones observadas en créditos,,,IMPORTE_MONETARIO_NO_RECONCILIADO,Voz_verificada.json; Voz_exitosa.json,2026-11-17,1189 y 1099 créditos; no convertir sin regla de facturación ni sumarlos de nuevo al LLM
+n8n,Cargo real del período de prueba,,,FACTURA_NO_DISPONIBLE,Migración descrita por usuaria; instancia orozco08,2026-11-17,No se deduce cargo permanente cero de la prueba ni se afirma una suscripción contratada
+n8n Starter,Referencia futura; no contratado,20,EUR/mes equivalente,TARIFA_PUBLICADA_NO_CARGO,https://n8n.io/pricing/,2026-11-17,Facturación anual; 2500 ejecuciones. Una cotización más aprobación/voz puede generar varias ejecuciones
+n8n Pro,Referencia futura; no contratado,50,EUR/mes equivalente,TARIFA_PUBLICADA_NO_CARGO,https://n8n.io/pricing/,2026-11-17,Facturación anual; 10000 ejecuciones. No garantiza 10000 casos integrales
+Desarrollo humano,Horas × valoración horaria,,,NO_MEDIDO_POR_DECISION_USUARIA,"Instrucción de Mariana, 18nov2026: no calcular horas",2026-11-17,No se estiman horas ni tarifa; no equivale a cero
+IA para desarrollo,Experimento Gamma medido,0.00200500,USD,MEDIDO_YA_INCLUIDO_EN_COSTOS,Evidencias_historicas.zip/Comparacion_Gamma.json,2026-11-13,No sumarlo de nuevo; el uso restante de ChatGPT/Codex no tiene tokens exportados atribuibles al proyecto
