@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import vm from 'node:vm';
 const root=new URL('../',import.meta.url);
-const wf=JSON.parse(await fs.readFile(new URL('n8n/LogiSmart_Ecosistema_Agentes_H8.json',root),'utf8'));
+const wf=JSON.parse(await fs.readFile(new URL('../../n8n/LogiSmart_Ecosistema_Agentes.json',root),'utf8'));
 const code=n=>wf.nodes.find(x=>x.name===n).parameters.jsCode;
 const resultados=[];
 function prueba(n,fn){try{fn();resultados.push({prueba:n,resultado:'PASS'})}catch(e){resultados.push({prueba:n,resultado:'FAIL',motivo:e.message})}}
