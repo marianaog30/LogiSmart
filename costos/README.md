@@ -1,2 +1,9 @@
-# Costos
-Guardar costos.csv o costos.xlsx, tarifas con fuentes y fechas, conciliación por llamada y proyecciones de 100, 1000 y 10000 casos al mes.
+# Registro de costos actualizado al 21 de noviembre de 2026
+
+71 filas; 32 llamadas OpenAI auditables: 20 históricas GPT-5 mini, cuatro del caso público MUESTRA-196 y ocho de los casos operativos LOG-16754699 y LOG-944937395374. No cambiar retrospectivamente modelos ni tarifas. La suma monetaria conocida es USD 0.09292880; incluye USD 0.00200500 del experimento de desarrollo. No equivale a factura, saldo, costo integral ni costo medio por caso.
+
+`costos.csv` conserva celdas vacías para no medido o no aplicable según nota. `escenarios.csv` es sensibilidad histórica basada en el caso de 495 MXN; sus importes no son una proyección completa del costo de plataforma. `plataformas_y_desarrollo.csv` conserva fuentes y fecha de inspección; no demuestra planes contratados hoy. Las horas humanas no se calculan por decisión de Mariana.
+
+Fórmula por llamada: ((entrada-cache) × tarifa_entrada + cache × tarifa_cache + salida × tarifa_salida) / 1000000. Para GPT-4o mini: 0.15 / 0.075 / 0.60 USD por millón. Las reservas no son cargos y las referencias de loops no se vuelven a sumar. Fuente: https://developers.openai.com/api/docs/models/gpt-4o-mini . La política actual fue consultada el 21 de noviembre y vence el 29 a las 06:00 UTC.
+
+Ejecutar `python3 scripts/auditar_costos.py`. Los casos rechazados conservan sus llamadas consumidas. Telegram, HTML, Actions y Maestro determinista no añaden tokens por sí mismos. Voz tiene costo LLM y créditos de plataforma separados; no convertir créditos ni EUR a USD sin evidencia. El resto del consumo de desarrollo y el costo integral siguen no medidos. Los documentos históricos conservan su corte y no sustituyen este resumen.

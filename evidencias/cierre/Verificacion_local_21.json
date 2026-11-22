@@ -1,0 +1,27 @@
+{
+  "fecha": "2026-11-21",
+  "python_unittest": {
+    "metodos": 6,
+    "estado": "PASS"
+  },
+  "h8_historico": {
+    "controles": 46,
+    "estado": "PASS"
+  },
+  "export_actual": {
+    "controles": 141,
+    "estado": "PASS"
+  },
+  "dashboard": {
+    "filas": 198,
+    "estado": "PASS"
+  },
+  "costos": {
+    "filas": 71,
+    "llamadas_medidas": 32,
+    "subtotal_conocido_usd": "0.09292880",
+    "estado": "PASS"
+  },
+  "llamadas_api": 0,
+  "limite": "Pruebas locales, no ensayo integral nuevo ni restauración."
+}

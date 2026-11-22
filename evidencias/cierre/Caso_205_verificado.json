@@ -1,0 +1,164 @@
+{
+  "caso_id": "LOG-16754699",
+  "modo": "SIMULADO",
+  "agentes_ejecutados": [
+    "AGENTE_1_VALIDACION",
+    "AGENTE_2_CATALOGO_INVENTARIOS",
+    "AGENTE_3_COTIZACION",
+    "AGENTE_4_CONTROL_CALIDAD"
+  ],
+  "presupuesto": {
+    "limite_usd": 0.1,
+    "consumo_unidades": 31578,
+    "consumo_usd": 0.00078945,
+    "llamadas_ia_realizadas": 4,
+    "estado": "MEDICION_DIRECTA",
+    "medicion_directa": true,
+    "registros": [
+      {
+        "agente": 1,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 640,
+        "tokens_cache": 0,
+        "tokens_salida": 59,
+        "tokens_total": 699,
+        "costo_usd": 0.0001314,
+        "reserva_usd": 0.001596,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-14",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 2,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 725,
+        "tokens_cache": 0,
+        "tokens_salida": 121,
+        "tokens_total": 846,
+        "costo_usd": 0.00018135,
+        "reserva_usd": 0.00160875,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-14",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 3,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 743,
+        "tokens_cache": 0,
+        "tokens_salida": 190,
+        "tokens_total": 933,
+        "costo_usd": 0.00022545,
+        "reserva_usd": 0.00161145,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-14",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 4,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 1439,
+        "tokens_cache": 0,
+        "tokens_salida": 59,
+        "tokens_total": 1498,
+        "costo_usd": 0.00025125,
+        "reserva_usd": 0.00171585,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-14",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      }
+    ]
+  },
+  "detalle_lineas": [
+    {
+      "producto": "Producto A",
+      "cantidad": 1,
+      "precio_unitario": 120,
+      "subtotal": 120
+    },
+    {
+      "producto": "Producto B",
+      "cantidad": 1,
+      "precio_unitario": 85,
+      "subtotal": 85
+    }
+  ],
+  "revision_tecnica": {
+    "dictamen": "APROBADO_TECNICAMENTE",
+    "dictamen_agente_4": "APROBADO_TECNICAMENTE",
+    "hallazgos": [],
+    "validaciones_deterministas": [
+      {
+        "id": "caso_id_consistente",
+        "descripcion": "El caso_id es el mismo en el Agente 1, 2 y 3",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "productos_y_cantidades",
+        "descripcion": "Productos y cantidades de la cotizacion coinciden con lo extraido por el Agente 1",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "precios_vs_catalogo",
+        "descripcion": "Cada precio unitario coincide con el catalogo autorizado",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "inventario_suficiente",
+        "descripcion": "Ninguna cantidad supera el inventario autorizado",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "subtotales",
+        "descripcion": "Cada subtotal = cantidad x precio unitario",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "total",
+        "descripcion": "El total = suma de subtotales",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "sin_extras",
+        "descripcion": "No hay impuestos, envio ni descuentos inventados (cotizacion y propuesta)",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "propuesta_coincide_calculo",
+        "descripcion": "La propuesta del Agente 3 tiene el mismo total y moneda que el calculo",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "fuente_catalogo",
+        "descripcion": "La fuente del catalogo esta presente y coincide",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "politica",
+        "descripcion": "Modo SIMULADO y moneda MXN",
+        "ok": true,
+        "detalle": ""
+      }
+    ],
+    "fuentes_verificadas": [
+      "catalogo_ficticio_logismart_v1"
+    ],
+    "autoriza_accion_comercial": false
+  },
+  "duracion_total_ms": 10759,
+  "fecha_registro": "2026-11-19T02:45:40.873Z",
+  "estado_final": "APROBADA",
+  "aprobacion_humana": "APROBADA",
+  "importe_total": 205.0,
+  "moneda": "MXN",
+  "fuente": "Exportación privada auditada del 21 de noviembre; extracto de campos permitidos"
+}

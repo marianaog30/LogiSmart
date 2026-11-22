@@ -1,0 +1,141 @@
+{
+  "caso_id": "H10-CASO-03",
+  "fecha_utc": "2026-11-13T03:23:59.000Z",
+  "run_url": "https://github.com/marianaog30/LogiSmart/actions/runs/43358652867",
+  "estado": "PENDIENTE_APROBACION",
+  "importe_mxn": 700,
+  "aprobacion_humana": "PENDIENTE",
+  "presupuesto": {
+    "limite_usd": 0.1,
+    "consumo_unidades": 74620,
+    "consumo_usd": 0.0018655,
+    "llamadas_ia_realizadas": 4,
+    "estado": "MEDICION_DIRECTA",
+    "medicion_directa": true,
+    "registros": [
+      {
+        "agente": 1,
+        "modelo": "gpt-5-mini-2025-08-07",
+        "tokens_entrada": 549,
+        "tokens_cache": 0,
+        "tokens_salida": 77,
+        "tokens_total": 626,
+        "costo_usd": 0.00029125,
+        "reserva_usd": 0.00513725,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "tarifa_consultada": "2026-11-06",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 2,
+        "modelo": "gpt-5-mini-2025-08-07",
+        "tokens_entrada": 634,
+        "tokens_cache": 0,
+        "tokens_salida": 139,
+        "tokens_total": 773,
+        "costo_usd": 0.0004365,
+        "reserva_usd": 0.0051585,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "tarifa_consultada": "2026-11-06",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 3,
+        "modelo": "gpt-5-mini-2025-08-07",
+        "tokens_entrada": 653,
+        "tokens_cache": 0,
+        "tokens_salida": 213,
+        "tokens_total": 866,
+        "costo_usd": 0.00058925,
+        "reserva_usd": 0.00516325,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "tarifa_consultada": "2026-11-06",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 4,
+        "modelo": "gpt-5-mini-2025-08-07",
+        "tokens_entrada": 1426,
+        "tokens_cache": 0,
+        "tokens_salida": 96,
+        "tokens_total": 1522,
+        "costo_usd": 0.0005485,
+        "reserva_usd": 0.0053565,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "tarifa_consultada": "2026-11-06",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      }
+    ]
+  },
+  "trazas": [
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "apertura_y_validacion_de_caso",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "AGENTE_1_VALIDACION",
+      "etapa": "validacion_de_solicitud",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "revision_agente_1",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "asignacion_agente_2",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "AGENTE_2_CATALOGO_INVENTARIOS",
+      "etapa": "consulta_catalogo_e_inventarios",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "revision_agente_2",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "calculo_determinista",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "AGENTE_3_COTIZACION",
+      "etapa": "elaboracion_de_cotizacion",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "revision_agente_3",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "validaciones_deterministas_qa",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "AGENTE_4_CONTROL_CALIDAD",
+      "etapa": "control_de_calidad",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "revision_agente_4",
+      "estado": "COMPLETADO"
+    },
+    {
+      "agente": "ORQUESTADOR",
+      "etapa": "cierre",
+      "estado": "COMPLETADO"
+    }
+  ],
+  "cantidades": {
+    "Producto A": 3,
+    "Producto B": 4
+  }
+}

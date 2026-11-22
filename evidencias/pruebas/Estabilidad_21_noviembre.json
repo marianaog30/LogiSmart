@@ -1,0 +1,122 @@
+{
+  "fecha": "2026-11-21",
+  "fuente_tarifas": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+  "tarifas_usd_millon": {
+    "entrada": 0.15,
+    "cache": 0.075,
+    "salida": 0.6
+  },
+  "flujos": [
+    {
+      "flujo": "Telegram_nativo.json",
+      "version": "e4997bee-fcb1-4c1d-8980-d88266013b10",
+      "nodos": 65,
+      "politicas": [
+        "Preparar llamada 1",
+        "Preparar llamada 2",
+        "Preparar llamada 3",
+        "Preparar llamada 4"
+      ],
+      "vigencia_hasta_utc": "2026-11-29T06:00:00Z"
+    },
+    {
+      "flujo": "GitHub_nativo.json",
+      "version": "2b33088e-a030-440c-ad5e-af1b4753d0ce",
+      "nodos": 45,
+      "politicas": [
+        "Preparar llamada 1",
+        "Preparar llamada 2",
+        "Preparar llamada 3",
+        "Preparar llamada 4"
+      ],
+      "vigencia_hasta_utc": "2026-11-29T06:00:00Z"
+    }
+  ],
+  "alerta_prueba": {
+    "tipo": "evento_simulado_manual",
+    "entrega_telegram_confirmada": true,
+    "llamadas_ia": 0
+  },
+  "limites": [
+    "Alertas requieren n8n y Telegram disponibles; no reparan credenciales ni contratan saldo.",
+    "n8n Cloud mostró 7 días de prueba restantes; no informó hora exacta del vencimiento.",
+    "Se verificó ejecución completa en la ruta GitHub y decisión en la ruta Telegram; no se certifican todas las pruebas P01-P14."
+  ],
+  "instancia": {
+    "online": true,
+    "dias_prueba_mostrados": 7,
+    "ejecuciones_usadas": 32,
+    "ejecuciones_cuota": 1000,
+    "hora_fin_no_mostrada": true
+  },
+  "notificador": {
+    "workflow_publicado": true,
+    "vinculo_telegram_verificado_en_UI": true,
+    "vinculo_github_verificado_en_exportacion": true,
+    "evento_simulado_entregado": true,
+    "evento_produccion_pendiente": false,
+    "controles_locales": 8,
+    "evento_produccion_confirmado": {
+      "error_origen": 40,
+      "ejecucion_aviso": 41,
+      "telegram_ok": true,
+      "causa": "TARIFA_VENCIDA en control de presupuesto",
+      "llamadas_generacion_ia": 0
+    }
+  },
+  "publicacion_telegram_version": "680f395c-adb1-472d-8b41-454e9eef8bd6",
+  "publicacion_github_version": "ae43057c-b32c-462e-8d96-5577eb40d9d9",
+  "notas_restauracion": [
+    "Los JSON sanitizados exigen configurar credenciales, tablas, usuarios y vínculo de error al importar.",
+    "Los respaldos nativos privados no contienen las claves API; deben reconectarse credenciales.",
+    "El respaldo Telegram nativo fue tomado antes de asignar el errorWorkflow; ese ajuste fue verificado posteriormente en la interfaz.",
+    "No hay suscripción contratada ni promesa de disponibilidad de proveedores."
+  ],
+  "controles_politica_locales": 118,
+  "prueba_integral": {
+    "github_run": "https://github.com/marianaog30/LogiSmart/actions/runs/44937395374",
+    "job": 136946918651,
+    "estado": "SUCCESS",
+    "producto_a": 2,
+    "producto_b": 1,
+    "importe_esperado_mxn": 325,
+    "enviado_telegram_confirmado": true,
+    "llamadas_medidas": 4,
+    "tokens_entrada": 3190,
+    "tokens_salida": 432,
+    "costo_calculado_usd": 0.0007377,
+    "aprobacion_humana": "RECHAZADA",
+    "caso_id": "LOG-944937395374",
+    "importe_verificado_mxn": 325,
+    "estado_final": "RECHAZADA",
+    "ejecucion_decision": 43
+  },
+  "respaldo_historial": {
+    "filas": 202,
+    "columnas": 14,
+    "ids_unicos": 202,
+    "json_parseable": true,
+    "caso_325_rechazado": true,
+    "publico": false
+  },
+  "publicacion_dashboard": {
+    "run": "https://github.com/marianaog30/LogiSmart/actions/runs/44937826024",
+    "resultado": "SUCCESS",
+    "folio_publico": "MUESTRA-198",
+    "importe_mxn": 325,
+    "estado": "RECHAZADA",
+    "filas_publicas": 198,
+    "filas_privadas": 202
+  },
+  "automatizado": [
+    "Cuatro agentes, presupuesto y medición con una política central por flujo.",
+    "Validación de fecha y vigencia hasta 2026-11-29T06:00:00Z (fin del 28 en Ciudad de México).",
+    "Avisos de errores a Telegram, sin modelos de IA y con deduplicación.",
+    "Publicación de exportación sanitizada mediante workflow existente, programado cada seis horas."
+  ],
+  "requiere_persona": [
+    "Aprobar o rechazar propuestas.",
+    "Iniciar casos de prueba cuando sean necesarios.",
+    "Renovar saldo o plan si se agota; no se contrató nada."
+  ]
+}

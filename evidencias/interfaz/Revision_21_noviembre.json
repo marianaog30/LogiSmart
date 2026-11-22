@@ -1,0 +1,45 @@
+{
+  "tipo": "INTERFAZ_LOCAL_REAL",
+  "fecha": "2026-11-21",
+  "viewport": [
+    {
+      "ancho": 1366,
+      "documento": 1366
+    },
+    {
+      "ancho": 390,
+      "documento": 390
+    }
+  ],
+  "widget": "Click entrega y Enter catálogo cambian contenido y aria-pressed; foco visible",
+  "filtros": "búsqueda inexistente vacía; reset recupera198",
+  "estados": [
+    {
+      "estado": "loading",
+      "mensaje": "PRUEBA DE INTERFAZ · Cargando exportación pública…",
+      "conteo": "0"
+    },
+    {
+      "estado": "empty",
+      "mensaje": "PRUEBA DE INTERFAZ · Sin registros para la selección. Revisa los filtros o actualiza la fuente.",
+      "conteo": "0"
+    },
+    {
+      "estado": "error",
+      "mensaje": "PRUEBA DE INTERFAZ · Error simulado de la fuente.",
+      "conteo": "0"
+    },
+    {
+      "estado": "stale",
+      "mensaje": "PRUEBA DE INTERFAZ · Datos desactualizados · se conserva la última consulta. La exportación tiene más de 24 horas o se activó la prueba local; releerla no cambia su fecha. Umbral de interfaz, no SLA. Pulsa Actualizar exportación.",
+      "conteo": "198"
+    },
+    {
+      "estado": "ready",
+      "mensaje": "Exportación pública cargada · registros de operaciones ficticias.",
+      "conteo": "198"
+    }
+  ],
+  "microfono": "no probado en esta revisión; alternativa textual documentada",
+  "llamadas_ia": 0
+}

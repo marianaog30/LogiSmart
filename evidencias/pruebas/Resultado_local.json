@@ -1,0 +1,17 @@
+{
+  "fecha": "2026-11-18",
+  "version": "7f6b1ba; correcci\u00f3n local de ruta H8",
+  "python_unittest": 6,
+  "guardrails": {
+    "entrada_decision": 20,
+    "nodos_exportados": 17,
+    "consulta": 9
+  },
+  "datos_panel": 196,
+  "costos_llamadas": 24,
+  "subtotal_usd_conocido": "0.09140165",
+  "falla_inicial": "ENOENT ruta de fixture H8",
+  "correccion": "Prueba lee ../../n8n/LogiSmart_Ecosistema_Agentes.json",
+  "resultado_repeticion": "PASS",
+  "limite": "Tests de nodos hist\u00f3ricos no equivalen a ejecuci\u00f3n de integraci\u00f3n activa."
+}

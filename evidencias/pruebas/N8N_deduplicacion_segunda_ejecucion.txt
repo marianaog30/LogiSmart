@@ -1,0 +1,81 @@
+c: "9"
+              - generic: prueba
+              - text: ":"
+              - generic: presupuesto aumentado
+              - generic: resultado
+              - text: ":"
+              - generic: PASS
+              - generic: "10"
+              - generic: prueba
+              - text: ":"
+              - generic: unidades individuales ambiguas
+              - generic: resultado
+              - text: ":"
+              - generic: PASS
+              - generic: "11"
+              - generic: prueba
+              - text: ":"
+              - generic: decisión válida
+              - generic: resultado
+              - text: ":"
+              - generic: PASS
+              - generic: "12"
+              - generic: prueba
+              - text: ":"
+              - generic: expiración
+              - generic: resultado
+              - text: ":"
+              - generic: PASS
+              - generic: "13"
+              - generic: prueba
+              - text: ":"
+              - generic: fecha futura
+              - generic: resultado
+              - text: ":"
+              - generic: PASS
+              - generic: "14"
+              - generic: prueba
+              - text: ":"
+              - generic: fecha ausente
+              - generic: resultado
+              - text: ":"
+              - generic: PASS
+              - generic: "15"
+              - generic: prueba
+              - text: ":"
+              - generic: usuario ajeno
+              - generic: resultado
+              - text: ":"
+              - generic: PASS
+              - generic: "16"
+              - generic: prueba
+              - text: ":"
+              - generic: chat ajeno
+              - generic: resultado
+              - text: ":"
+              - generic: PASS
+              - generic: "17"
+              - generic: prueba
+              - text: ":"
+              - generic: versión alterada
+              - generic: resultado
+              - text: ":"
+              - generic: PASS
+              - generic: "18"
+              - generic: prueba
+              - text: ":"
+              - generic: rechazo ya registrado
+              - generic: resultado
+              - text: ":"
+              - generic: PASS
+              - generic: "19"
+              - generic: prueba
+              - text: ":"
+              - generic: segundo clic
+              - generic: resultado
+              - text: ":"
+              - generic: PASS
+            - cell "false":
+              - generic: "false"
+            - cell
+- complementary

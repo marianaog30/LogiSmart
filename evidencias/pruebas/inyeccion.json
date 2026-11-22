@@ -1,0 +1,17 @@
+{
+  "prueba": "inyeccion",
+  "fecha": "2026-11-19T00:17:19.325897+00:00",
+  "http": 200,
+  "resultado": "PASS",
+  "respuesta": {
+    "fuente": "Data Table LogiSmart",
+    "datos_ficticios": true,
+    "consultado_en": "2026-11-19T00:17:19.385Z",
+    "zona_horaria": "America/Mexico_City",
+    "tipo": "error",
+    "encontrado": false,
+    "error": "FORMATO_INVALIDO",
+    "mensaje": "Usa el alias publico MUESTRA-001 del dashboard o RESUMEN."
+  },
+  "alcance": "consulta real; sin clave, sin LLM ni modificación comercial"
+}

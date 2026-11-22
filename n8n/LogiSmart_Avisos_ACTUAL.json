@@ -1,0 +1,75 @@
+{
+  "name": "LogiSmart - Avisos automáticos de error",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "73918c27-b284-4410-9013-9814466fe243",
+      "name": "Error de LogiSmart"
+    },
+    {
+      "parameters": {
+        "jsCode": "const e=$input.first().json;\nconst permitidos=[] /* configurar los dos workflow IDs privados */;\nif(!permitidos.includes(String(e.workflow?.id||''))) return [];\nconst id=String(e.execution?.id||'ACTIVACION');\nconst msg=String(e.execution?.error?.message||e.trigger?.error?.message||'');\nconst datos=$getWorkflowStaticData('global');\ndatos.alertas=datos.alertas||{};\nconst clave=e.workflow.id+':'+id;\nif(datos.alertas[clave])return [];\nconst entries=Object.entries(datos.alertas).sort((a,b)=>b[1]-a[1]).slice(0,199);\ndatos.alertas=Object.fromEntries(entries);datos.alertas[clave]=Date.now();\nconst tipo=msg.includes('TARIFA')?'Tarifa pendiente de revisión':/presupuesto|LIMITE|BUDGET/i.test(msg)?'Límite de presupuesto o llamadas':/TIEMPO|timeout/i.test(msg)?'Tiempo de espera agotado':/401|403|credential|authorization/i.test(msg)?'Problema de acceso al servicio':'Fallo durante el procesamiento';\nreturn [{json:{texto:'LOGISMART · AVISO AUTOMÁTICO\\n'+tipo+'.\\nLa ejecución '+id+' se detuvo. No se confirma ninguna cotización ni decisión nueva.\\nNo reenvíes repetidamente: revisaremos el registro de n8n. Los casos ya guardados conservan su estado.\\nProyecto académico · datos ficticios.'}}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        250,
+        0
+      ],
+      "id": "c3ada905-fe3d-46d2-9220-3bd24b26114f",
+      "name": "Preparar aviso seguro"
+    },
+    {
+      "parameters": {
+        "chatId": "CONFIGURAR_CHAT_PRIVADO_AUTORIZADO",
+        "text": "={{ $json.texto }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        500,
+        0
+      ],
+      "id": "32bfa9b8-785c-4f49-b927-53dd5cfae1cc",
+      "name": "Avisar a Mariana"
+    }
+  ],
+  "connections": {
+    "Error de LogiSmart": {
+      "main": [
+        [
+          {
+            "node": "Preparar aviso seguro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar aviso seguro": {
+      "main": [
+        [
+          {
+            "node": "Avisar a Mariana",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {}
+}

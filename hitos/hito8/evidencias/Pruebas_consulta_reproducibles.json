@@ -1,0 +1,42 @@
+{
+  "tipo": "CODIGO_LOCAL_CON_FILAS_SINTETICAS",
+  "llamadas_api": false,
+  "resultados": [
+    {
+      "prueba": "campos públicos",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "resumen válido",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "folio existente",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "folio inexistente",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "inyección bloqueada",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "acción bloqueada",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "objeto bloqueado",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "longitud bloqueada",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "exclusiones contadas",
+      "resultado": "PASS"
+    }
+  ]
+}

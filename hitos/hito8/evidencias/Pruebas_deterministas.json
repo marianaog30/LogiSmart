@@ -1,0 +1,86 @@
+{
+  "tipo": "EJECUCION_LOCAL_DE_CODIGO_SIN_API",
+  "api_llamada": false,
+  "resultados": [
+    {
+      "prueba": "solicitud válida y minimizada",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "inyección de instrucciones",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "URL arbitraria",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "datos personales",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "producto sin cantidad",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "inventario excedido",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "duplicado de producto",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "modo real",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "longitud excesiva",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "presupuesto aumentado",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "unidades individuales ambiguas",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "decisión válida",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "expiración",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "fecha futura",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "fecha ausente",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "usuario ajeno",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "chat ajeno",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "versión alterada",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "rechazo ya registrado",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "segundo clic",
+      "resultado": "PASS"
+    }
+  ]
+}

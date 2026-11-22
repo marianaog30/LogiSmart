@@ -1,0 +1,10 @@
+{
+  "resultado": "46 PASS",
+  "detalle": {
+    "entrada_y_decision": 20,
+    "nodos": 17,
+    "consulta": 9
+  },
+  "llamadas_api": false,
+  "alcance": "Código exportado local con corrección de ruta; no equivale a pruebas integrales de todas las ramas publicadas."
+}

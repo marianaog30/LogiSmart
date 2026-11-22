@@ -1,16 +1,71 @@
 # LogiSmart Solutions
 
-Proyecto académico de empresa ficticia distribuidora, con cuatro agentes y aprobación humana.
+Mariana Orozco · Proyecto individual AI Tools · Corte de revisión 21 de noviembre de 2026.
 
-- [Abrir dashboard público](https://marianaog30.github.io/LogiSmart/)
-- [Workflow n8n sanitizado](n8n/LogiSmart_Ecosistema_Agentes.json)
-- [Publicación, actualización y evidencias del Hito 6](docs/Hito_6.md)
-- [Actualizar datos sanitizados y publicar](https://github.com/marianaog30/LogiSmart/actions/workflows/actualizar-datos.yml)
-- [Skills y loops implementados](docs/Hito_7.md)
-- [Ejecuciones de validación y publicación](https://github.com/marianaog30/LogiSmart/actions/workflows/publicar.yml)
+**Abrir primero `ABRIR_PRIMERO.html`.** Este es el punto único de revisión docente. No confundir esta carpeta con los respaldos privados anteriores. El paquete no está declarado 100% aprobado: la auditoría identifica pruebas parciales y pendientes de integración, video y defensa.
 
-La página usa `web/datos/cotizaciones.json`, una exportación sanitizada ficticia, no una base de datos en tiempo real. La fecha de consulta se muestra en el panel. El asistente consulta n8n en vivo y puede obtener datos más recientes. No publicar credenciales, conversaciones completas ni registros privados.
+## Objetivo y alcance
 
-Validación local: `node scripts/validar.mjs`. GitHub Actions ejecuta esa misma revisión antes de desplegar únicamente `web/`. Pages no mantiene n8n en ejecución.
+Distribuidora ficticia de suministros de empaque. Recibe solicitudes, prepara cotización provisional con cuatro especialistas y registra decisión humana. Alfa valida, Beta contrasta catálogo, Gamma redacta, Omega revisa; Maestro coordina con reglas. Operación empresarial SIMULADA; las APIs sí pueden consumir saldo. No se realizan pagos, compras, reservas ni entregas reales.
 
-Los skills y loops se cargan mediante el adaptador de Maestro antes de la simulación de GitHub; no son carga nativa de los prompts n8n. El Hito 6 tiene verificadas la publicación, actualización y las consultas de folio y resumen desde el widget público de Pages. Ver el checklist y las evidencias en docs/Hito_6.md.
+## Enlaces
+
+- Dashboard: https://marianaog30.github.io/LogiSmart/
+- Repositorio y rama de entrega: https://github.com/marianaog30/LogiSmart/tree/main
+- Publicar/actualizar: https://github.com/marianaog30/LogiSmart/actions/workflows/publicar.yml
+- Simulación manual: https://github.com/marianaog30/LogiSmart/actions/workflows/simular-cotizacion.yml
+- Bot: https://t.me/L0g1SmartBot ; acceso de prueba autorizado por canal privado del curso. El token nunca se comparte.
+- Bloqueo deliberado: https://github.com/marianaog30/LogiSmart/actions/runs/42273907767
+- Recuperación: https://github.com/marianaog30/LogiSmart/actions/runs/42274092137
+- Último caso de rechazo medido: https://github.com/marianaog30/LogiSmart/actions/runs/44937395374
+
+## Dónde corre cada componente y requisitos
+
+GitHub Pages aloja web estática; Actions verifica/publica e inicia la simulación manual; n8n Cloud privado ejecuta agentes, registro y decisiones; OpenAI provee GPT-4o mini; ElevenLabs ofrece voz/texto. La web por sí sola no ejecuta n8n.
+
+Validación local con Python3 (solo biblioteca estándar) y Node22, usado en Actions. Sin dependencias npm/pip para el proyecto operativo; el informe PDF se entrega ya generado. n8n mostró versión2.47.7 en inspección21/11; cada JSON conserva typeVersion de sus nodos. Modelo actual gpt-4o-mini-2024-07-18, históricamente GPT-5 mini; no reinterpretar costos antiguos. Web usa HTML/CSS/JS y script oficial externo de ElevenLabs; su versión no está fijada en el fragmento existente y puede cambiar.
+
+Se requieren cuentas y capacidad vigente en GitHub, n8n, OpenAI y ElevenLabs. No se presupone gratuidad permanente. La inspección21/11 mostró siete días de prueba de n8n sin hora exacta; verificar antes de defensa. No se contrató plan.
+
+## Instalar e importar
+
+1. Descargar el ZIP del commit indicado en `ESTADO_ENTREGA.json` del paquete externo y extraerlo. No importar archivos históricos por nombre parecido.
+2. Seguir `n8n/README.md`: importar los tres `*ACTUAL.json`, crear tabla privada, seleccionar credenciales, configurar usuarios autorizados y notificador. Los JSON sanitizados se detienen hasta completar configuración. El respaldo privado de registros no forma parte de la entrega docente.
+3. OpenAI y Telegram se configuran en Credentials de n8n; Header Auth en Entrada GitHub protegida. `LogiSmart-key` es el nombre del encabezado, no una clave real. En GitHub Settings → Secrets and variables → Actions configurar `N8N_SIMULATION_KEY` con el mismo valor. Los nodos n8n usan sus credenciales: GitHub no les actualiza OpenAI automáticamente. `OPENAI_API_KEY`, `TELEGRAM_BOT_TOKEN` y `ALPHAVANTAGE_API_KEY` de GitHub no son requeridos por el recorrido actual de simulación; no copiar secretos al sitio.
+4. Actualizar host si se migra de cuenta en scripts/exportar_datos.py, scripts/ejecutar_simulacion.py y herramienta ElevenLabs. Activar un solo receptor Telegram por bot. Revisar `Preparar llamada1` para la política única de tarifas; vencimiento actual29/11/2026 06:00UTC.
+5. Configurar Pages con fuente GitHub Actions; publicar solo tras validación. Se despliega únicamente web/. Configurar ElevenLabs según docs/ElevenLabs_recreacion.md; esa guía identifica la autenticación de voz todavía pendiente.
+
+## Repetir un caso
+
+Enviar una sola vez `/nuevo Necesito cotizar 1 paquete de Producto A y 1 paquete de Producto B`. Esperado: 120+85=205MXN, cuatro agentes trazables, pendiente de aprobación. La persona autorizada revisa y decide. Debe quedar estado persistido y notificación de cierre. Para consultar, `/estado FOLIO` usando el folio operativo recibido; no usar MUESTRA para aprobar. Si el parser publicado pide otro formato, registrar el incidente; no fingir ejecución.
+
+Alternativa: workflow Simular cotización, A=2 B=1 →325MXN; presupuestomáximo USD0.10, cuatro generaciones, sin reintentos automáticos. Esta acción envía una propuesta real de prueba al Telegram autorizado y consume API. La decisión sigue siendo humana.
+
+Actualizar el dashboard con publicar.yml actualizar_datos=true; después Actualizar exportación en Pages. Programación cada seis horas, aproximadamente cuatro lecturas/día, sin SLA. El artifact puede tener datos más recientes que el JSON versionado. No se hace commit automático en esa ruta programada. Alias públicos dependen del corte; `datos/Mapa_casos_del_corte.json` reconcilia únicamente los casos documentados en esta entrega.
+
+## Verificar sin consumir API
+
+Desde la raíz:
+
+```sh
+python3 -m unittest discover -s tests -v
+python3 scripts/hito7.py
+python3 scripts/auditar_costos.py
+node scripts/validar.mjs
+node tests/probar_actuales.cjs
+node hitos/hito8/pruebas/ejecutar_todas.mjs
+```
+
+La última orden verifica fixtures históricos; no certifica producción actual. Para vista previa: `python3 -m http.server 8000` y abrir http://localhost:8000/web/ . Detener con Ctrl+C. No abrir con file:// porque fetch puede bloquearse. El widget de voz puede requerir autorizar dominio de prueba; usar Pages para la prueba pública. Las exportaciones actuales y pruebas históricas están diferenciadas.
+
+## Parada y solución de problemas
+
+No llega Telegram: revisar bot correcto, receptor único, publicación, credencial y lista autorizada. No pulsar Execute trigger manual mientras esté publicado. HTTP401/403: comprobar Header Auth y Secret sin imprimir valores; claveOpenAI y clavewebhook son diferentes. Tarifa vencida: verificar fuente/precios y fecha; nunca eliminar el control. Respuesta desconocida: revisar historial antes de repetir para evitar duplicados. Web vieja: comprobar fecha del corte y Actions, no confundir refrescar HTML con generar un caso. Micrófono denegado: usar texto/Telegram; aviso de consentimiento lo acepta la persona. Si servicio está caído, documentar incidente.
+
+Parar producción: despublicar solo el flujo afectado cuando se autorice la interrupción; Pages queda estático. El notificador requiere n8n y Telegram disponibles, no garantiza entrega ante caída global. No se certifica disponibilidad hasta28/11 sin verificar la cuenta.
+
+## Entregables y límites
+
+Informe10páginas en docs/, auditoría de los10criterios/100puntos sin nota inventada, matrizP01–P14 en tests/, costos71filas, escenarios y fuentes en costos/, mapa/diccionario de datos, prompts/contratos, skills/loops, tresexports actuales y evidencias sanitizadas. docs/Recorrido_de_prueba_y_video.md explica qué ejecutar y qué esperar antes de grabar. Video y defensa pendientes; no son archivos existentes. docs/Uso_IA_y_recursos.md declara asistencia y recursos.
+
+Las notas de hitos/ y documentos con fecha anterior son evidencia histórica; la auditoría y este README prevalecen para el corte de entrega. No sustituir vacíos con cero ni llamar pruebas locales ejecuciones reales. La fuente de requisitos es la guía de la Dra.Elda C.Morales, versión30/10/2026, páginas1–16; no se redistribuye el PDF del curso.

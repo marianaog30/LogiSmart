@@ -17,12 +17,12 @@ for r in rows:
   a,b,d=(D(r[k]) for k in ('tarifa_entrada_usd_millon','tarifa_cache_usd_millon','tarifa_salida_usd_millon'))
   assert ((i-c)*a+c*b+o*d)/1000000==D(r['costo_usd']), 'Costo por llamada inconsistente'
   agents+=1
-assert agents==24
-assert total==D('.09140165'), 'Subtotal no concilia con evidencia preservada'
+assert agents==32
+assert total==D('.09292880'), 'Subtotal no concilia con evidencia preservada'
 case=json.loads((P/'Caso_196.json').read_text())
 assert {r['agente'] for r in case['presupuesto']['registros']}=={1,2,3,4}
 assert sum(D(str(r['costo_usd'])) for r in case['presupuesto']['registros'])==D('.0008019')
 voice=json.loads((P/'Voz_exitosa.json').read_text())
 assert voice['caso_id']=='MUESTRA-196' and voice['audio_disponible'] is True
 assert voice['tokens_entrada'] is None and voice['modelo_llm'] is None
-print(f'PASS: {len(rows)} filas; 24 llamadas reconciliadas; USD conocido {total}; total integral no disponible.')
+print(f'PASS: {len(rows)} filas; 32 llamadas reconciliadas; USD conocido {total}; total integral no disponible.')

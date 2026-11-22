@@ -1,0 +1,32 @@
+{
+  "prueba": "folio_valido",
+  "fecha": "2026-11-19T00:17:18.235020+00:00",
+  "http": 200,
+  "resultado": "PASS",
+  "respuesta": {
+    "fuente": "Data Table LogiSmart",
+    "datos_ficticios": true,
+    "consultado_en": "2026-11-19T00:17:18.298Z",
+    "zona_horaria": "America/Mexico_City",
+    "tipo": "consulta_folio",
+    "encontrado": true,
+    "registro": {
+      "folio_publico": "MUESTRA-196",
+      "fecha_registro": "2026-11-17T01:48:51.469Z",
+      "productos": [
+        "Producto A",
+        "Producto B"
+      ],
+      "importe_total": 495,
+      "moneda": "MXN",
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "duracion_total_ms": 15370,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    "nota": "Alias de presentacion de la consulta actual; no es el folio operativo Telegram. No autoriza modificaciones."
+  },
+  "alcance": "consulta real; sin clave, sin LLM ni modificación comercial"
+}

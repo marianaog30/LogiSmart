@@ -1,0 +1,10 @@
+{
+  "prueba": "sin_autorizacion",
+  "fecha": "2026-11-19T00:17:20.705969+00:00",
+  "http": 403,
+  "resultado": "PASS",
+  "respuesta": {
+    "respuesta_no_json": "Authorization data is wrong!"
+  },
+  "alcance": "consulta real; sin clave, sin LLM ni modificación comercial"
+}

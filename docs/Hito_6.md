@@ -1,3 +1,5 @@
+> Documento histórico con corte anterior. Para el estado actual consultar README.md de la raíz, costos/README.md y docs/Auditoria_rubrica.csv.
+
 # Hito 6 — Publicación y actualización verificables
 
 Mariana Orozco · LogiSmart Solutions · Empresa ficticia distribuidora.

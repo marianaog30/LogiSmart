@@ -1,0 +1,17 @@
+{
+  "prueba": "accion_no_permitida",
+  "fecha": "2026-11-19T00:17:20.058670+00:00",
+  "http": 200,
+  "resultado": "PASS",
+  "respuesta": {
+    "fuente": "Data Table LogiSmart",
+    "datos_ficticios": true,
+    "consultado_en": "2026-11-19T00:17:20.124Z",
+    "zona_horaria": "America/Mexico_City",
+    "tipo": "error",
+    "encontrado": false,
+    "error": "ENTRADA_NO_PERMITIDA",
+    "mensaje": "Consulta de solo lectura: usa un folio publico o RESUMEN."
+  },
+  "alcance": "consulta real; sin clave, sin LLM ni modificación comercial"
+}

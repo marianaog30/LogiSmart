@@ -1,0 +1,165 @@
+{
+  "caso_id": "LOG-944937395374",
+  "importe_total": 325,
+  "moneda": "MXN",
+  "estado_final": "RECHAZADA",
+  "aprobacion_humana": "RECHAZADA",
+  "fecha_registro": "2026-11-21T18:47:25.012Z",
+  "agentes_ejecutados": [
+    "AGENTE_1_VALIDACION",
+    "AGENTE_2_CATALOGO_INVENTARIOS",
+    "AGENTE_3_COTIZACION",
+    "AGENTE_4_CONTROL_CALIDAD"
+  ],
+  "presupuesto": {
+    "limite_usd": 0.1,
+    "consumo_unidades": 29508,
+    "consumo_usd": 0.0007377,
+    "llamadas_ia_realizadas": 4,
+    "estado": "MEDICION_DIRECTA",
+    "medicion_directa": true,
+    "registros": [
+      {
+        "agente": 1,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 550,
+        "tokens_cache": 0,
+        "tokens_salida": 60,
+        "tokens_total": 610,
+        "costo_usd": 0.0001185,
+        "reserva_usd": 0.0015825,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-21",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 2,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 635,
+        "tokens_cache": 0,
+        "tokens_salida": 122,
+        "tokens_total": 757,
+        "costo_usd": 0.00016845,
+        "reserva_usd": 0.00159525,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-21",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 3,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 654,
+        "tokens_cache": 0,
+        "tokens_salida": 190,
+        "tokens_total": 844,
+        "costo_usd": 0.0002121,
+        "reserva_usd": 0.0015981,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-21",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      },
+      {
+        "agente": 4,
+        "modelo": "gpt-4o-mini-2024-07-18",
+        "tokens_entrada": 1351,
+        "tokens_cache": 0,
+        "tokens_salida": 60,
+        "tokens_total": 1411,
+        "costo_usd": 0.00023865,
+        "reserva_usd": 0.00170265,
+        "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+        "tarifa_consultada": "2026-11-21",
+        "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO"
+      }
+    ]
+  },
+  "detalle_lineas": [
+    {
+      "producto": "Producto A",
+      "cantidad": 2,
+      "precio_unitario": 120,
+      "subtotal": 240
+    },
+    {
+      "producto": "Producto B",
+      "cantidad": 1,
+      "precio_unitario": 85,
+      "subtotal": 85
+    }
+  ],
+  "revision_tecnica": {
+    "dictamen": "APROBADO_TECNICAMENTE",
+    "dictamen_agente_4": "APROBADO_TECNICAMENTE",
+    "hallazgos": [],
+    "validaciones_deterministas": [
+      {
+        "id": "caso_id_consistente",
+        "descripcion": "El caso_id es el mismo en el Agente 1, 2 y 3",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "productos_y_cantidades",
+        "descripcion": "Productos y cantidades de la cotizacion coinciden con lo extraido por el Agente 1",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "precios_vs_catalogo",
+        "descripcion": "Cada precio unitario coincide con el catalogo autorizado",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "inventario_suficiente",
+        "descripcion": "Ninguna cantidad supera el inventario autorizado",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "subtotales",
+        "descripcion": "Cada subtotal = cantidad x precio unitario",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "total",
+        "descripcion": "El total = suma de subtotales",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "sin_extras",
+        "descripcion": "No hay impuestos, envio ni descuentos inventados (cotizacion y propuesta)",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "propuesta_coincide_calculo",
+        "descripcion": "La propuesta del Agente 3 tiene el mismo total y moneda que el calculo",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "fuente_catalogo",
+        "descripcion": "La fuente del catalogo esta presente y coincide",
+        "ok": true,
+        "detalle": ""
+      },
+      {
+        "id": "politica",
+        "descripcion": "Modo SIMULADO y moneda MXN",
+        "ok": true,
+        "detalle": ""
+      }
+    ],
+    "fuentes_verificadas": [
+      "catalogo_ficticio_logismart_v1"
+    ],
+    "autoriza_accion_comercial": false
+  },
+  "github_run": "https://github.com/marianaog30/LogiSmart/actions/runs/44937395374",
+  "n8n_ejecucion": 42,
+  "ejecucion_decision": 43,
+  "notificacion_decision_telegram_ok": true
+}

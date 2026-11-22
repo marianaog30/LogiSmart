@@ -1,3 +1,5 @@
+> Documento histórico con corte anterior. Para el estado actual consultar README.md de la raíz, costos/README.md y docs/Auditoria_rubrica.csv.
+
 # LogiSmart Solutions · Cierre académico y operación
 Mariana Orozco · 18 de noviembre de 2026.
 

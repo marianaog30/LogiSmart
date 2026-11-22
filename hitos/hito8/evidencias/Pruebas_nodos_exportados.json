@@ -1,0 +1,74 @@
+{
+  "tipo": "NODOS_EXPORTADOS_SANITIZADOS_CON_ENTRADAS_SINTETICAS",
+  "llamadas_api": false,
+  "resultados": [
+    {
+      "prueba": "usuario no autorizado antes de LLM",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "evento inválido",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "reserva previa",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "presupuesto insuficiente",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "conteo inválido undefined",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "conteo inválido 0",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "conteo inválido -1",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "conteo inválido 1.5",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "tarifa vencida",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "identidad no enviada al modelo",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "máximo cuatro generaciones",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "tiempo agotado",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "destinos HTTP permitidos",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "QA válido: diez controles",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "precio alterado",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "fuente alterada",
+      "resultado": "PASS"
+    },
+    {
+      "prueba": "total alterado",
+      "resultado": "PASS"
+    }
+  ]
+}

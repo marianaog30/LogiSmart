@@ -1,0 +1,25 @@
+{
+  "prueba": "P01",
+  "fecha_local": "2026-11-18",
+  "caso_id": "LOG-16754699",
+  "version": "4b3e374f-ad63-4640-bea3-c023e142d9e2",
+  "entrada": "1 paquete de Producto A y 1 paquete de Producto B",
+  "importe_total": 205,
+  "moneda": "MXN",
+  "estado_final": "APROBADA",
+  "aprobacion_humana": "APROBADA",
+  "agentes_completados": [
+    "Alfa",
+    "Beta",
+    "Gamma",
+    "Omega"
+  ],
+  "validaciones_deterministas_aprobadas": 10,
+  "notificacion_telegram_ok": true,
+  "ejecucion_cotizacion": "https://orozco08.app.n8n.cloud/workflow/ksz4WYKRKyWCYSIZ/executions/27",
+  "ejecucion_aprobacion": "https://orozco08.app.n8n.cloud/workflow/ksz4WYKRKyWCYSIZ/executions/28",
+  "consumo_usd_calculado": 0.00078945,
+  "origen": "Verificacion directa en UI n8n: Registrar aprobacion humana y Confirmar decision humana en Telegram",
+  "resultado": "APROBADO",
+  "limite": "Caso ficticio, llamadas reales; no acredita todas las pruebas P02-P14."
+}

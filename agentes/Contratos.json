@@ -1,0 +1,54 @@
+{
+  "version": "entrega-2026-11-21",
+  "modo": "SIMULADO",
+  "entrada_documentada": {
+    "caso_id": "cadena única del caso",
+    "canal": "telegram o github",
+    "usuario": "autorizado en servidor; no exportar identificador personal",
+    "solicitud": "productos y paquetes",
+    "limite_costo_usd": 0.1
+  },
+  "github_wire_contract": {
+    "repository": "marianaog30/LogiSmart",
+    "run_id": "identificador numérico de Actions",
+    "modo": "SIMULADO",
+    "producto_a": "entero 1..100",
+    "producto_b": "entero 1..80"
+  },
+  "salida_final": [
+    "caso_id",
+    "estado_final",
+    "productos",
+    "detalle_lineas",
+    "importe_total",
+    "moneda",
+    "revision_tecnica",
+    "aprobacion_humana",
+    "modo",
+    "agentes_ejecutados",
+    "presupuesto",
+    "duracion_total_ms",
+    "trazas"
+  ],
+  "consumo_por_llamada": [
+    "agente",
+    "modelo",
+    "tokens_entrada",
+    "tokens_cache",
+    "tokens_salida",
+    "tokens_total",
+    "costo_usd",
+    "reserva_usd",
+    "fuente",
+    "tarifa_consultada",
+    "tipo"
+  ],
+  "reglas": [
+    "preservar mismo caso_id interno",
+    "moneda MXN",
+    "no completar ausencias con cero",
+    "rechazar JSON o estado inválido",
+    "ningún modelo aprueba por un humano"
+  ],
+  "limite": "Este inventario no añade campos inexistentes a salidas históricas; canal/usuario se verifican en la entrada privada."
+}

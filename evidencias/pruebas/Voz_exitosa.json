@@ -1,0 +1,20 @@
+{
+  "alias_sesion": "H10-VOZ-02",
+  "caso_id": "MUESTRA-196",
+  "fecha_local": "2026-11-17T13:56:00-06:00",
+  "precision_fecha": "minuto UI",
+  "duracion_sesion_segundos": 99,
+  "duracion_reproductor_segundos": 98,
+  "audio_disponible": true,
+  "mensajes": 4,
+  "turnos_llm_facturados": 2,
+  "creditos_plataforma": 1099,
+  "creditos_llm": null,
+  "costo_llm_usd": "0.0119",
+  "tokens_entrada": null,
+  "tokens_salida": null,
+  "modelo_llm": null,
+  "resultado": "Consulta exitosa: APROBADA, aprobación humana APROBADA, MXN495, productos A/B",
+  "fuente": "Historial ElevenLabs revisado 2026-11-17",
+  "nota": "No contiene audio, transcripción completa ni identificadores privados. Duración de sesión no equivale al tiempo aislado de habla. No se convierte plataforma a USD sin plan."
+}

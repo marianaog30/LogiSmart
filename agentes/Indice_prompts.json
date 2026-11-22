@@ -1,0 +1,30 @@
+{
+  "fuente": "n8n/LogiSmart_GitHub_ACTUAL.json",
+  "tipo": "instrucciones base extraídas del código; el nodo añade catálogo y seguridad",
+  "roles": [
+    {
+      "agente": "Alfa",
+      "nodo": "Preparar llamada 1",
+      "modelo": "gpt-4o-mini-2024-07-18",
+      "archivo": "1_Alfa.txt"
+    },
+    {
+      "agente": "Beta",
+      "nodo": "Preparar llamada 2",
+      "modelo": "gpt-4o-mini-2024-07-18",
+      "archivo": "2_Beta.txt"
+    },
+    {
+      "agente": "Gamma",
+      "nodo": "Preparar llamada 3",
+      "modelo": "gpt-4o-mini-2024-07-18",
+      "archivo": "3_Gamma.txt"
+    },
+    {
+      "agente": "Omega",
+      "nodo": "Preparar llamada 4",
+      "modelo": "gpt-4o-mini-2024-07-18",
+      "archivo": "4_Omega.txt"
+    }
+  ]
+}

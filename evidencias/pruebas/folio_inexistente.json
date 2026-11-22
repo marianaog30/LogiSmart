@@ -1,0 +1,17 @@
+{
+  "prueba": "folio_inexistente",
+  "fecha": "2026-11-19T00:17:18.652022+00:00",
+  "http": 200,
+  "resultado": "PASS",
+  "respuesta": {
+    "fuente": "Data Table LogiSmart",
+    "datos_ficticios": true,
+    "consultado_en": "2026-11-19T00:17:18.715Z",
+    "zona_horaria": "America/Mexico_City",
+    "tipo": "consulta_folio",
+    "encontrado": false,
+    "registro": null,
+    "nota": "Alias de presentacion de la consulta actual; no es el folio operativo Telegram. No autoriza modificaciones."
+  },
+  "alcance": "consulta real; sin clave, sin LLM ni modificación comercial"
+}
