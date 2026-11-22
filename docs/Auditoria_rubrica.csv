@@ -1,5 +1,5 @@
 ﻿criterio,subcriterio,puntos_maximos,estado,evidencia,accion_pendiente
-1 Caso e integración,Problema usuario y tres KPI,2,DOCUMENTADO,docs/Informe_tecnico_empresarial.pdf; docs/Diccionario_de_datos.md,Conservar evidencia y verificar disponibilidad en la defensa.
+1 Caso e integración,Problema usuario y tres KPI,2,DOCUMENTADO,docs/Diccionario_de_datos.md,Conservar evidencia y verificar disponibilidad en la defensa.
 1 Caso e integración,Arquitectura concatenada y mismo caso_id,3,PARCIAL,docs/Arquitectura.md; evidencias/cierre/Caso_325_verificado.json,El ID operativo es consistente; el alias público es secuencial. Congelar mapa por corte o persistir ID público estable.
 2 Ecosistema agéntico,Maestro operativo,4,VERIFICADO_EN_EVIDENCIA,evidencias/cierre/Caso_325_verificado.json; agentes/README.md,Conservar evidencia y verificar disponibilidad en la defensa.
 2 Ecosistema agéntico,Alfa con aportación distinta,2,VERIFICADO_EN_EVIDENCIA,agentes/Indice_prompts.json; evidencias/cierre/Caso_325_verificado.json,Conservar evidencia y verificar disponibilidad en la defensa.
