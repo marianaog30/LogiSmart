@@ -17,3 +17,7 @@ También se requiere un identificador público persistente o un mapa sanitizado 
 Voz verificada históricamente: `costos/Voz_exitosa.json`, MUESTRA-196 APROBADA por MXN495, 99s de sesión, USD0.0119 LLM; tokens/modelo no entregados en el desglose. No se publican audio/transcripciones privadas. Última prueba no garantiza saldo actual. Deben repetirse micrófono denegado y alternativa textual, caída del servicio y el nuevo endpoint autenticado si se instala. Consentimiento y permiso de micrófono siempre los completa la persona.
 
 Recrear: crear agente → cargar instrucciones y documentos → configurar herramienta → configurar dominio/widget → publicar → aceptar aviso personalmente → consultar folio y RESUMEN → contrastar respuesta con registro y fecha. Fuente del método oficial: https://elevenlabs.io/docs/eleven-agents/customization/widget y https://elevenlabs.io/docs/eleven-agents/customization/tools/webhook-tools .
+
+## Configuración vigente de la herramienta,22 de noviembre de2026
+
+`consultar_logismart`: GET `https://orozco08.app.n8n.cloud/webhook/logismart-voz`; query requerida `folio` (MUESTRA-001 o RESUMEN); encabezado `X-LogiSmart-Voice-Key` de tipo Secreto. Crear el secreto privadamente con el mismo valor de Header Auth de n8n; no se exporta ese valor. Se verificó desde «Probar herramienta» una consulta auténtica MUESTRA-199 aprobada205MXN y un resumen199registros. El agente público WALL-E conserva el mismo identificador y el widget del dashboard. Esta prueba de herramienta no sustituye una conversación nueva de micrófono después del cambio.

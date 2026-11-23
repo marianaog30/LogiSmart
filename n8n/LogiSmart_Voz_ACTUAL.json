@@ -1,0 +1,226 @@
+{
+  "name": "LogiSmart - Voz protegida de solo lectura",
+  "nodes": [
+    {
+      "name": "Entrada voz protegida",
+      "type": "n8n-nodes-base.webhook",
+      "parameters": {
+        "path": "logismart-voz",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 2.1,
+      "id": "18cd7c8f-2eed-4707-ab15-93fecf3ad845"
+    },
+    {
+      "name": "Validar consulta voz",
+      "type": "n8n-nodes-base.code",
+      "parameters": {
+        "jsCode": "const q=$input.first().json.query;\nconst ok=q&&typeof q==='object'&&!Array.isArray(q)&&Object.keys(q).length===1&&Object.hasOwn(q,'folio')&&typeof q.folio==='string'&&q.folio.length<=64;\nconst folio=ok?q.folio.trim().toUpperCase():'';\nif(!ok||!(/^(?:MUESTRA-[0-9]{3,}|RESUMEN)$/.test(folio)))return [{json:{permitida:false,status:400,body:{datos_ficticios:true,tipo:'error',encontrado:false,error:'ENTRADA_NO_PERMITIDA',mensaje:'Usa un folio público MUESTRA-001 o RESUMEN; consulta de solo lectura.'}}}];\nreturn [{json:{permitida:true,folio}}];"
+      },
+      "position": [
+        230,
+        0
+      ],
+      "typeVersion": 2,
+      "id": "04c69321-ac22-4348-9525-3edc75ad0cee"
+    },
+    {
+      "name": "Consulta permitida",
+      "type": "n8n-nodes-base.if",
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "leftValue": "={{ $json.permitida }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "position": [
+        460,
+        0
+      ],
+      "typeVersion": 2.4,
+      "id": "955f2783-2c68-4672-aea0-123da9c7aff3"
+    },
+    {
+      "name": "Consultar registro sanitizado",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "https://orozco08.app.n8n.cloud/webhook/logismart-dashboard",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "folio",
+              "value": "={{ $json.folio }}"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "position": [
+        690,
+        -100
+      ],
+      "typeVersion": 4.2,
+      "id": "7dcbca2f-70e8-492d-b5e0-f82435461e9c",
+      "onError": "continueRegularOutput",
+      "retryOnFail": false
+    },
+    {
+      "name": "Verificar respuesta publica",
+      "type": "n8n-nodes-base.code",
+      "parameters": {
+        "jsCode": "const p=$input.first().json;\nconst fail=()=>[{json:{status:503,body:{datos_ficticios:true,tipo:'error',encontrado:false,error:'FUENTE_NO_DISPONIBLE',mensaje:'No se pudo verificar la consulta. Usa el dashboard o Telegram; no se confirma un estado.'}}}];\nconst states=['PENDIENTE_APROBACION','APROBADA','RECHAZADA','DETENIDO','ACLARACION_REQUERIDA','DEVUELTO','ERROR_INCONSISTENTE'];\nconst allowed=['fuente','datos_ficticios','consultado_en','zona_horaria','tipo','encontrado','registro','nota','total_registros','por_estado','importados_simulados','error','mensaje'];\nif(!p||p.datos_ficticios!==true||p.fuente!=='Data Table LogiSmart'||!Number.isFinite(Date.parse(p.consultado_en))||Object.keys(p).some(k=>!allowed.includes(k)))return fail();\nif(p.tipo==='consulta_folio'){\n if(typeof p.encontrado!=='boolean'||(p.encontrado&&!p.registro)||(!p.encontrado&&p.registro!==null))return fail();\n if(p.registro){\n  const r=p.registro;const fields=['folio_publico','fecha_registro','productos','importe_total','moneda','estado_final','aprobacion_humana','duracion_total_ms','origen','completa_primer_intento','sin_correcciones_auditoria'];\n  if(Object.keys(r).some(k=>!fields.includes(k))||!/^MUESTRA-[0-9]{3,}$/.test(r.folio_publico)||!states.includes(r.estado_final)||!Array.isArray(r.productos)||!r.productos.every(x=>['Producto A','Producto B'].includes(x)))return fail();\n }\n}else if(p.tipo==='resumen'){\n if(!Number.isSafeInteger(p.total_registros)||p.total_registros<0||!p.por_estado||Object.keys(p.por_estado).some(k=>!states.includes(k))||Object.values(p.por_estado).some(v=>!Number.isSafeInteger(v)||v<0)||Object.values(p.por_estado).reduce((a,b)=>a+b,0)!==p.total_registros)return fail();\n}else return fail();\nreturn [{json:{status:200,body:p}}];"
+      },
+      "position": [
+        920,
+        -100
+      ],
+      "typeVersion": 2,
+      "id": "93698337-8b61-4c10-852c-7a60ff65d8c2"
+    },
+    {
+      "name": "Responder consulta voz",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json.body }}",
+        "options": {
+          "responseCode": "={{ $json.status }}",
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Cache-Control",
+                "value": "no-store"
+              }
+            ]
+          }
+        }
+      },
+      "position": [
+        1150,
+        -100
+      ],
+      "typeVersion": 1.4,
+      "id": "0a49645e-2bb3-464b-ab12-4f31a7ac58ab"
+    },
+    {
+      "name": "Rechazar consulta invalida",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json.body }}",
+        "options": {
+          "responseCode": 400,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Cache-Control",
+                "value": "no-store"
+              }
+            ]
+          }
+        }
+      },
+      "position": [
+        690,
+        140
+      ],
+      "typeVersion": 1.4,
+      "id": "2c5b7ce1-2915-43c6-8d81-058fc0397272"
+    }
+  ],
+  "connections": {
+    "Entrada voz protegida": {
+      "main": [
+        [
+          {
+            "node": "Validar consulta voz",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar consulta voz": {
+      "main": [
+        [
+          {
+            "node": "Consulta permitida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consulta permitida": {
+      "main": [
+        [
+          {
+            "node": "Consultar registro sanitizado",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rechazar consulta invalida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar registro sanitizado": {
+      "main": [
+        [
+          {
+            "node": "Verificar respuesta publica",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar respuesta publica": {
+      "main": [
+        [
+          {
+            "node": "Responder consulta voz",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {}
+}

@@ -13,8 +13,16 @@
     "HTML inerte"
   ],
   "fuente_widget": "https://www.myshiptracking.com/more/embed-our-map",
-  "revision_visual": "PENDIENTE: equipo bloqueado al intentar navegador",
-  "prueba_word_excel_en_navegador": "PENDIENTE",
-  "credenciales_voz": "La usuaria informa guardadas; no verificadas en esta revisión por falta de acceso al navegador.",
-  "informe_academico": "NO INCLUIDO"
+  "revision_visual": "PASS escritorio: KPI visibles, tabla, barras, muestra CSV y widget MyShipTracking con barcos y controles.",
+  "prueba_word_excel_en_navegador": "PASS: OOXML sintético DOCX y XLSX, Producto A2 y B1, total325MXN; no es certificación de todos los documentos Office.",
+  "credenciales_voz": "VERIFICADAS: consulta autenticada desde ElevenLabs al endpoint protegido, MUESTRA-199 APROBADA/APROBADA205MXN; RESUMEN199.",
+  "informe_academico": "NO INCLUIDO",
+  "pruebas_interfaz": [
+    "Ejemplo A1 B1=205MXN",
+    "Producto C rechazado sin precio",
+    "Borrar sesión",
+    "CSV199registros alimenta KPI y gráficos"
+  ],
+  "microfono_tras_cambio": "No ejecutado; se probó la herramienta HTTP sin LLM.",
+  "vista_movil": "Pendiente: la anulación de viewport no cambió el ancho efectivo del navegador."
 }
