@@ -17,12 +17,17 @@ for r in rows:
   a,b,d=(D(r[k]) for k in ('tarifa_entrada_usd_millon','tarifa_cache_usd_millon','tarifa_salida_usd_millon'))
   assert ((i-c)*a+c*b+o*d)/1000000==D(r['costo_usd']), 'Costo por llamada inconsistente'
   agents+=1
-assert agents==32
-assert total==D('.09292880'), 'Subtotal no concilia con evidencia preservada'
+closure=json.loads((P.parent/'evidencias/cierre/Conciliacion_22.json').read_text())
+assert agents==closure['llamadas_conciliadas_csv']
+assert total==D(closure['subtotal_conocido_usd']), 'Subtotal no concilia con evidencia preservada'
+for case in closure['casos']:
+ selected=[r for r in rows if r['caso_id']==case['caso_id'] and r['proveedor']=='OpenAI' and r['tokens_entrada']]
+ assert len(selected)==4 and {r['agente'] for r in selected}=={'Alfa','Beta','Gamma','Omega'}
+ assert sum(D(r['costo_usd']) for r in selected)==D(case['costo_ia_usd'])
 case=json.loads((P/'Caso_196.json').read_text())
 assert {r['agente'] for r in case['presupuesto']['registros']}=={1,2,3,4}
 assert sum(D(str(r['costo_usd'])) for r in case['presupuesto']['registros'])==D('.0008019')
 voice=json.loads((P/'Voz_exitosa.json').read_text())
 assert voice['caso_id']=='MUESTRA-196' and voice['audio_disponible'] is True
 assert voice['tokens_entrada'] is None and voice['modelo_llm'] is None
-print(f'PASS: {len(rows)} filas; 32 llamadas reconciliadas; USD conocido {total}; total integral no disponible.')
+print(f'PASS: {len(rows)} filas; {agents} llamadas reconciliadas; USD conocido {total}; total integral no disponible.')

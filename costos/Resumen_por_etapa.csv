@@ -1,0 +1,12 @@
+﻿etapa,filas,llamadas_OpenAI_medidas,costo_conocido_usd,filas_sin_costo_determinado,alcance
+Agentes 1 a 4,44,44,0.01398830,0,Subtotal conocido; no es costo integral
+Diseño y construcción,2,0,0,2,Subtotal conocido; no es costo integral
+ElevenLabs,2,0,0.0426,1,Subtotal conocido; no es costo integral
+ElevenLabs · voz,2,0,0.0268,1,Subtotal conocido; no es costo integral
+ElevenLabs · voz exitosa,2,0,0.0119,1,Subtotal conocido; no es costo integral
+Orquestación,6,0,0,6,Subtotal conocido; no es costo integral
+Precontrol,1,0,0,0,Subtotal conocido; no es costo integral
+Publicación y operación,6,0,0,6,Subtotal conocido; no es costo integral
+Revisión y guardrails,6,0,0,6,Subtotal conocido; no es costo integral
+Skills y loops,6,0,0,6,Subtotal conocido; no es costo integral
+Telegram y n8n,6,0,0,6,Subtotal conocido; no es costo integral

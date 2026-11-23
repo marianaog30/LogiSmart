@@ -39,6 +39,8 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: Verificar políticas de los workflows actuales sin API
         run: node tests/probar_actuales.cjs
+      - name: Verificar componentes con entradas sintéticas sin API
+        run: node tests/probar_componentes.cjs
       - name: Probar importación local y cálculo de propuestas
         run: node tests/probar_archivos.cjs
       - name: Auditar costos sin duplicaciones

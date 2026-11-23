@@ -1,0 +1,14 @@
+﻿caso_id,filas,llamadas_OpenAI_medidas,costo_conocido_usd,filas_sin_costo_determinado,alcance
+,1,0,0,1,Subtotal conocido; no es costo integral
+H10-CASO-01,9,4,0.00171325,5,Subtotal conocido; no es costo integral
+H10-CASO-02,11,4,0.04433475,6,Subtotal conocido; no es costo integral
+H10-CASO-03,9,4,0.00186550,5,Subtotal conocido; no es costo integral
+H10-CASO-04,9,4,0.00198125,5,Subtotal conocido; no es costo integral
+H10-CASO-05,9,4,0.00200500,5,Subtotal conocido; no es costo integral
+H10-ERROR-01,1,0,0,0,Subtotal conocido; no es costo integral
+LOG-16754699,4,4,0.00078945,0,Subtotal conocido; no es costo integral
+LOG-944937395374,4,4,0.00073770,0,Subtotal conocido; no es costo integral
+LOG-944973825442,4,4,0.00080670,0,Subtotal conocido; no es costo integral
+LOG-945108082595,4,4,0.00076695,0,Subtotal conocido; no es costo integral
+LOG-945108165306,4,4,0.00078585,0,Subtotal conocido; no es costo integral
+MUESTRA-196,14,4,0.03950190,8,Subtotal conocido; no es costo integral

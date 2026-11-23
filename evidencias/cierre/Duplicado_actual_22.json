@@ -1,0 +1,26 @@
+{
+  "fecha_local": "2026-11-22",
+  "tipo": "REPLAY_REAL_PRODUCCION_AUTORIZADO",
+  "github_run": 45108082595,
+  "intento_original": {
+    "numero": 1,
+    "resultado": "SUCCESS",
+    "caso_id": "LOG-945108082595",
+    "folio_publico": "MUESTRA-200",
+    "importe_mxn": 290,
+    "decision": "APROBADA"
+  },
+  "repeticion": {
+    "numero": 2,
+    "resultado_github": "FAILURE_ESPERADO",
+    "nodo_bloqueo": "Evitar repetición GitHub",
+    "mensaje": "Esta ejecución GitHub ya generó un caso; no se repetirá el envío.",
+    "duracion_n8n_s": 1.743,
+    "agentes_ejecutados": 0,
+    "cotizaciones_publicas_antes": 201,
+    "cotizaciones_publicas_despues": 201,
+    "nuevo_envio_cotizacion": false,
+    "notificador": "Ejecución de avisos finalizada con éxito; recepción humana del aviso no verificada."
+  },
+  "limite": "Verificado con el mismo run_id persistido en Data Table; no prueba carreras de solicitudes simultáneas. La repetición esperadamente fallida no invalida el caso original aprobado."
+}

@@ -1,0 +1,12 @@
+{
+  "tipo": "OBSERVACION_UI_N8N",
+  "fecha_ejecucion_visible": "2026-11-23T04:18:18.993Z",
+  "workflow": "LogiSmart - QA cierre sin consumo (NO PUBLICAR)",
+  "resultado_visible": "PASS",
+  "controles_visibles": 12,
+  "evidencia_visual": "Captura conservada localmente, fuera del repositorio y ZIP por revisión de publicación",
+  "fuente_reproducible": "tests/QA_manual_sin_consumo.json",
+  "llamadas_api": 0,
+  "envios_telegram": 0,
+  "alcance": "Doce componentes copiados de exports y ejecutados en el motor n8n, con identidades y reloj sintéticos. No prueba todas las conexiones de producción ni una segunda identidad Telegram real. La captura muestra el resultado global; no es una exportación nativa completa de la ejecución."
+}

@@ -1,0 +1,1835 @@
+{
+  "fecha_local": "2026-11-22",
+  "origen": "REGISTRO_PRIVADO_EXPORTADO_Y_COMPARADO_CON_EXPORTACION_PUBLICA",
+  "sha256_origen_privado": "5e6d8e910a31a6f27d594079317321c6f4fa4d8b4bd97e547f6c9db9edb2e738",
+  "registros_privados": 205,
+  "registros_publicos": 201,
+  "consultado_en": "2026-11-23T04:07:12.273Z",
+  "casos": [
+    {
+      "caso_id": "LOG-16754699",
+      "folio_publico": "MUESTRA-197",
+      "fecha_registro": "2026-11-19T02:45:40.873Z",
+      "productos": [
+        {
+          "producto": "Producto A",
+          "cantidad": 1,
+          "precio_unitario": 120,
+          "subtotal": 120
+        },
+        {
+          "producto": "Producto B",
+          "cantidad": 1,
+          "precio_unitario": 85,
+          "subtotal": 85
+        }
+      ],
+      "importe_mxn": 205,
+      "estado": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "llamadas": [
+        {
+          "agente": 1,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 640,
+          "tokens_cache": 0,
+          "tokens_salida": 59,
+          "tokens_total": 699,
+          "costo_usd": 0.0001314,
+          "reserva_usd": 0.001596,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-14",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-16754699-L1"
+        },
+        {
+          "agente": 2,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 725,
+          "tokens_cache": 0,
+          "tokens_salida": 121,
+          "tokens_total": 846,
+          "costo_usd": 0.00018135,
+          "reserva_usd": 0.00160875,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-14",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-16754699-L2"
+        },
+        {
+          "agente": 3,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 743,
+          "tokens_cache": 0,
+          "tokens_salida": 190,
+          "tokens_total": 933,
+          "costo_usd": 0.00022545,
+          "reserva_usd": 0.00161145,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-14",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-16754699-L3"
+        },
+        {
+          "agente": 4,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 1439,
+          "tokens_cache": 0,
+          "tokens_salida": 59,
+          "tokens_total": 1498,
+          "costo_usd": 0.00025125,
+          "reserva_usd": 0.00171585,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-14",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-16754699-L4"
+        }
+      ],
+      "costo_ia_usd": "0.00078945",
+      "trazas": [
+        {
+          "caso_id": "LOG-16754699",
+          "agente": "ORQUESTADOR",
+          "etapa": "apertura_y_validacion_de_caso",
+          "estado": "COMPLETADO",
+          "duracion_ms": 1,
+          "resultado": "Caso valido y dentro de politica (SIMULADO, cotizar_productos). Se asigna tarea al Agente 1.",
+          "fuentes": [
+            "Datos iniciales"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-16754699",
+          "agente": "AGENTE_1_VALIDACION",
+          "etapa": "validacion_de_solicitud",
+          "estado": "COMPLETADO",
+          "duracion_ms": 4186,
+          "resultado": {
+            "productos": [
+              {
+                "nombre": "Producto A",
+                "cantidad": 1
+              },
+              {
+                "nombre": "Producto B",
+                "cantidad": 1
+              }
+            ]
+          },
+          "fuentes": [
+            "solicitud original del caso"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-16754699-L1"
+        },
+        {
+          "caso_id": "LOG-16754699",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_1",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Salida de Agente 1 valida, mismo caso_id, cantidades presentes en la solicitud. Se asigna Agente 2.",
+          "fuentes": [
+            "Agente 1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-16754699",
+          "agente": "ORQUESTADOR",
+          "etapa": "asignacion_agente_2",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Se entrega al Agente 2 la lista de productos del Agente 1 y el catalogo autorizado (catalogo_ficticio_logismart_v1).",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-16754699",
+          "agente": "AGENTE_2_CATALOGO_INVENTARIOS",
+          "etapa": "consulta_catalogo_e_inventarios",
+          "estado": "COMPLETADO",
+          "duracion_ms": 3056,
+          "resultado": {
+            "items": [
+              {
+                "producto": "Producto A",
+                "cantidad": 1,
+                "precio_unitario": 120,
+                "moneda": "MXN",
+                "inventario": 100,
+                "fuente": "catalogo_ficticio_logismart_v1"
+              },
+              {
+                "producto": "Producto B",
+                "cantidad": 1,
+                "precio_unitario": 85,
+                "moneda": "MXN",
+                "inventario": 80,
+                "fuente": "catalogo_ficticio_logismart_v1"
+              }
+            ]
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-16754699-L2"
+        },
+        {
+          "caso_id": "LOG-16754699",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_2",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Productos existentes, con inventario suficiente y precios identicos al catalogo autorizado. Se calcula la cotizacion.",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-16754699",
+          "agente": "ORQUESTADOR",
+          "etapa": "calculo_determinista",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Subtotales y total calculados en Code (sin impuestos, envio ni descuentos): total 205 MXN",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-16754699",
+          "agente": "AGENTE_3_COTIZACION",
+          "etapa": "elaboracion_de_cotizacion",
+          "estado": "COMPLETADO",
+          "duracion_ms": 2155,
+          "resultado": {
+            "subtotal": 205,
+            "total": 205,
+            "moneda": "MXN"
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1",
+            "Calculo determinista de cotizacion"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-16754699-L3"
+        },
+        {
+          "caso_id": "LOG-16754699",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_3",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Propuesta coincide con el calculo determinista. Se asigna control de calidad.",
+          "fuentes": [
+            "Agente 3",
+            "Calculo determinista"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-16754699",
+          "agente": "ORQUESTADOR",
+          "etapa": "validaciones_deterministas_qa",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "10 de 10 validaciones deterministas aprobadas",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-16754699",
+          "agente": "AGENTE_4_CONTROL_CALIDAD",
+          "etapa": "control_de_calidad",
+          "estado": "COMPLETADO",
+          "duracion_ms": 1323,
+          "resultado": {
+            "dictamen": "APROBADO_TECNICAMENTE",
+            "hallazgos": []
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-16754699-L4"
+        },
+        {
+          "caso_id": "LOG-16754699",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_4",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Dictamen del Agente 4 y validaciones deterministas coinciden: APROBADO_TECNICAMENTE. Pasa a cierre con aprobacion humana pendiente.",
+          "fuentes": [
+            "Agente 4",
+            "Validaciones deterministas QA"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-16754699",
+          "agente": "ORQUESTADOR",
+          "etapa": "cierre",
+          "estado": "COMPLETADO",
+          "duracion_ms": 10,
+          "resultado": "Caso completo: 4 agentes ejecutados, revision tecnica aprobada. Estado PENDIENTE_APROBACION; aprobacion humana PENDIENTE.",
+          "fuentes": [
+            "trazas del caso"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        }
+      ],
+      "revision_tecnica": {
+        "dictamen": "APROBADO_TECNICAMENTE",
+        "dictamen_agente_4": "APROBADO_TECNICAMENTE",
+        "hallazgos": [],
+        "validaciones_deterministas": [
+          {
+            "id": "caso_id_consistente",
+            "descripcion": "El caso_id es el mismo en el Agente 1, 2 y 3",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "productos_y_cantidades",
+            "descripcion": "Productos y cantidades de la cotizacion coinciden con lo extraido por el Agente 1",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "precios_vs_catalogo",
+            "descripcion": "Cada precio unitario coincide con el catalogo autorizado",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "inventario_suficiente",
+            "descripcion": "Ninguna cantidad supera el inventario autorizado",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "subtotales",
+            "descripcion": "Cada subtotal = cantidad x precio unitario",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "total",
+            "descripcion": "El total = suma de subtotales",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "sin_extras",
+            "descripcion": "No hay impuestos, envio ni descuentos inventados (cotizacion y propuesta)",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "propuesta_coincide_calculo",
+            "descripcion": "La propuesta del Agente 3 tiene el mismo total y moneda que el calculo",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "fuente_catalogo",
+            "descripcion": "La fuente del catalogo esta presente y coincide",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "politica",
+            "descripcion": "Modo SIMULADO y moneda MXN",
+            "ok": true,
+            "detalle": ""
+          }
+        ],
+        "fuentes_verificadas": [
+          "catalogo_ficticio_logismart_v1"
+        ],
+        "autoriza_accion_comercial": false
+      },
+      "advertencia": "Resultado anidado conserva cierre provisional; la decisión vigente se verifica en columnas actualizadas. Sin usuarios/chats/IDs de ejecución. Hora individual de llamada no conservada."
+    },
+    {
+      "caso_id": "LOG-944937395374",
+      "folio_publico": "MUESTRA-198",
+      "fecha_registro": "2026-11-21T18:47:25.012Z",
+      "productos": [
+        {
+          "producto": "Producto A",
+          "cantidad": 2,
+          "precio_unitario": 120,
+          "subtotal": 240
+        },
+        {
+          "producto": "Producto B",
+          "cantidad": 1,
+          "precio_unitario": 85,
+          "subtotal": 85
+        }
+      ],
+      "importe_mxn": 325,
+      "estado": "RECHAZADA",
+      "aprobacion_humana": "RECHAZADA",
+      "llamadas": [
+        {
+          "agente": 1,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 550,
+          "tokens_cache": 0,
+          "tokens_salida": 60,
+          "tokens_total": 610,
+          "costo_usd": 0.0001185,
+          "reserva_usd": 0.0015825,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-944937395374-L1"
+        },
+        {
+          "agente": 2,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 635,
+          "tokens_cache": 0,
+          "tokens_salida": 122,
+          "tokens_total": 757,
+          "costo_usd": 0.00016845,
+          "reserva_usd": 0.00159525,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-944937395374-L2"
+        },
+        {
+          "agente": 3,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 654,
+          "tokens_cache": 0,
+          "tokens_salida": 190,
+          "tokens_total": 844,
+          "costo_usd": 0.0002121,
+          "reserva_usd": 0.0015981,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-944937395374-L3"
+        },
+        {
+          "agente": 4,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 1351,
+          "tokens_cache": 0,
+          "tokens_salida": 60,
+          "tokens_total": 1411,
+          "costo_usd": 0.00023865,
+          "reserva_usd": 0.00170265,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-944937395374-L4"
+        }
+      ],
+      "costo_ia_usd": "0.00073770",
+      "trazas": [
+        {
+          "caso_id": "LOG-944937395374",
+          "agente": "ORQUESTADOR",
+          "etapa": "apertura_y_validacion_de_caso",
+          "estado": "COMPLETADO",
+          "duracion_ms": 1,
+          "resultado": "Caso valido y dentro de politica (SIMULADO, cotizar_productos). Se asigna tarea al Agente 1.",
+          "fuentes": [
+            "Datos iniciales"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944937395374",
+          "agente": "AGENTE_1_VALIDACION",
+          "etapa": "validacion_de_solicitud",
+          "estado": "COMPLETADO",
+          "duracion_ms": 4589,
+          "resultado": {
+            "productos": [
+              {
+                "nombre": "Producto A",
+                "cantidad": 2
+              },
+              {
+                "nombre": "Producto B",
+                "cantidad": 1
+              }
+            ]
+          },
+          "fuentes": [
+            "solicitud original del caso"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-944937395374-L1"
+        },
+        {
+          "caso_id": "LOG-944937395374",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_1",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Salida de Agente 1 valida, mismo caso_id, cantidades presentes en la solicitud. Se asigna Agente 2.",
+          "fuentes": [
+            "Agente 1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944937395374",
+          "agente": "ORQUESTADOR",
+          "etapa": "asignacion_agente_2",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Se entrega al Agente 2 la lista de productos del Agente 1 y el catalogo autorizado (catalogo_ficticio_logismart_v1).",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944937395374",
+          "agente": "AGENTE_2_CATALOGO_INVENTARIOS",
+          "etapa": "consulta_catalogo_e_inventarios",
+          "estado": "COMPLETADO",
+          "duracion_ms": 3342,
+          "resultado": {
+            "items": [
+              {
+                "producto": "Producto A",
+                "cantidad": 2,
+                "precio_unitario": 120,
+                "moneda": "MXN",
+                "inventario": 100,
+                "fuente": "catalogo_ficticio_logismart_v1"
+              },
+              {
+                "producto": "Producto B",
+                "cantidad": 1,
+                "precio_unitario": 85,
+                "moneda": "MXN",
+                "inventario": 80,
+                "fuente": "catalogo_ficticio_logismart_v1"
+              }
+            ]
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-944937395374-L2"
+        },
+        {
+          "caso_id": "LOG-944937395374",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_2",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Productos existentes, con inventario suficiente y precios identicos al catalogo autorizado. Se calcula la cotizacion.",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944937395374",
+          "agente": "ORQUESTADOR",
+          "etapa": "calculo_determinista",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Subtotales y total calculados en Code (sin impuestos, envio ni descuentos): total 325 MXN",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944937395374",
+          "agente": "AGENTE_3_COTIZACION",
+          "etapa": "elaboracion_de_cotizacion",
+          "estado": "COMPLETADO",
+          "duracion_ms": 3790,
+          "resultado": {
+            "subtotal": 325,
+            "total": 325,
+            "moneda": "MXN"
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1",
+            "Calculo determinista de cotizacion"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-944937395374-L3"
+        },
+        {
+          "caso_id": "LOG-944937395374",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_3",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Propuesta coincide con el calculo determinista. Se asigna control de calidad.",
+          "fuentes": [
+            "Agente 3",
+            "Calculo determinista"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944937395374",
+          "agente": "ORQUESTADOR",
+          "etapa": "validaciones_deterministas_qa",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "10 de 10 validaciones deterministas aprobadas",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944937395374",
+          "agente": "AGENTE_4_CONTROL_CALIDAD",
+          "etapa": "control_de_calidad",
+          "estado": "COMPLETADO",
+          "duracion_ms": 1657,
+          "resultado": {
+            "dictamen": "APROBADO_TECNICAMENTE",
+            "hallazgos": []
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-944937395374-L4"
+        },
+        {
+          "caso_id": "LOG-944937395374",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_4",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Dictamen del Agente 4 y validaciones deterministas coinciden: APROBADO_TECNICAMENTE. Pasa a cierre con aprobacion humana pendiente.",
+          "fuentes": [
+            "Agente 4",
+            "Validaciones deterministas QA"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944937395374",
+          "agente": "ORQUESTADOR",
+          "etapa": "cierre",
+          "estado": "COMPLETADO",
+          "duracion_ms": 9,
+          "resultado": "Caso completo: 4 agentes ejecutados, revision tecnica aprobada. Estado PENDIENTE_APROBACION; aprobacion humana PENDIENTE.",
+          "fuentes": [
+            "trazas del caso"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        }
+      ],
+      "revision_tecnica": {
+        "dictamen": "APROBADO_TECNICAMENTE",
+        "dictamen_agente_4": "APROBADO_TECNICAMENTE",
+        "hallazgos": [],
+        "validaciones_deterministas": [
+          {
+            "id": "caso_id_consistente",
+            "descripcion": "El caso_id es el mismo en el Agente 1, 2 y 3",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "productos_y_cantidades",
+            "descripcion": "Productos y cantidades de la cotizacion coinciden con lo extraido por el Agente 1",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "precios_vs_catalogo",
+            "descripcion": "Cada precio unitario coincide con el catalogo autorizado",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "inventario_suficiente",
+            "descripcion": "Ninguna cantidad supera el inventario autorizado",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "subtotales",
+            "descripcion": "Cada subtotal = cantidad x precio unitario",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "total",
+            "descripcion": "El total = suma de subtotales",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "sin_extras",
+            "descripcion": "No hay impuestos, envio ni descuentos inventados (cotizacion y propuesta)",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "propuesta_coincide_calculo",
+            "descripcion": "La propuesta del Agente 3 tiene el mismo total y moneda que el calculo",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "fuente_catalogo",
+            "descripcion": "La fuente del catalogo esta presente y coincide",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "politica",
+            "descripcion": "Modo SIMULADO y moneda MXN",
+            "ok": true,
+            "detalle": ""
+          }
+        ],
+        "fuentes_verificadas": [
+          "catalogo_ficticio_logismart_v1"
+        ],
+        "autoriza_accion_comercial": false
+      },
+      "advertencia": "Resultado anidado conserva cierre provisional; la decisión vigente se verifica en columnas actualizadas. Sin usuarios/chats/IDs de ejecución. Hora individual de llamada no conservada."
+    },
+    {
+      "caso_id": "LOG-944973825442",
+      "folio_publico": "MUESTRA-199",
+      "fecha_registro": "2026-11-22T01:57:45.132Z",
+      "productos": [
+        {
+          "producto": "Producto A",
+          "cantidad": 1,
+          "precio_unitario": 120,
+          "subtotal": 120
+        },
+        {
+          "producto": "Producto B",
+          "cantidad": 1,
+          "precio_unitario": 85,
+          "subtotal": 85
+        }
+      ],
+      "importe_mxn": 205,
+      "estado": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "llamadas": [
+        {
+          "agente": 1,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 550,
+          "tokens_cache": 0,
+          "tokens_salida": 96,
+          "tokens_total": 646,
+          "costo_usd": 0.0001401,
+          "reserva_usd": 0.0015825,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-944973825442-L1"
+        },
+        {
+          "agente": 2,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 635,
+          "tokens_cache": 0,
+          "tokens_salida": 182,
+          "tokens_total": 817,
+          "costo_usd": 0.00020445,
+          "reserva_usd": 0.00159525,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-944973825442-L2"
+        },
+        {
+          "agente": 3,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 654,
+          "tokens_cache": 0,
+          "tokens_salida": 190,
+          "tokens_total": 844,
+          "costo_usd": 0.0002121,
+          "reserva_usd": 0.0015981,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-944973825442-L3"
+        },
+        {
+          "agente": 4,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 1351,
+          "tokens_cache": 0,
+          "tokens_salida": 79,
+          "tokens_total": 1430,
+          "costo_usd": 0.00025005,
+          "reserva_usd": 0.00170265,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-944973825442-L4"
+        }
+      ],
+      "costo_ia_usd": "0.00080670",
+      "trazas": [
+        {
+          "caso_id": "LOG-944973825442",
+          "agente": "ORQUESTADOR",
+          "etapa": "apertura_y_validacion_de_caso",
+          "estado": "COMPLETADO",
+          "duracion_ms": 1,
+          "resultado": "Caso valido y dentro de politica (SIMULADO, cotizar_productos). Se asigna tarea al Agente 1.",
+          "fuentes": [
+            "Datos iniciales"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944973825442",
+          "agente": "AGENTE_1_VALIDACION",
+          "etapa": "validacion_de_solicitud",
+          "estado": "COMPLETADO",
+          "duracion_ms": 4725,
+          "resultado": {
+            "productos": [
+              {
+                "nombre": "Producto A",
+                "cantidad": 1
+              },
+              {
+                "nombre": "Producto B",
+                "cantidad": 1
+              }
+            ]
+          },
+          "fuentes": [
+            "solicitud original del caso"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-944973825442-L1"
+        },
+        {
+          "caso_id": "LOG-944973825442",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_1",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Salida de Agente 1 valida, mismo caso_id, cantidades presentes en la solicitud. Se asigna Agente 2.",
+          "fuentes": [
+            "Agente 1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944973825442",
+          "agente": "ORQUESTADOR",
+          "etapa": "asignacion_agente_2",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Se entrega al Agente 2 la lista de productos del Agente 1 y el catalogo autorizado (catalogo_ficticio_logismart_v1).",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944973825442",
+          "agente": "AGENTE_2_CATALOGO_INVENTARIOS",
+          "etapa": "consulta_catalogo_e_inventarios",
+          "estado": "COMPLETADO",
+          "duracion_ms": 2655,
+          "resultado": {
+            "items": [
+              {
+                "producto": "Producto A",
+                "cantidad": 1,
+                "precio_unitario": 120,
+                "moneda": "MXN",
+                "inventario": 100,
+                "fuente": "catalogo_ficticio_logismart_v1"
+              },
+              {
+                "producto": "Producto B",
+                "cantidad": 1,
+                "precio_unitario": 85,
+                "moneda": "MXN",
+                "inventario": 80,
+                "fuente": "catalogo_ficticio_logismart_v1"
+              }
+            ]
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-944973825442-L2"
+        },
+        {
+          "caso_id": "LOG-944973825442",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_2",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Productos existentes, con inventario suficiente y precios identicos al catalogo autorizado. Se calcula la cotizacion.",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944973825442",
+          "agente": "ORQUESTADOR",
+          "etapa": "calculo_determinista",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Subtotales y total calculados en Code (sin impuestos, envio ni descuentos): total 205 MXN",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944973825442",
+          "agente": "AGENTE_3_COTIZACION",
+          "etapa": "elaboracion_de_cotizacion",
+          "estado": "COMPLETADO",
+          "duracion_ms": 2551,
+          "resultado": {
+            "subtotal": 205,
+            "total": 205,
+            "moneda": "MXN"
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1",
+            "Calculo determinista de cotizacion"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-944973825442-L3"
+        },
+        {
+          "caso_id": "LOG-944973825442",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_3",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Propuesta coincide con el calculo determinista. Se asigna control de calidad.",
+          "fuentes": [
+            "Agente 3",
+            "Calculo determinista"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944973825442",
+          "agente": "ORQUESTADOR",
+          "etapa": "validaciones_deterministas_qa",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "10 de 10 validaciones deterministas aprobadas",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944973825442",
+          "agente": "AGENTE_4_CONTROL_CALIDAD",
+          "etapa": "control_de_calidad",
+          "estado": "COMPLETADO",
+          "duracion_ms": 1620,
+          "resultado": {
+            "dictamen": "APROBADO_TECNICAMENTE",
+            "hallazgos": []
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-944973825442-L4"
+        },
+        {
+          "caso_id": "LOG-944973825442",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_4",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Dictamen del Agente 4 y validaciones deterministas coinciden: APROBADO_TECNICAMENTE. Pasa a cierre con aprobacion humana pendiente.",
+          "fuentes": [
+            "Agente 4",
+            "Validaciones deterministas QA"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-944973825442",
+          "agente": "ORQUESTADOR",
+          "etapa": "cierre",
+          "estado": "COMPLETADO",
+          "duracion_ms": 8,
+          "resultado": "Caso completo: 4 agentes ejecutados, revision tecnica aprobada. Estado PENDIENTE_APROBACION; aprobacion humana PENDIENTE.",
+          "fuentes": [
+            "trazas del caso"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        }
+      ],
+      "revision_tecnica": {
+        "dictamen": "APROBADO_TECNICAMENTE",
+        "dictamen_agente_4": "APROBADO_TECNICAMENTE",
+        "hallazgos": [],
+        "validaciones_deterministas": [
+          {
+            "id": "caso_id_consistente",
+            "descripcion": "El caso_id es el mismo en el Agente 1, 2 y 3",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "productos_y_cantidades",
+            "descripcion": "Productos y cantidades de la cotizacion coinciden con lo extraido por el Agente 1",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "precios_vs_catalogo",
+            "descripcion": "Cada precio unitario coincide con el catalogo autorizado",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "inventario_suficiente",
+            "descripcion": "Ninguna cantidad supera el inventario autorizado",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "subtotales",
+            "descripcion": "Cada subtotal = cantidad x precio unitario",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "total",
+            "descripcion": "El total = suma de subtotales",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "sin_extras",
+            "descripcion": "No hay impuestos, envio ni descuentos inventados (cotizacion y propuesta)",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "propuesta_coincide_calculo",
+            "descripcion": "La propuesta del Agente 3 tiene el mismo total y moneda que el calculo",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "fuente_catalogo",
+            "descripcion": "La fuente del catalogo esta presente y coincide",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "politica",
+            "descripcion": "Modo SIMULADO y moneda MXN",
+            "ok": true,
+            "detalle": ""
+          }
+        ],
+        "fuentes_verificadas": [
+          "catalogo_ficticio_logismart_v1"
+        ],
+        "autoriza_accion_comercial": false
+      },
+      "advertencia": "Resultado anidado conserva cierre provisional; la decisión vigente se verifica en columnas actualizadas. Sin usuarios/chats/IDs de ejecución. Hora individual de llamada no conservada."
+    },
+    {
+      "caso_id": "LOG-945108082595",
+      "folio_publico": "MUESTRA-200",
+      "fecha_registro": "2026-11-23T03:48:22.720Z",
+      "productos": [
+        {
+          "producto": "Producto A",
+          "cantidad": 1,
+          "precio_unitario": 120,
+          "subtotal": 120
+        },
+        {
+          "producto": "Producto B",
+          "cantidad": 2,
+          "precio_unitario": 85,
+          "subtotal": 170
+        }
+      ],
+      "importe_mxn": 290,
+      "estado": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "llamadas": [
+        {
+          "agente": 1,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 550,
+          "tokens_cache": 0,
+          "tokens_salida": 96,
+          "tokens_total": 646,
+          "costo_usd": 0.0001401,
+          "reserva_usd": 0.0015825,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-945108082595-L1"
+        },
+        {
+          "agente": 2,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 635,
+          "tokens_cache": 0,
+          "tokens_salida": 122,
+          "tokens_total": 757,
+          "costo_usd": 0.00016845,
+          "reserva_usd": 0.00159525,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-945108082595-L2"
+        },
+        {
+          "agente": 3,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 654,
+          "tokens_cache": 0,
+          "tokens_salida": 185,
+          "tokens_total": 839,
+          "costo_usd": 0.0002091,
+          "reserva_usd": 0.0015981,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-945108082595-L3"
+        },
+        {
+          "agente": 4,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 1346,
+          "tokens_cache": 0,
+          "tokens_salida": 79,
+          "tokens_total": 1425,
+          "costo_usd": 0.0002493,
+          "reserva_usd": 0.0017019,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-945108082595-L4"
+        }
+      ],
+      "costo_ia_usd": "0.00076695",
+      "trazas": [
+        {
+          "caso_id": "LOG-945108082595",
+          "agente": "ORQUESTADOR",
+          "etapa": "apertura_y_validacion_de_caso",
+          "estado": "COMPLETADO",
+          "duracion_ms": 1,
+          "resultado": "Caso valido y dentro de politica (SIMULADO, cotizar_productos). Se asigna tarea al Agente 1.",
+          "fuentes": [
+            "Datos iniciales"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108082595",
+          "agente": "AGENTE_1_VALIDACION",
+          "etapa": "validacion_de_solicitud",
+          "estado": "COMPLETADO",
+          "duracion_ms": 3966,
+          "resultado": {
+            "productos": [
+              {
+                "nombre": "Producto A",
+                "cantidad": 1
+              },
+              {
+                "nombre": "Producto B",
+                "cantidad": 2
+              }
+            ]
+          },
+          "fuentes": [
+            "solicitud original del caso"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-945108082595-L1"
+        },
+        {
+          "caso_id": "LOG-945108082595",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_1",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Salida de Agente 1 valida, mismo caso_id, cantidades presentes en la solicitud. Se asigna Agente 2.",
+          "fuentes": [
+            "Agente 1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108082595",
+          "agente": "ORQUESTADOR",
+          "etapa": "asignacion_agente_2",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Se entrega al Agente 2 la lista de productos del Agente 1 y el catalogo autorizado (catalogo_ficticio_logismart_v1).",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108082595",
+          "agente": "AGENTE_2_CATALOGO_INVENTARIOS",
+          "etapa": "consulta_catalogo_e_inventarios",
+          "estado": "COMPLETADO",
+          "duracion_ms": 1781,
+          "resultado": {
+            "items": [
+              {
+                "producto": "Producto A",
+                "cantidad": 1,
+                "precio_unitario": 120,
+                "moneda": "MXN",
+                "inventario": 100,
+                "fuente": "catalogo_ficticio_logismart_v1"
+              },
+              {
+                "producto": "Producto B",
+                "cantidad": 2,
+                "precio_unitario": 85,
+                "moneda": "MXN",
+                "inventario": 80,
+                "fuente": "catalogo_ficticio_logismart_v1"
+              }
+            ]
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-945108082595-L2"
+        },
+        {
+          "caso_id": "LOG-945108082595",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_2",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Productos existentes, con inventario suficiente y precios identicos al catalogo autorizado. Se calcula la cotizacion.",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108082595",
+          "agente": "ORQUESTADOR",
+          "etapa": "calculo_determinista",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Subtotales y total calculados en Code (sin impuestos, envio ni descuentos): total 290 MXN",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108082595",
+          "agente": "AGENTE_3_COTIZACION",
+          "etapa": "elaboracion_de_cotizacion",
+          "estado": "COMPLETADO",
+          "duracion_ms": 5053,
+          "resultado": {
+            "subtotal": 290,
+            "total": 290,
+            "moneda": "MXN"
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1",
+            "Calculo determinista de cotizacion"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-945108082595-L3"
+        },
+        {
+          "caso_id": "LOG-945108082595",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_3",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Propuesta coincide con el calculo determinista. Se asigna control de calidad.",
+          "fuentes": [
+            "Agente 3",
+            "Calculo determinista"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108082595",
+          "agente": "ORQUESTADOR",
+          "etapa": "validaciones_deterministas_qa",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "10 de 10 validaciones deterministas aprobadas",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108082595",
+          "agente": "AGENTE_4_CONTROL_CALIDAD",
+          "etapa": "control_de_calidad",
+          "estado": "COMPLETADO",
+          "duracion_ms": 2280,
+          "resultado": {
+            "dictamen": "APROBADO_TECNICAMENTE",
+            "hallazgos": []
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-945108082595-L4"
+        },
+        {
+          "caso_id": "LOG-945108082595",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_4",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Dictamen del Agente 4 y validaciones deterministas coinciden: APROBADO_TECNICAMENTE. Pasa a cierre con aprobacion humana pendiente.",
+          "fuentes": [
+            "Agente 4",
+            "Validaciones deterministas QA"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108082595",
+          "agente": "ORQUESTADOR",
+          "etapa": "cierre",
+          "estado": "COMPLETADO",
+          "duracion_ms": 8,
+          "resultado": "Caso completo: 4 agentes ejecutados, revision tecnica aprobada. Estado PENDIENTE_APROBACION; aprobacion humana PENDIENTE.",
+          "fuentes": [
+            "trazas del caso"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        }
+      ],
+      "revision_tecnica": {
+        "dictamen": "APROBADO_TECNICAMENTE",
+        "dictamen_agente_4": "APROBADO_TECNICAMENTE",
+        "hallazgos": [],
+        "validaciones_deterministas": [
+          {
+            "id": "caso_id_consistente",
+            "descripcion": "El caso_id es el mismo en el Agente 1, 2 y 3",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "productos_y_cantidades",
+            "descripcion": "Productos y cantidades de la cotizacion coinciden con lo extraido por el Agente 1",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "precios_vs_catalogo",
+            "descripcion": "Cada precio unitario coincide con el catalogo autorizado",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "inventario_suficiente",
+            "descripcion": "Ninguna cantidad supera el inventario autorizado",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "subtotales",
+            "descripcion": "Cada subtotal = cantidad x precio unitario",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "total",
+            "descripcion": "El total = suma de subtotales",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "sin_extras",
+            "descripcion": "No hay impuestos, envio ni descuentos inventados (cotizacion y propuesta)",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "propuesta_coincide_calculo",
+            "descripcion": "La propuesta del Agente 3 tiene el mismo total y moneda que el calculo",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "fuente_catalogo",
+            "descripcion": "La fuente del catalogo esta presente y coincide",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "politica",
+            "descripcion": "Modo SIMULADO y moneda MXN",
+            "ok": true,
+            "detalle": ""
+          }
+        ],
+        "fuentes_verificadas": [
+          "catalogo_ficticio_logismart_v1"
+        ],
+        "autoriza_accion_comercial": false
+      },
+      "advertencia": "Resultado anidado conserva cierre provisional; la decisión vigente se verifica en columnas actualizadas. Sin usuarios/chats/IDs de ejecución. Hora individual de llamada no conservada."
+    },
+    {
+      "caso_id": "LOG-945108165306",
+      "folio_publico": "MUESTRA-201",
+      "fecha_registro": "2026-11-23T03:49:08.952Z",
+      "productos": [
+        {
+          "producto": "Producto A",
+          "cantidad": 3,
+          "precio_unitario": 120,
+          "subtotal": 360
+        },
+        {
+          "producto": "Producto B",
+          "cantidad": 1,
+          "precio_unitario": 85,
+          "subtotal": 85
+        }
+      ],
+      "importe_mxn": 445,
+      "estado": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "llamadas": [
+        {
+          "agente": 1,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 550,
+          "tokens_cache": 0,
+          "tokens_salida": 60,
+          "tokens_total": 610,
+          "costo_usd": 0.0001185,
+          "reserva_usd": 0.0015825,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-945108165306-L1"
+        },
+        {
+          "agente": 2,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 635,
+          "tokens_cache": 0,
+          "tokens_salida": 182,
+          "tokens_total": 817,
+          "costo_usd": 0.00020445,
+          "reserva_usd": 0.00159525,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-945108165306-L2"
+        },
+        {
+          "agente": 3,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 654,
+          "tokens_cache": 0,
+          "tokens_salida": 191,
+          "tokens_total": 845,
+          "costo_usd": 0.0002127,
+          "reserva_usd": 0.0015981,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-945108165306-L3"
+        },
+        {
+          "agente": 4,
+          "modelo": "gpt-4o-mini-2024-07-18",
+          "tokens_entrada": 1352,
+          "tokens_cache": 0,
+          "tokens_salida": 79,
+          "tokens_total": 1431,
+          "costo_usd": 0.0002502,
+          "reserva_usd": 0.0017028,
+          "fuente": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "tarifa_consultada": "2026-11-21",
+          "tipo": "USAGE_PROVEEDOR_COSTO_CALCULADO",
+          "llamada_id": "LOG-945108165306-L4"
+        }
+      ],
+      "costo_ia_usd": "0.00078585",
+      "trazas": [
+        {
+          "caso_id": "LOG-945108165306",
+          "agente": "ORQUESTADOR",
+          "etapa": "apertura_y_validacion_de_caso",
+          "estado": "COMPLETADO",
+          "duracion_ms": 1,
+          "resultado": "Caso valido y dentro de politica (SIMULADO, cotizar_productos). Se asigna tarea al Agente 1.",
+          "fuentes": [
+            "Datos iniciales"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108165306",
+          "agente": "AGENTE_1_VALIDACION",
+          "etapa": "validacion_de_solicitud",
+          "estado": "COMPLETADO",
+          "duracion_ms": 1353,
+          "resultado": {
+            "productos": [
+              {
+                "nombre": "Producto A",
+                "cantidad": 3
+              },
+              {
+                "nombre": "Producto B",
+                "cantidad": 1
+              }
+            ]
+          },
+          "fuentes": [
+            "solicitud original del caso"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-945108165306-L1"
+        },
+        {
+          "caso_id": "LOG-945108165306",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_1",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Salida de Agente 1 valida, mismo caso_id, cantidades presentes en la solicitud. Se asigna Agente 2.",
+          "fuentes": [
+            "Agente 1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108165306",
+          "agente": "ORQUESTADOR",
+          "etapa": "asignacion_agente_2",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Se entrega al Agente 2 la lista de productos del Agente 1 y el catalogo autorizado (catalogo_ficticio_logismart_v1).",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108165306",
+          "agente": "AGENTE_2_CATALOGO_INVENTARIOS",
+          "etapa": "consulta_catalogo_e_inventarios",
+          "estado": "COMPLETADO",
+          "duracion_ms": 2349,
+          "resultado": {
+            "items": [
+              {
+                "producto": "Producto A",
+                "cantidad": 3,
+                "precio_unitario": 120,
+                "moneda": "MXN",
+                "inventario": 100,
+                "fuente": "catalogo_ficticio_logismart_v1"
+              },
+              {
+                "producto": "Producto B",
+                "cantidad": 1,
+                "precio_unitario": 85,
+                "moneda": "MXN",
+                "inventario": 80,
+                "fuente": "catalogo_ficticio_logismart_v1"
+              }
+            ]
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-945108165306-L2"
+        },
+        {
+          "caso_id": "LOG-945108165306",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_2",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Productos existentes, con inventario suficiente y precios identicos al catalogo autorizado. Se calcula la cotizacion.",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108165306",
+          "agente": "ORQUESTADOR",
+          "etapa": "calculo_determinista",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Subtotales y total calculados en Code (sin impuestos, envio ni descuentos): total 445 MXN",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108165306",
+          "agente": "AGENTE_3_COTIZACION",
+          "etapa": "elaboracion_de_cotizacion",
+          "estado": "COMPLETADO",
+          "duracion_ms": 2558,
+          "resultado": {
+            "subtotal": 445,
+            "total": 445,
+            "moneda": "MXN"
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1",
+            "Calculo determinista de cotizacion"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-945108165306-L3"
+        },
+        {
+          "caso_id": "LOG-945108165306",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_3",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Propuesta coincide con el calculo determinista. Se asigna control de calidad.",
+          "fuentes": [
+            "Agente 3",
+            "Calculo determinista"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108165306",
+          "agente": "ORQUESTADOR",
+          "etapa": "validaciones_deterministas_qa",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "10 de 10 validaciones deterministas aprobadas",
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108165306",
+          "agente": "AGENTE_4_CONTROL_CALIDAD",
+          "etapa": "control_de_calidad",
+          "estado": "COMPLETADO",
+          "duracion_ms": 2475,
+          "resultado": {
+            "dictamen": "APROBADO_TECNICAMENTE",
+            "hallazgos": []
+          },
+          "fuentes": [
+            "catalogo_ficticio_logismart_v1"
+          ],
+          "advertencias": [],
+          "llamada_id": "LOG-945108165306-L4"
+        },
+        {
+          "caso_id": "LOG-945108165306",
+          "agente": "ORQUESTADOR",
+          "etapa": "revision_agente_4",
+          "estado": "COMPLETADO",
+          "duracion_ms": 0,
+          "resultado": "Dictamen del Agente 4 y validaciones deterministas coinciden: APROBADO_TECNICAMENTE. Pasa a cierre con aprobacion humana pendiente.",
+          "fuentes": [
+            "Agente 4",
+            "Validaciones deterministas QA"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        },
+        {
+          "caso_id": "LOG-945108165306",
+          "agente": "ORQUESTADOR",
+          "etapa": "cierre",
+          "estado": "COMPLETADO",
+          "duracion_ms": 8,
+          "resultado": "Caso completo: 4 agentes ejecutados, revision tecnica aprobada. Estado PENDIENTE_APROBACION; aprobacion humana PENDIENTE.",
+          "fuentes": [
+            "trazas del caso"
+          ],
+          "advertencias": [],
+          "tokenizacion": "NO_APLICA_LOGICA_DETERMINISTA"
+        }
+      ],
+      "revision_tecnica": {
+        "dictamen": "APROBADO_TECNICAMENTE",
+        "dictamen_agente_4": "APROBADO_TECNICAMENTE",
+        "hallazgos": [],
+        "validaciones_deterministas": [
+          {
+            "id": "caso_id_consistente",
+            "descripcion": "El caso_id es el mismo en el Agente 1, 2 y 3",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "productos_y_cantidades",
+            "descripcion": "Productos y cantidades de la cotizacion coinciden con lo extraido por el Agente 1",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "precios_vs_catalogo",
+            "descripcion": "Cada precio unitario coincide con el catalogo autorizado",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "inventario_suficiente",
+            "descripcion": "Ninguna cantidad supera el inventario autorizado",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "subtotales",
+            "descripcion": "Cada subtotal = cantidad x precio unitario",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "total",
+            "descripcion": "El total = suma de subtotales",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "sin_extras",
+            "descripcion": "No hay impuestos, envio ni descuentos inventados (cotizacion y propuesta)",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "propuesta_coincide_calculo",
+            "descripcion": "La propuesta del Agente 3 tiene el mismo total y moneda que el calculo",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "fuente_catalogo",
+            "descripcion": "La fuente del catalogo esta presente y coincide",
+            "ok": true,
+            "detalle": ""
+          },
+          {
+            "id": "politica",
+            "descripcion": "Modo SIMULADO y moneda MXN",
+            "ok": true,
+            "detalle": ""
+          }
+        ],
+        "fuentes_verificadas": [
+          "catalogo_ficticio_logismart_v1"
+        ],
+        "autoriza_accion_comercial": false
+      },
+      "advertencia": "Resultado anidado conserva cierre provisional; la decisión vigente se verifica en columnas actualizadas. Sin usuarios/chats/IDs de ejecución. Hora individual de llamada no conservada."
+    }
+  ],
+  "llamadas_conciliadas_csv": 44,
+  "filas_csv": 83,
+  "subtotal_conocido_usd": "0.09528830",
+  "costo_integral": null,
+  "limite": "Subtotal conocido, no factura. Desarrollo adicional y cargos integrales de plataformas desconocidos. Sin inventar ceros ni horas humanas."
+}

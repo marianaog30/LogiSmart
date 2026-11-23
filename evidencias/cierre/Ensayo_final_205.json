@@ -18,7 +18,7 @@
   "costo_calculado_usd": 0.0008067,
   "envio_telegram_confirmado_por_n8n": true,
   "decision_humana": "APROBADA",
-  "limite": "Es ensayo posterior al corte del registro de32llamadas; todavía no se concilia por llamada ni se presenta aprobación humana.",
+  "limite": "Cuatro llamadas conciliadas en costos/costos.csv y Conciliacion_22.json. Aprobación verificada en columnas actualizadas. Este anexo no se suma nuevamente.",
   "confirmacion_telegram": "reportada por Mariana",
   "persistencia": "comprobada directamente en exportación pública",
   "folio_publico": "MUESTRA-199",
