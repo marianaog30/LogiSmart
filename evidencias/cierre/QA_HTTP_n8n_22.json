@@ -1,0 +1,22 @@
+[
+  {
+    "fecha_utc": "2026-11-23T05:20:34.526Z",
+    "tipo": "QA_HTTP_REAL_N8N_SIN_CREDENCIALES",
+    "resultado": "PASS",
+    "acceso": {
+      "prueba": "API_SIN_CREDENCIAL",
+      "http": 401,
+      "resultado": "PASS",
+      "mensaje": "Problema de acceso al servicio. La prueba se detuvo sin generar cotización."
+    },
+    "timeout": {
+      "limite_ms": 1,
+      "reintentos": 0,
+      "resultado": "PASS",
+      "mensaje": "Tiempo de espera agotado. No se generó una cotización."
+    },
+    "llamadas_generacion_ia": 0,
+    "envios_telegram": 0,
+    "alcance": "HTTP real y salida controlada en workflow aislado de n8n. No prueba una caída de proveedor ni el recorrido de error de producción a Telegram. No se modifica producción."
+  }
+]
