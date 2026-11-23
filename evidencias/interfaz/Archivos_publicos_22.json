@@ -1,0 +1,50 @@
+{
+  "fecha_local": "2026-11-22",
+  "url": "https://marianaog30.github.io/LogiSmart/archivos.html",
+  "metodo": "Interacciones reales en navegador de la web pública; sin envío a n8n ni llamadas IA.",
+  "pruebas": [
+    {
+      "entrada": "Ejemplo A1+B1",
+      "esperado_mxn": 205,
+      "observado_mxn": 205,
+      "estado": "PASS"
+    },
+    {
+      "entrada": "Producto M,1",
+      "esperado": "Rechazar producto no autorizado y ocultar propuesta anterior",
+      "observado": "Producto no autorizado: revisa el catálogo. Solo Producto A y Producto B. Propuesta anterior oculta.",
+      "estado": "PASS"
+    },
+    {
+      "entrada": "Producto A,101",
+      "esperado": "Bloqueo inventario ficticio100",
+      "observado": "Cantidad superior al inventario ficticio de Producto A. Solicita aclaración. Propuesta oculta.",
+      "estado": "PASS"
+    },
+    {
+      "entrada": "CSV con columnas producto,cantidad y filas Producto A,2;Producto B,1",
+      "esperado_mxn": 325,
+      "observado_mxn": 325,
+      "lineas_mxn": [
+        240,
+        85
+      ],
+      "paquetes": 3,
+      "grafica": "Dos barras rotuladas240y85",
+      "estado": "PASS"
+    },
+    {
+      "entrada": "Borrar sesión",
+      "esperado": "Vaciar editor y ocultar propuesta",
+      "observado": "Editor vacío; propuesta oculta; aviso Sesión borrada. Ningún documento fue enviado.",
+      "estado": "PASS"
+    }
+  ],
+  "limites": [
+    "No prueba ejecución de los cuatro agentes ni aprobación humana.",
+    "No demuestra permiso de micrófono denegado; sigue pendiente.",
+    "La solicitud CSV aporta productos/cantidades; el catálogo autorizado del código aporta precios, no el CSV de historial."
+  ],
+  "catalogo": "Solo A y B; expansión descartada por decisión de Mariana.",
+  "captura": "Captura conservada localmente fuera del repositorio: outputs/Pruebas_sin_voz/Cotizacion_CSV_325.png"
+}
