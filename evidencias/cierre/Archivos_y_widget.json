@@ -24,5 +24,12 @@
     "CSV199registros alimenta KPI y gráficos"
   ],
   "microfono_tras_cambio": "No ejecutado; se probó la herramienta HTTP sin LLM.",
-  "vista_movil": "Pendiente: la anulación de viewport no cambió el ancho efectivo del navegador."
+  "vista_movil": "Pendiente: la anulación de viewport no cambió el ancho efectivo del navegador.",
+  "widget_actual": {
+    "proveedor": "ShipEstimator",
+    "url": "https://shipestimator.com/embed/shipping-cost-calculator/",
+    "sustituye": "MyShipTracking",
+    "verificacion": "Formulario incrustado visible; botón de cálculo de ejemplo ejecutado; resultados orientativos con nota explícita del proveedor. Sin reserva ni contratación.",
+    "fecha_local": "2026-11-22"
+  }
 }
