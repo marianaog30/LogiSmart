@@ -1,6 +1,6 @@
 # LogiSmart Solutions
 
-Mariana Orozco · Proyecto individual AI Tools · Corte de revisión 21 de noviembre de 2026.
+Mariana Orozco · Proyecto individual AI Tools · Corte de revisión 22 de noviembre de 2026.
 
 **Abrir primero `ABRIR_PRIMERO.html`.** Este es el punto único de revisión docente. No confundir esta carpeta con los respaldos privados anteriores. El paquete no está declarado 100% aprobado: la auditoría identifica pruebas parciales y pendientes de integración, video y defensa.
 
@@ -30,10 +30,10 @@ Se requieren cuentas y capacidad vigente en GitHub, n8n, OpenAI y ElevenLabs. No
 ## Instalar e importar
 
 1. Descargar el ZIP del commit indicado en `ESTADO_ENTREGA.json` del paquete externo y extraerlo. No importar archivos históricos por nombre parecido.
-2. Seguir `n8n/README.md`: importar los tres `*ACTUAL.json`, crear tabla privada, seleccionar credenciales, configurar usuarios autorizados y notificador. Los JSON sanitizados se detienen hasta completar configuración. El respaldo privado de registros no forma parte de la entrega docente.
+2. Seguir `n8n/README.md`: importar los cuatro `*ACTUAL.json`, crear tabla privada, seleccionar credenciales, configurar usuarios autorizados y notificador. Los JSON sanitizados se detienen hasta completar configuración. El respaldo privado de registros no forma parte de la entrega docente.
 3. OpenAI y Telegram se configuran en Credentials de n8n; Header Auth en Entrada GitHub protegida. `LogiSmart-key` es el nombre del encabezado, no una clave real. En GitHub Settings → Secrets and variables → Actions configurar `N8N_SIMULATION_KEY` con el mismo valor. Los nodos n8n usan sus credenciales: GitHub no les actualiza OpenAI automáticamente. `OPENAI_API_KEY`, `TELEGRAM_BOT_TOKEN` y `ALPHAVANTAGE_API_KEY` de GitHub no son requeridos por el recorrido actual de simulación; no copiar secretos al sitio.
 4. Actualizar host si se migra de cuenta en scripts/exportar_datos.py, scripts/ejecutar_simulacion.py y herramienta ElevenLabs. Activar un solo receptor Telegram por bot. Revisar `Preparar llamada1` para la política única de tarifas; vencimiento actual29/11/2026 06:00UTC.
-5. Configurar Pages con fuente GitHub Actions; publicar solo tras validación. Se despliega únicamente web/. Configurar ElevenLabs según docs/ElevenLabs_recreacion.md; esa guía identifica la autenticación de voz todavía pendiente.
+5. Configurar Pages con fuente GitHub Actions; publicar solo tras validación. Se despliega únicamente web/. Configurar ElevenLabs según docs/ElevenLabs_recreacion.md; esa guía describe la ruta de voz autenticada ya instalada y la nueva comprobación de micrófono pendiente.
 
 ## Repetir un caso
 
@@ -53,6 +53,9 @@ python3 scripts/hito7.py
 python3 scripts/auditar_costos.py
 node scripts/validar.mjs
 node tests/probar_actuales.cjs
+node tests/probar_archivos.cjs
+node tests/probar_componentes.cjs
+python3 scripts/verificar_paquete.py
 node hitos/hito8/pruebas/ejecutar_todas.mjs
 ```
 
@@ -66,7 +69,7 @@ Parar producción: despublicar solo el flujo afectado cuando se autorice la inte
 
 ## Entregables y límites
 
-Informe académico a cargo de Mariana por separado; no incluido. Auditoría de los10criterios/100puntos sin nota inventada, matrizP01–P14 en tests/, costos71filas, escenarios y fuentes en costos/, mapa/diccionario de datos, prompts/contratos, skills/loops, tresexports actuales y evidencias sanitizadas. docs/Recorrido_de_prueba_y_video.md explica qué ejecutar y qué esperar antes de grabar. Video y defensa pendientes; no son archivos existentes. docs/Uso_IA_y_recursos.md declara asistencia y recursos.
+Informe académico a cargo de Mariana por separado; no incluido. Auditoría de los10criterios/100puntos sin nota inventada, matrizP01–P14 en tests/, costos83filas, escenarios y fuentes en costos/, mapa/diccionario de datos, prompts/contratos, skills/loops, cuatro exports actuales y evidencias sanitizadas. docs/Recorrido_de_prueba_y_video.md explica qué ejecutar y qué esperar antes de grabar. Video y defensa pendientes; no son archivos existentes. docs/Uso_IA_y_recursos.md declara asistencia y recursos.
 
 Las notas de hitos/ y documentos con fecha anterior son evidencia histórica; la auditoría y este README prevalecen para el corte de entrega. No sustituir vacíos con cero ni llamar pruebas locales ejecuciones reales. La fuente de requisitos es la guía de la Dra.Elda C.Morales, versión30/10/2026, páginas1–16; no se redistribuye el PDF del curso.
 
@@ -82,3 +85,6 @@ Para explorar los KPI con otro archivo ficticio, descarga `web/datos/muestra_his
 
 
 Pruebas adicionales del cierre22nov: `node tests/probar_componentes.cjs` ejecuta12 controles sin API. El mismo código se ejecutó en un workflow manual aislado de n8n: `evidencias/cierre/QA_componentes_n8n_22.json`. Importación opcional: `tests/QA_manual_sin_consumo.json`; ejecutar manualmente, no publicar. No necesita credenciales ni envía mensajes. Este ensayo de componentes complementa, sin sustituir, las pruebas integrales documentadas.
+
+
+Prueba HTTP del22nov: `tests/QA_HTTP_manual_sin_claves.json`, importable por separado y solo manual. Resultado real: `evidencias/cierre/QA_HTTP_n8n_22.json`, HTTP401 y timeout1ms controlados, sin credenciales ni generación IA. No publicar ese laboratorio. Este ensayo no demuestra por sí solo el recorrido completo de falloAPI a Telegram.

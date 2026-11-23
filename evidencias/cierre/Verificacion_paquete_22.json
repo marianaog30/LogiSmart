@@ -1,0 +1,29 @@
+{
+  "resultado": "PASS",
+  "enlaces_internos_index": 18,
+  "archivos_esenciales_comprobados": 15,
+  "workflows_operativos": [
+    {
+      "archivo": "LogiSmart_Telegram_ACTUAL.json",
+      "nodos": 65,
+      "conexiones_validas": true
+    },
+    {
+      "archivo": "LogiSmart_GitHub_ACTUAL.json",
+      "nodos": 45,
+      "conexiones_validas": true
+    },
+    {
+      "archivo": "LogiSmart_Avisos_ACTUAL.json",
+      "nodos": 3,
+      "conexiones_validas": true
+    },
+    {
+      "archivo": "LogiSmart_Voz_ACTUAL.json",
+      "nodos": 7,
+      "conexiones_validas": true
+    }
+  ],
+  "pruebas_ids": 14,
+  "alcance": "Verificación estructural local. No demuestra importación completa, credenciales, disponibilidad ni reproducción por otra persona."
+}
