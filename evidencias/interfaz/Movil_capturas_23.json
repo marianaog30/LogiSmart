@@ -1,0 +1,43 @@
+{
+  "fecha_revision_local": "2026-11-23",
+  "origen": "Dos capturas aportadas por Mariana Orozco y confirmación de uso desde su celular.",
+  "resultado": "VERIFICADO_EN_CAPTURAS_MOVILES",
+  "observado": {
+    "productos": 2,
+    "paquetes": 2,
+    "total_mxn": 205,
+    "lineas": [
+      {
+        "producto": "Producto A",
+        "paquetes": 1,
+        "precio_mxn": 120,
+        "subtotal_mxn": 120
+      },
+      {
+        "producto": "Producto B",
+        "paquetes": 1,
+        "precio_mxn": 85,
+        "subtotal_mxn": 85
+      }
+    ],
+    "grafica": "Dos barras con valores120 y85MXN",
+    "solicitud": "/nuevo Necesito cotizar 1 paquete de Producto A y 1 paquete de Producto B"
+  },
+  "archivos_originales": [
+    {
+      "nombre": "IMG_5220.PNG",
+      "sha256": "ad10c1ed83abf8bc6568a8a2c63f69f4e56e0b8a4e4068b2c68502744cc1a97c"
+    },
+    {
+      "nombre": "IMG_5221.PNG",
+      "sha256": "59f73860769b2df820c1edefaa16c2953e61997a785250d40d78930616566a74"
+    }
+  ],
+  "ubicacion_capturas": "EVIDENCIA_MOVIL en carpeta definitiva y ZIP; originales no publicados en GitHub.",
+  "limites": [
+    "Prueba de vista previa local desde móvil de la autora; no reproducción por otra persona.",
+    "No demuestra recepción Telegram, ejecución de cuatro agentes, aprobación humana ni consulta de voz.",
+    "Se ven los botones de copiar/descargar/Telegram, pero las capturas no prueban que se hayan pulsado.",
+    "Encabezado Subtotal aparece partido en la primera captura; no se declara certificación de accesibilidad ni prueba de todos los tamaños."
+  ]
+}
