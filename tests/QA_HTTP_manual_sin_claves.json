@@ -1,0 +1,134 @@
+{
+  "name": "LogiSmart - QA HTTP aislado sin claves (NO PUBLICAR)",
+  "nodes": [
+    {
+      "name": "Inicio manual",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {},
+      "id": "2b9f3d9b-cea9-46cb-9222-95f89d9d0796"
+    },
+    {
+      "name": "API sin credencial",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "url": "https://api.openai.com/v1/models",
+        "options": {
+          "timeout": 5000,
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true,
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "b417744c-d9be-4d78-bdd1-236cd8ab1e91"
+    },
+    {
+      "name": "Comprobar acceso rechazado",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const r=$input.first().json;if(r.statusCode!==401)throw Error('QA_ACCESO_NO_RECHAZADO:'+r.statusCode);return [{json:{prueba:'API_SIN_CREDENCIAL',http:401,resultado:'PASS',mensaje:'Problema de acceso al servicio. La prueba se detuvo sin generar cotización.'}}];"
+      },
+      "id": "df1ba97a-f91f-4c83-a60a-38c12cdbeb26"
+    },
+    {
+      "name": "Tiempo máximo un milisegundo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        0
+      ],
+      "parameters": {
+        "url": "https://api.openai.com/v1/models",
+        "options": {
+          "timeout": 1
+        }
+      },
+      "onError": "continueRegularOutput",
+      "retryOnFail": false,
+      "id": "bc7493c0-06f7-40e5-b6bb-75cd05bdd8d8"
+    },
+    {
+      "name": "Verificar salida controlada",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        960,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const r=$input.first().json;const raw=JSON.stringify(r);if(!/timeout|timed.?out|ETIMEDOUT|aborted/i.test(raw))throw Error('QA_TIMEOUT_NO_DEMOSTRADO');return [{json:{fecha_utc:new Date().toISOString(),tipo:'QA_HTTP_REAL_N8N_SIN_CREDENCIALES',resultado:'PASS',acceso:$(\"Comprobar acceso rechazado\").first().json,timeout:{limite_ms:1,reintentos:0,resultado:'PASS',mensaje:'Tiempo de espera agotado. No se generó una cotización.'},llamadas_generacion_ia:0,envios_telegram:0,alcance:'HTTP real y salida controlada en workflow aislado de n8n. No prueba una caída de proveedor ni el recorrido de error de producción a Telegram. No se modifica producción.'}}];"
+      },
+      "id": "33b4c6dd-33a5-41b2-9719-0fc59ce18f86"
+    }
+  ],
+  "connections": {
+    "Inicio manual": {
+      "main": [
+        [
+          {
+            "node": "API sin credencial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "API sin credencial": {
+      "main": [
+        [
+          {
+            "node": "Comprobar acceso rechazado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Comprobar acceso rechazado": {
+      "main": [
+        [
+          {
+            "node": "Tiempo máximo un milisegundo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tiempo máximo un milisegundo": {
+      "main": [
+        [
+          {
+            "node": "Verificar salida controlada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {}
+}

@@ -1,0 +1,15 @@
+{
+  "estado": "PREPARADO_NO_EJECUTADO",
+  "fecha_local": "2026-11-22",
+  "archivo": "tests/QA_HTTP_manual_sin_claves.json",
+  "como_usar": [
+    "Importar como workflow nuevo y separado.",
+    "No publicar ni añadir credenciales.",
+    "Ejecutar manualmente una vez.",
+    "Esperado: acceso sin credencial401 y timeout controlado con1ms; nodo finalPASS solo si ambos se comprueban.",
+    "Si el nodo final falla, conservar el error; no declarar aprobación."
+  ],
+  "efectos": "Dos solicitudes GET a lista de modelos, sin clave, sin prompts ni generación. No lee/escribe Data Tables y no envía Telegram.",
+  "limite": "Prueba HTTP en workflow aislado; no equivale a caída real del proveedor ni demuestra por sí sola el aviso de producción a Telegram.",
+  "bloqueo_actual": "No se pudo cargar editor n8n en navegador; ejecución pendiente, no se generó evidencia de éxito."
+}
