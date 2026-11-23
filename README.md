@@ -73,3 +73,9 @@ Las notas de hitos/ y documentos con fecha anterior son evidencia histórica; la
 ## Ensayo posterior al corte del registro
 
 El archivo `evidencias/cierre/Ensayo_final_205.json` acredita el ensayo nuevo del 21/11: skills cargados, cuatro agentes, 205 MXN, envío confirmado por n8n y aprobación persistida como MUESTRA-199. La confirmación de Telegram fue reportada por Mariana. Costo agregado USD 0.00080670, 3190 tokens de entrada y 547 de salida; no se dispone aquí de desglose por especialista ni caché, por lo que no se añade como cuatro filas ficticias al CSV cerrado. El CSV conserva su corte de 32 llamadas; subtotal conocido del CSV más este ensayo, sin duplicar: USD 0.09373550. No es costo integral. El dashboard puede mostrar 199 filas después de actualizar el artifact, mientras la muestra versionada de entrega conserva 198 y su fecha.
+
+## Carga de archivos para la docente
+
+En la web pública, abre [Laboratorio de archivos](https://marianaog30.github.io/LogiSmart/archivos.html), pulsa **Probar solicitud A + B** y después **Validar y calcular localmente**: debe mostrar $205 MXN. Prueba también un producto desconocido: debe solicitar revisión, sin inventar precio. CSV/JSON son estructurados; XLSX, DOCX, TXT y HTML se extraen para revisión. No se admiten todos los formatos ni PDF. Los archivos no se envían a n8n: para recorrer los cuatro agentes, copia la solicitud al bot autorizado y decide en Telegram. El cálculo local no cuenta como ejecución de agentes.
+
+Para explorar los KPI con otro archivo ficticio, descarga `web/datos/muestra_historial.csv` y cárgalo en el panel. El esquema y las fórmulas se conservan; no sustituye la tabla privada. El mapa externo marítimo no participa en los cálculos. Documentación de formatos y privacidad: `web/README.md`.

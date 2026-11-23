@@ -1,0 +1,20 @@
+{
+  "fecha_local": "2026-11-22",
+  "tipo": "PRUEBAS_LOCALES_SIN_LLM",
+  "controles_core_seguridad": 24,
+  "resultado": "PASS",
+  "validacion_exportacion_registros": 199,
+  "formatos_implementados": [
+    "CSV",
+    "JSON",
+    "XLSX primera hoja sin fórmulas",
+    "DOCX texto",
+    "TXT",
+    "HTML inerte"
+  ],
+  "fuente_widget": "https://www.myshiptracking.com/more/embed-our-map",
+  "revision_visual": "PENDIENTE: equipo bloqueado al intentar navegador",
+  "prueba_word_excel_en_navegador": "PENDIENTE",
+  "credenciales_voz": "La usuaria informa guardadas; no verificadas en esta revisión por falta de acceso al navegador.",
+  "informe_academico": "NO INCLUIDO"
+}
