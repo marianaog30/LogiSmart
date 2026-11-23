@@ -11,3 +11,12 @@ El complemento externo actual es el Shipping Cost Calculator de [ShipEstimator](
 La biblioteca local `vendor/fflate-0.8.3.js` (npm fflate 0.8.3, MIT) descomprime OOXML; licencia en `vendor/fflate-LICENSE.txt`. Fuente: https://github.com/101arrowz/fflate. No se ejecutan macros ni fórmulas. No se envían documentos a un LLM.
 
 Prueba sin consumo: `node tests/probar_archivos.cjs`. Las pruebas automáticas no sustituyen la revisión visual de XLSX/DOCX, móvil, teclado, portapapeles y disponibilidad del widget externo.
+
+
+## Panel logístico para ventas · revisión23nov2026
+
+La presentación usa tonos cafés y mantiene los tres KPI originales. El análisis comercial calcula media y mediana solo de importes conocidos, rangos de importe y mezclas exclusivas de productos a partir de las filas filtradas. No mide ingresos, margen ni ventas facturadas.
+
+`datos/proveedores_demo.csv` es una asignación sintética aprobada por Mariana: A→Proveedor demo A, B→Proveedor demo B. No es un campo recuperado del historial. El gráfico cuenta registros que incluyen el producto asignado; una cotización A+B aparece en ambas barras. No sumar barras como solicitudes únicas, ni atribuir gasto a cada proveedor: no existen importes por línea en la exportación pública. No afecta n8n.
+
+El módulo desplegable de evaluación ponderada procede de Carlos F. Cabañero Pisa y Marta Viu Roig, Fundamentos de logística, PID_00147161, ejercicio8 y solucionario, consultado en ElevenLabs el23nov2026. Pesos15/20/5/10/30/20%; valoracionesA7/6/9/8/3/5 y B6/8/5/4/8/7; puntuaciones5.40 y6.95. Los pesos deben sumar100%; no se normalizan silenciosamente. Es aprendizaje independiente del historial y de proveedores demo; no realiza selección empresarial ni cambia precios. No se redistribuye el documento original.

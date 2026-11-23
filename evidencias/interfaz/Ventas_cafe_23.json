@@ -1,0 +1,82 @@
+{
+  "fecha_local": "2026-11-23",
+  "audiencia": "Personal de ventas de distribuidora ficticia de suministros de empaque",
+  "paleta": "Café, nogal y neutros cálidos; Times New Roman",
+  "fuentes": {
+    "historial": "web/datos/cotizaciones.json y muestra_historial.csv; misma base201",
+    "proveedores": "web/datos/proveedores_demo.csv, ASIGNACION_SINTETICA aprobada por Mariana",
+    "ejercicio": "Fundamentos de logística, Carlos F. Cabañero Pisa y Marta Viu Roig, PID_00147161, autoevaluación8/solucionario; contenido de documento consultado en ElevenLabs"
+  },
+  "contrato_original": "Se conservan los tres KPI y las fórmulas. No se añaden proveedores a la tabla operativa.",
+  "pruebas_observadas": {
+    "escritorio1366": {
+      "ancho_documento": 1366,
+      "desbordamiento_global": false
+    },
+    "movil390": {
+      "ancho_documento": 390,
+      "ancho_seccion_analisis": 362,
+      "desbordamiento_global": false
+    },
+    "MUESTRA-200": {
+      "registros": 1,
+      "media_mxn": 290,
+      "mediana_mxn": 290,
+      "asociaciones_proveedor": [
+        1,
+        1
+      ]
+    },
+    "busqueda_inexistente": {
+      "registros": 0,
+      "media": "—",
+      "grafica": "Sin observaciones para mostrar"
+    },
+    "reset": {
+      "registros": 201,
+      "mediana_mxn": 1700
+    }
+  },
+  "corte": {
+    "importes_conocidos": 161,
+    "importes_ausentes": 40,
+    "mezcla": [
+      60,
+      60,
+      81,
+      0
+    ],
+    "rangos": [
+      12,
+      36,
+      60,
+      53
+    ],
+    "proveedores_demo": [
+      141,
+      141
+    ]
+  },
+  "limites": [
+    "No se atribuyen importes completos a cada producto o proveedor para evitar doble conteo.",
+    "Proveedores demo no son registros comerciales ni desempeño medido.",
+    "Ejercicio independiente no cambia cotización/KPI/n8n.",
+    "No se ejecutó generación de IA en estas pruebas."
+  ],
+  "ejercicio_ponderado": {
+    "original": [
+      5.4,
+      6.95
+    ],
+    "cambio_pesos_calidad45_precio0": [
+      6.6,
+      6.35
+    ],
+    "suma101": "No calculable; puntuaciones —",
+    "restaurar": [
+      5.4,
+      6.95
+    ],
+    "alcance": "Prueba interactiva en navegador sin conexión a decisiones empresariales"
+  }
+}

@@ -88,3 +88,6 @@ Pruebas adicionales del cierre22nov: `node tests/probar_componentes.cjs` ejecuta
 
 
 Prueba HTTP del22nov: `tests/QA_HTTP_manual_sin_claves.json`, importable por separado y solo manual. Resultado real: `evidencias/cierre/QA_HTTP_n8n_22.json`, HTTP401 y timeout1ms controlados, sin credenciales ni generación IA. No publicar ese laboratorio. Este ensayo no demuestra por sí solo el recorrido completo de falloAPI a Telegram.
+
+
+El dashboard se orienta al personal de ventas de suministros de empaque, con paleta café. El historial conserva su contrato; `web/datos/proveedores_demo.csv` añade solo un cruce sintético para análisis, no proveedores registrados ni compras reales. El módulo educativo de ponderación de proveedores está separado del negocio. Pruebas sin API: `node tests/probar_ventas.cjs`. Documentación: `web/README.md`.

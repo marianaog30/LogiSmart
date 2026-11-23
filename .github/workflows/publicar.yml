@@ -43,6 +43,8 @@ jobs:
         run: node tests/probar_componentes.cjs
       - name: Probar importación local y cálculo de propuestas
         run: node tests/probar_archivos.cjs
+      - name: Verificar análisis comercial y asignaciones demo
+        run: node tests/probar_ventas.cjs
       - name: Auditar costos sin duplicaciones
         run: python3 scripts/auditar_costos.py
       - name: Comprobar archivos esenciales y enlaces de entrega
