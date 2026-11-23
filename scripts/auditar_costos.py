@@ -4,6 +4,8 @@ from decimal import Decimal as D
 from pathlib import Path
 P=Path(__file__).resolve().parents[1]/'costos'
 rows=list(csv.DictReader((P/'costos.csv').open(encoding='utf-8-sig')))
+required=['agente', 'caso_id', 'costo_usd', 'duracion_voz_segundos', 'estado', 'etapa', 'fecha_tarifa', 'fecha_utc', 'fuente', 'llamada_id', 'modelo_version', 'moneda', 'origen', 'precision_fecha', 'proveedor', 'reintento', 'tarifa_cache_usd_millon', 'tarifa_entrada_usd_millon', 'tarifa_salida_usd_millon', 'tokens_cache', 'tokens_entrada', 'tokens_salida', 'unidad_cobro']
+assert rows and set(required)<=set(rows[0]), 'Faltan columnas exigidas por la guía'
 ids=[r['llamada_id'] for r in rows if r['llamada_id']]
 assert len(ids)==len(set(ids)), 'Alias de llamada duplicado'
 total=D(0);agents=0
