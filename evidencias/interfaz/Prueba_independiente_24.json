@@ -1,0 +1,74 @@
+{
+  "fecha_prueba_declarada": "2026-11-24",
+  "participante": "Persona de prueba distinta de Mariana, según reporte reenviado; identidad no recabada",
+  "dispositivo_declarado": "Teléfono",
+  "navegador_declarado": "Safari",
+  "reporte_recibido": "Todo funcionó. Lo único confuso fue entender el dashboard y lo que medía.",
+  "origen": "REPORTE_REENVIADO_POR_MARIANA_Y_SEIS_CAPTURAS_APORTADAS",
+  "resultado": "ACCESO_PUBLICO_INDEPENDIENTE_REPORTADO_CON_EVIDENCIA_VISUAL",
+  "observado_en_capturas": [
+    "Búsqueda Muestra-200 con1registro visible y0pendientes",
+    "Media y mediana290MXN;0registros sin importe en esa selección",
+    "Propuesta local205MXN:2productos,2paquetes,A1+B1; etiqueta no guardada en n8n",
+    "Widget texto consulta MUESTRA-200 e importe290MXN; parte inferior de estado cortada en captura",
+    "Resumen201;56pendientes,84aprobadas,21rechazadas,10detenidas,14aclaración,16devueltas,0error;180importados; hora21:05UTC explícita"
+  ],
+  "confirmado_solo_por_reporte": [
+    "Todos los pasos enviados funcionaron, incluido reset y carga de muestra. Las capturas no muestran cada clic ni el selector de archivo.",
+    "Estado APROBADA y aprobación humana completa no visibles enteros en captura del widget; resultado general confirmado por participante."
+  ],
+  "hallazgo_usabilidad": {
+    "problema": "No fue claro qué mide el dashboard",
+    "accion": "Añadir guía inicial, explicación en lenguaje sencillo junto a tres KPI y distinción entre datos ficticios, tiempo técnico y propuestas sin ventas reales.",
+    "estado": "GUIA_IMPLEMENTADA_Y_REVISADA_EN_NAVEGADOR",
+    "verificacion_pendiente": "Repetir lectura con participante después de publicación; no afirmar comprensión mejorada sin su confirmación."
+  },
+  "limites": [
+    "Prueba pública, no cotización nueva de cuatro agentes ni autorización Telegram",
+    "No acredita importación/restauración n8n ni prueba docente protegida",
+    "No acredita voz por micrófono; estas capturas muestran texto",
+    "Seis archivos recibidos; posibles duplicados identificados por hash, no son seis sesiones",
+    "No se publica identidad, audio ni conversación completa. Originales en carpeta local y ZIP, no en GitHub."
+  ],
+  "capturas_locales": [
+    {
+      "archivo_local": "Prueba_publica_01.jpeg",
+      "sha256": "509ff9910cfd705327670eefed5182c7e92c17e09b98395e7723150f15196177",
+      "bytes": 87166
+    },
+    {
+      "archivo_local": "Prueba_publica_02.jpeg",
+      "sha256": "51549f9883f772cc39720f799b87d31da666b1c636c4bfcf146f88c9e7c4ace7",
+      "bytes": 134656
+    },
+    {
+      "archivo_local": "Prueba_publica_03.jpeg",
+      "sha256": "9b4de40cbd249f764e6c39e7cf8b0e8b068e4ce950861661334966752986559e",
+      "bytes": 147920
+    },
+    {
+      "archivo_local": "Prueba_publica_04.jpeg",
+      "sha256": "7b034b0032ec3c930d619773b4a3b39ab899dc814084604209326e86a549dcc9",
+      "bytes": 104838
+    },
+    {
+      "archivo_local": "Prueba_publica_05.jpeg",
+      "sha256": "365e2a2418fdd67c77d086925871e3db83941e04238429aadd73d45652f84a75",
+      "bytes": 113434
+    },
+    {
+      "archivo_local": "Prueba_publica_06.jpeg",
+      "sha256": "365e2a2418fdd67c77d086925871e3db83941e04238429aadd73d45652f84a75",
+      "bytes": 113434
+    }
+  ],
+  "archivos_unicos_por_sha256": 5,
+  "revision_de_la_correccion": {
+    "escritorio": "1366x900, sin desbordamiento horizontal",
+    "movil": "390x844, guía en una columna, sin desbordamiento horizontal",
+    "busqueda_MUESTRA_200": "1registro, media290MXN, mediana290MXN",
+    "reset": "201registros",
+    "calculos": "No modificados",
+    "comprension_participante": "PENDIENTE_REPETIR_LECTURA"
+  }
+}

@@ -7,3 +7,5 @@ main{max-width:1280px}.card{border-radius:9px;box-shadow:0 3px 14px #30231b05}.t
 .weights-table{min-width:550px}.weights-table label{font-weight:normal;font-size:16px}.weights-table input{width:90px;max-width:100%;font-size:16px}.weights-table th:first-child{white-space:normal}#ejemplo-logistica output{display:block;font-size:30px;font-weight:bold;color:var(--red);margin:12px 0}#ejemplo-logistica meter{display:block;width:100%;height:24px;accent-color:var(--red)}#ejemplo-logistica .grid>div{background:#f7f0e5;padding:18px;border-radius:6px}
 
 #ejemplo-logistica meter[hidden]{display:none!important}
+
+.quick-guide{border-top:4px solid #b99265}.quick-guide h2{margin:5px 0 10px}.quick-guide>p{max-width:1000px}.guide-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding-left:23px;margin:18px 0}.guide-steps li{padding-right:10px}.guide-steps b{display:block;color:#513820}.guide-example{background:#f7f0e5;padding:13px 16px;border-left:3px solid #a47a50}.kpi-question{font-size:16px;margin:5px 0 0;color:var(--muted)}@media(max-width:760px){.guide-steps{grid-template-columns:1fr;gap:12px}.quick-guide small{font-size:15px}}
