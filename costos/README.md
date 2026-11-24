@@ -1,6 +1,6 @@
 # Registro de costos actualizado al 24 de noviembre de 2026
 
-85 filas; 44 llamadas OpenAI auditables: 20 históricas GPT-5 mini, cuatro del caso público MUESTRA-196 ocho de los casos operativos LOG-16754699 y LOG-944937395374, y12 de los casos205/290/445 conciliados el22nov. No cambiar retrospectivamente modelos ni tarifas. La suma monetaria conocida es USD 0.11808830; incluye USD 0.00200500 del experimento de desarrollo. No equivale a factura, saldo, costo integral ni costo medio por caso.
+87 filas; 44 llamadas OpenAI auditables: 20 históricas GPT-5 mini, cuatro del caso público MUESTRA-196 ocho de los casos operativos LOG-16754699 y LOG-944937395374, y12 de los casos205/290/445 conciliados el22nov. No cambiar retrospectivamente modelos ni tarifas. La suma monetaria conocida es USD 0.14538830; incluye USD 0.00200500 del experimento de desarrollo. No equivale a factura, saldo, costo integral ni costo medio por caso.
 
 `costos.csv` conserva celdas vacías para no medido o no aplicable según nota. `escenarios.csv` es sensibilidad histórica basada en el caso de 495 MXN; sus importes no son una proyección completa del costo de plataforma. `plataformas_y_desarrollo.csv` conserva fuentes y fecha de inspección; no demuestra planes contratados hoy. Las horas humanas no se calculan por decisión de Mariana.
 
@@ -15,3 +15,5 @@ Conciliación de cierre: `evidencias/cierre/Conciliacion_22.json` relaciona los 
 `Campos_y_completitud.json` enumera las27columnas, su correspondencia con la guía y el conteo de celdas disponibles. Todos los campos solicitados existen. Esto no significa que todos los valores estén medidos: la duración exacta de audio hablado no está disponible; la duración de sesión se conserva por separado. En filas sin llamada LLM, modelo/tokens/alias pueden no aplicar; en cargos desconocidos no se reporta costo cero. Leer siempre `origen`, `precision_fecha` y `nota`.
 
 Sesión de voz24nov: `evidencias/cierre/Voz_publica_24.json`, folio200 yRESUMEN201,142s de sesión,5turnos yUSD0.0228 LLM reportado;228créditosLLM +1577plataforma =1805créditos. No sumar créditos y dólares, no convertir créditos a USD sin tarifa. Las dos filas comparten sesión: no sumar su duración. Tokens y modelo no disponibles.
+
+Prueba de texto con permiso de micrófono bloqueado confirmado por Mariana: sesión v9 del24nov,117s,USD0.0273 LLM,274créditos LLM y1299plataforma. Entrada Texto y respuesta UTC verificadas. Fuente `evidencias/interfaz/Texto_y_UTC_24.json`. El modelo visible del editor no acredita el modelo facturado de cada llamada; se preserva desconocido.

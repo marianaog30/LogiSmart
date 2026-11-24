@@ -1,7 +1,7 @@
 {
   "archivo": "costos.csv",
   "fecha_revision_local": "2026-11-24",
-  "filas": 85,
+  "filas": 87,
   "columnas": 27,
   "todos_los_campos_requeridos_presentes": true,
   "correspondencia_rubrica": {
@@ -67,111 +67,111 @@
   },
   "completitud_por_columna": {
     "fecha_utc": {
-      "con_valor": 82,
+      "con_valor": 84,
       "sin_valor": 3
     },
     "caso_id": {
-      "con_valor": 84,
+      "con_valor": 86,
       "sin_valor": 1
     },
     "llamada_id": {
-      "con_valor": 52,
+      "con_valor": 54,
       "sin_valor": 33
     },
     "etapa": {
-      "con_valor": 85,
+      "con_valor": 87,
       "sin_valor": 0
     },
     "agente": {
-      "con_valor": 80,
+      "con_valor": 82,
       "sin_valor": 5
     },
     "proveedor": {
-      "con_valor": 52,
+      "con_valor": 54,
       "sin_valor": 33
     },
     "modelo_version": {
       "con_valor": 45,
-      "sin_valor": 40
+      "sin_valor": 42
     },
     "tokens_entrada": {
       "con_valor": 45,
-      "sin_valor": 40
+      "sin_valor": 42
     },
     "tokens_cache": {
       "con_valor": 45,
-      "sin_valor": 40
+      "sin_valor": 42
     },
     "tokens_salida": {
       "con_valor": 45,
-      "sin_valor": 40
+      "sin_valor": 42
     },
     "duracion_voz_segundos": {
       "con_valor": 0,
-      "sin_valor": 85
+      "sin_valor": 87
     },
     "duracion_sesion_segundos": {
-      "con_valor": 8,
+      "con_valor": 10,
       "sin_valor": 77
     },
     "unidad_cobro": {
-      "con_valor": 79,
+      "con_valor": 81,
       "sin_valor": 6
     },
     "tarifa_entrada_usd_millon": {
       "con_valor": 44,
-      "sin_valor": 41
+      "sin_valor": 43
     },
     "tarifa_cache_usd_millon": {
       "con_valor": 44,
-      "sin_valor": 41
+      "sin_valor": 43
     },
     "tarifa_salida_usd_millon": {
       "con_valor": 44,
-      "sin_valor": 41
+      "sin_valor": 43
     },
     "costo_usd": {
-      "con_valor": 49,
-      "sin_valor": 36
+      "con_valor": 50,
+      "sin_valor": 37
     },
     "creditos": {
-      "con_valor": 6,
+      "con_valor": 8,
       "sin_valor": 79
     },
     "moneda": {
-      "con_valor": 76,
-      "sin_valor": 9
+      "con_valor": 77,
+      "sin_valor": 10
     },
     "estado": {
-      "con_valor": 85,
+      "con_valor": 87,
       "sin_valor": 0
     },
     "reintento": {
-      "con_valor": 47,
+      "con_valor": 49,
       "sin_valor": 38
     },
     "origen": {
-      "con_valor": 85,
+      "con_valor": 87,
       "sin_valor": 0
     },
     "fuente": {
-      "con_valor": 73,
+      "con_valor": 75,
       "sin_valor": 12
     },
     "fecha_tarifa": {
       "con_valor": 44,
-      "sin_valor": 41
+      "sin_valor": 43
     },
     "precision_fecha": {
-      "con_valor": 52,
+      "con_valor": 54,
       "sin_valor": 33
     },
     "referencias_llamadas": {
       "con_valor": 7,
-      "sin_valor": 78
+      "sin_valor": 80
     },
     "nota": {
-      "con_valor": 85,
+      "con_valor": 87,
       "sin_valor": 0
     }
   },
@@ -182,6 +182,7 @@
     "fecha_utc puede ser el cierre del caso; precision_fecha identifica cuándo no se conservó la hora individual de la llamada.",
     "Tarifas por tokens no aplican a todos los cargos de plataforma; valores desconocidos permanecen vacíos y requieren leer origen y nota.",
     "Subtotal conocido no equivale al costo integral. Los campos presentes no acreditan por sí solos completitud de todos los datos.",
-    "La sesión de voz24nov añade dos componentes: USD0.0228 LLM y1577créditos plataforma sin conversión USD; duración142s de sesión repetida en ambos componentes, no sumar duraciones."
+    "La sesión de voz24nov añade dos componentes: USD0.0228 LLM y1577créditos plataforma sin conversión USD; duración142s de sesión repetida en ambos componentes, no sumar duraciones.",
+    "Sesión textual v9 añade USD0.0273 LLM y1299créditos plataforma. Duración117s compartida por dos componentes. No duplicar duración ni convertir créditos."
   ]
 }

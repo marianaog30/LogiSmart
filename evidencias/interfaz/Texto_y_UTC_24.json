@@ -1,0 +1,53 @@
+{
+  "fecha_local": "2026-11-24",
+  "sesion_alias": "TEXTO-24-M200",
+  "version_agente": "v9",
+  "estado": "APROBADO_EN_ALCANCE_DOCUMENTADO",
+  "origen": [
+    "Confirmación Mariana: micrófono bloqueado y consulta por texto correcta",
+    "Historial ElevenLabs observado: entrada Texto, widget, dos consultar_logismart exitosos"
+  ],
+  "microfono": {
+    "bloqueado_confirmado_por_usuaria": true,
+    "permiso_observado_directamente_por_agente": false,
+    "limite": "El historial no acredita el estado del permiso del navegador; no se incluye captura de ese permiso."
+  },
+  "consulta": {
+    "folio": "MUESTRA-200",
+    "importe_mxn": 290,
+    "estado_final": "APROBADA",
+    "aprobacion_humana": "APROBADA",
+    "consultado_en": "2026-11-24T20:23:52.021Z",
+    "fecha_registro": "2026-11-23T03:48:22.720Z",
+    "ruta": "https://orozco08.app.n8n.cloud/webhook/logismart-voz",
+    "encabezado": "X-LogiSmart-Voice-Key; valor no publicado"
+  },
+  "correccion_utc": {
+    "estado": "PUBLICADA_Y_VERIFICADA_EN_RESPUESTA_V9",
+    "registro_narrado": "23 de noviembre de 2026 a las 03:48 UTC",
+    "consulta_narrada": "24 de noviembre de 2026 a las 20:23 UTC",
+    "no_conversion_local_inventada": true,
+    "instrucciones": "agentes/WALL_E_instrucciones_actuales_24.txt",
+    "limite": "Una respuesta de regresión verificada no garantiza todas las futuras salidas del modelo."
+  },
+  "datos_faltantes": {
+    "entrada": "cotización muestra",
+    "resultado_observado": "Solicita folio completo; no inventa una cotización ni un estado nuevo.",
+    "alcance": "Consulta de folio del asistente; no prueba rama de creación Telegram."
+  },
+  "consumo": {
+    "duracion_sesion_segundos": 117,
+    "duracion_voz_hablada_segundos": null,
+    "llm_usd_reportado": "0.0273",
+    "turnos_facturados": 6,
+    "creditos_llm": 274,
+    "creditos_plataforma": 1299,
+    "creditos_total": 1573,
+    "nota": "Cifras UI separadas, sin inferir conversión ni exactitud superior al redondeo mostrado. Texto de entrada con TTS de salida; no etiquetar como sesión sin audio ni costo cero.",
+    "tokens_entrada": null,
+    "tokens_salida": null,
+    "modelo_llamada": null
+  },
+  "configuracion_observada": "Editor del agente mostraba Eric y DeepSeek Flash 4.1. No demuestra el modelo facturado por turno de las sesiones anteriores ni cambia los cuatro agentes OpenAI en n8n.",
+  "privacidad": "Extracto técnico sanitizado; sin IDs privados, audio ni conversación completa."
+}

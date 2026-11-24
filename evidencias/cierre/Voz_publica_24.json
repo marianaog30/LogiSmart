@@ -56,7 +56,8 @@
   "hallazgos": [
     {
       "tipo": "CORRECCION_PENDIENTE_FECHA_HORA",
-      "detalle": "La respuesta verbal usó 20:06 UTC como hora de Ciudad de México. La consulta corresponde a 14:06 local; el registro fechado 23nov03:48Z es 22nov21:48 local. Los datos ISO del servidor son correctos. No se declara precisión temporal de la narración."
+      "detalle": "La respuesta verbal usó 20:06 UTC como hora de Ciudad de México. La consulta corresponde a 14:06 local; el registro fechado 23nov03:48Z es 22nov21:48 local. Los datos ISO del servidor son correctos. No se declara precisión temporal de la narración.",
+      "resolucion": "Corregido después: instrucciones publicadas v9 y respuesta UTC verificada en evidencias/interfaz/Texto_y_UTC_24.json. La sesión v8 original conserva su error."
     }
   ],
   "alcance": "P03 confirma micrófono, folio del mismo sistema y resumen por herramienta autenticada después de migración. No prueba permiso denegado, usuario independiente ni todos los guardrails. No se generaron cotizaciones ni decisiones nuevas durante esta revisión.",
