@@ -1,0 +1,24 @@
+{
+  "fecha_local": "2026-11-24",
+  "motivo": "Mariana solicita dashboard más intuitivo tras prueba independiente con confusión de lectura",
+  "cambios": [
+    "Inicio compacto con3tareas: buscar, ver pendientes y preparar archivo",
+    "Ayuda detallada bajo desplegable; evita repetir bloque introductorio largo",
+    "Estados y productos con etiquetas legibles, valores técnicos conservados",
+    "Filtros agrupados y selección activa explícita con base de registros",
+    "Atajo pendientes borra filtros anteriores de fecha, producto y folio; conserva fuente elegida y muestra estado pendiente",
+    "KPI originales, datos y fórmulas sin cambios"
+  ],
+  "verificacion": {
+    "estado": "PASS_QA_NAVEGADOR",
+    "buscar": "Atajo enfoca campo; MUESTRA-200 produce1registro y290MXN",
+    "pendientes": "Limpia folio/fecha/producto, conserva fuente,56registros pendientes",
+    "reset": "Vuelve a201registros",
+    "vacio": "Folio inexistente muestra0 ymedia—",
+    "demo": "180registros sin filtros",
+    "movil": "390x844, botones en una columna ysin desbordamiento horizontal",
+    "escritorio": "1366x900 revisado visualmente",
+    "anclas": "Todos los enlaces del menú apuntan a secciones existentes"
+  },
+  "limite": "No afirmar mejora de comprensión sin evaluación posterior de la persona de prueba."
+}
