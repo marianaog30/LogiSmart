@@ -33,7 +33,7 @@ Se requieren cuentas y capacidad vigente en GitHub, n8n, OpenAI y ElevenLabs. No
 2. Seguir `n8n/README.md`: importar los cuatro `*ACTUAL.json`, crear tabla privada, seleccionar credenciales, configurar usuarios autorizados y notificador. Los JSON sanitizados se detienen hasta completar configuración. El respaldo privado de registros no forma parte de la entrega docente.
 3. OpenAI y Telegram se configuran en Credentials de n8n; Header Auth en Entrada GitHub protegida. `LogiSmart-key` es el nombre del encabezado, no una clave real. En GitHub Settings → Secrets and variables → Actions configurar `N8N_SIMULATION_KEY` con el mismo valor. Los nodos n8n usan sus credenciales: GitHub no les actualiza OpenAI automáticamente. `OPENAI_API_KEY`, `TELEGRAM_BOT_TOKEN` y `ALPHAVANTAGE_API_KEY` de GitHub no son requeridos por el recorrido actual de simulación; no copiar secretos al sitio.
 4. Actualizar host si se migra de cuenta en scripts/exportar_datos.py, scripts/ejecutar_simulacion.py y herramienta ElevenLabs. Activar un solo receptor Telegram por bot. Revisar `Preparar llamada1` para la política única de tarifas; vencimiento actual29/11/2026 06:00UTC.
-5. Configurar Pages con fuente GitHub Actions; publicar solo tras validación. Se despliega únicamente web/. Configurar ElevenLabs según docs/ElevenLabs_recreacion.md; esa guía describe la ruta de voz autenticada ya instalada y la nueva comprobación de micrófono pendiente.
+5. Configurar Pages con fuente GitHub Actions; publicar solo tras validación. Se despliega únicamente web/. Configurar ElevenLabs según docs/ElevenLabs_recreacion.md; esa guía describe la ruta de voz autenticada ya instalada y la comprobación de micrófono del24nov, con observación horaria pendiente.
 
 ## Repetir un caso
 
@@ -91,3 +91,5 @@ Prueba HTTP del22nov: `tests/QA_HTTP_manual_sin_claves.json`, importable por sep
 
 
 El dashboard se orienta al personal de ventas de suministros de empaque, con paleta café. El historial conserva su contrato; `web/datos/proveedores_demo.csv` añade solo un cruce sintético para análisis, no proveedores registrados ni compras reales. El módulo educativo de ponderación de proveedores está separado del negocio. Pruebas sin API: `node tests/probar_ventas.cjs`. Documentación: `web/README.md`.
+
+Verificación24nov: voz por micrófono desde Pages y dos consultas protegidas exitosas, MUESTRA-200 aprobada290MXN yRESUMEN201. Véase `evidencias/cierre/Voz_publica_24.json`. Se conserva el hallazgo de narración horaria UTC/local; no se declara resuelto. Costos conocidos USD0.11808830; costo integral desconocido.

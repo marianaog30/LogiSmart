@@ -25,3 +25,7 @@ El webhook público `/webhook/logismart-dashboard` se reserva al panel de datos 
 Los alias MUESTRA dependen del orden de consulta. `datos/Mapa_casos_del_corte.json` congela la relación de los casos de entrega; no usar ese alias para aprobar en Telegram.
 
 Documentación oficial del método: https://elevenlabs.io/docs/eleven-agents/customization/widget y https://elevenlabs.io/docs/eleven-agents/customization/tools/webhook-tools . No se contrató ningún plan ni se publica ningún secreto.
+
+## Nueva verificación24 de noviembre
+
+Mariana realizó desde Pages la consulta por micrófono MUESTRA-200 yRESUMEN. El historialv8 muestra widget, ASR y dos llamadas `consultar_logismart` exitosas con encabezado protegido: APROBADA/APROBADA290MXN y201registros. Evidencia sanitizada: `evidencias/cierre/Voz_publica_24.json`. El aviso de cuota agotada22nov es histórico. Se observó un error de narración de zona horaria:20:06Z fue dicho como hora CDMX; corresponde14:06. Los ISO del servidor son correctos. Pendientes: corregir esa narración y verificar permiso denegado con alternativa por texto.

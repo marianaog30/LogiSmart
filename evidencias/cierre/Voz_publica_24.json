@@ -1,0 +1,64 @@
+{
+  "fecha_local": "2026-11-24",
+  "sesion_alias": "VOZ-24-M200",
+  "agente": "WALL-E",
+  "version": "v8",
+  "origen": "HISTORIAL_ELEVENLABS_OBSERVADO_Y_CONFIRMACION_USUARIA",
+  "canal": "Widget público; entrada por micrófono confirmada por Mariana y eventos ASR visibles",
+  "fecha_inicio_mostrada": "2026-11-24 14:05 America/Mexico_City",
+  "precision_fecha": "Interfaz muestra minutos, no segundos de inicio",
+  "estado_proveedor": "Exitoso",
+  "duracion_sesion_segundos": 142,
+  "duracion_voz_hablada_segundos": null,
+  "herramienta": "consultar_logismart",
+  "ruta": "https://orozco08.app.n8n.cloud/webhook/logismart-voz",
+  "encabezado_autenticacion": "X-LogiSmart-Voice-Key; valor REDACTED en registro; no incluido",
+  "consultas": [
+    {
+      "folio": "MUESTRA-200",
+      "estado_herramienta": "Exitoso",
+      "consultado_en": "2026-11-24T20:06:06.715Z",
+      "importe_mxn": 290,
+      "estado_final": "APROBADA",
+      "aprobacion_humana": "APROBADA",
+      "latencia_interfaz_segundos": 2.8
+    },
+    {
+      "folio": "RESUMEN",
+      "estado_herramienta": "Exitoso",
+      "consultado_en": "2026-11-24T20:06:54.343Z",
+      "total_registros": 201,
+      "por_estado": {
+        "PENDIENTE_APROBACION": 56,
+        "APROBADA": 84,
+        "RECHAZADA": 21,
+        "DETENIDO": 10,
+        "ACLARACION_REQUERIDA": 14,
+        "DEVUELTO": 16,
+        "ERROR_INCONSISTENTE": 0
+      },
+      "importados_simulados": 180,
+      "latencia_interfaz_segundos": 2.2
+    }
+  ],
+  "costos": {
+    "llm_usd_reportado": "0.0228",
+    "turnos_facturados": 5,
+    "creditos_llm": 228,
+    "creditos_plataforma": 1577,
+    "creditos_total": 1805,
+    "tokens_entrada": null,
+    "tokens_salida": null,
+    "modelo": null,
+    "cargo_integral_usd": null,
+    "nota": "Costo LLM mostrado por proveedor; créditos no convertidos a USD ni sumados dos veces. Duración de sesión no es audio hablado exacto."
+  },
+  "hallazgos": [
+    {
+      "tipo": "CORRECCION_PENDIENTE_FECHA_HORA",
+      "detalle": "La respuesta verbal usó 20:06 UTC como hora de Ciudad de México. La consulta corresponde a 14:06 local; el registro fechado 23nov03:48Z es 22nov21:48 local. Los datos ISO del servidor son correctos. No se declara precisión temporal de la narración."
+    }
+  ],
+  "alcance": "P03 confirma micrófono, folio del mismo sistema y resumen por herramienta autenticada después de migración. No prueba permiso denegado, usuario independiente ni todos los guardrails. No se generaron cotizaciones ni decisiones nuevas durante esta revisión.",
+  "privacidad": "No se publica audio, conversación completa, ID de usuario ni ID privado de conversación."
+}

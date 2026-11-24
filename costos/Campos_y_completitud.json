@@ -1,7 +1,7 @@
 {
   "archivo": "costos.csv",
-  "fecha_revision_local": "2026-11-22",
-  "filas": 83,
+  "fecha_revision_local": "2026-11-24",
+  "filas": 85,
   "columnas": 27,
   "todos_los_campos_requeridos_presentes": true,
   "correspondencia_rubrica": {
@@ -67,111 +67,111 @@
   },
   "completitud_por_columna": {
     "fecha_utc": {
-      "con_valor": 80,
+      "con_valor": 82,
       "sin_valor": 3
     },
     "caso_id": {
-      "con_valor": 82,
+      "con_valor": 84,
       "sin_valor": 1
     },
     "llamada_id": {
-      "con_valor": 50,
+      "con_valor": 52,
       "sin_valor": 33
     },
     "etapa": {
-      "con_valor": 83,
+      "con_valor": 85,
       "sin_valor": 0
     },
     "agente": {
-      "con_valor": 78,
+      "con_valor": 80,
       "sin_valor": 5
     },
     "proveedor": {
-      "con_valor": 50,
+      "con_valor": 52,
       "sin_valor": 33
     },
     "modelo_version": {
       "con_valor": 45,
-      "sin_valor": 38
+      "sin_valor": 40
     },
     "tokens_entrada": {
       "con_valor": 45,
-      "sin_valor": 38
+      "sin_valor": 40
     },
     "tokens_cache": {
       "con_valor": 45,
-      "sin_valor": 38
+      "sin_valor": 40
     },
     "tokens_salida": {
       "con_valor": 45,
-      "sin_valor": 38
+      "sin_valor": 40
     },
     "duracion_voz_segundos": {
       "con_valor": 0,
-      "sin_valor": 83
+      "sin_valor": 85
     },
     "duracion_sesion_segundos": {
-      "con_valor": 6,
+      "con_valor": 8,
       "sin_valor": 77
     },
     "unidad_cobro": {
-      "con_valor": 77,
+      "con_valor": 79,
       "sin_valor": 6
     },
     "tarifa_entrada_usd_millon": {
       "con_valor": 44,
-      "sin_valor": 39
+      "sin_valor": 41
     },
     "tarifa_cache_usd_millon": {
       "con_valor": 44,
-      "sin_valor": 39
+      "sin_valor": 41
     },
     "tarifa_salida_usd_millon": {
       "con_valor": 44,
-      "sin_valor": 39
+      "sin_valor": 41
     },
     "costo_usd": {
-      "con_valor": 48,
-      "sin_valor": 35
+      "con_valor": 49,
+      "sin_valor": 36
     },
     "creditos": {
-      "con_valor": 4,
+      "con_valor": 6,
       "sin_valor": 79
     },
     "moneda": {
-      "con_valor": 75,
-      "sin_valor": 8
+      "con_valor": 76,
+      "sin_valor": 9
     },
     "estado": {
-      "con_valor": 83,
+      "con_valor": 85,
       "sin_valor": 0
     },
     "reintento": {
-      "con_valor": 45,
+      "con_valor": 47,
       "sin_valor": 38
     },
     "origen": {
-      "con_valor": 83,
+      "con_valor": 85,
       "sin_valor": 0
     },
     "fuente": {
-      "con_valor": 71,
+      "con_valor": 73,
       "sin_valor": 12
     },
     "fecha_tarifa": {
       "con_valor": 44,
-      "sin_valor": 39
+      "sin_valor": 41
     },
     "precision_fecha": {
-      "con_valor": 50,
+      "con_valor": 52,
       "sin_valor": 33
     },
     "referencias_llamadas": {
       "con_valor": 7,
-      "sin_valor": 76
+      "sin_valor": 78
     },
     "nota": {
-      "con_valor": 83,
+      "con_valor": 85,
       "sin_valor": 0
     }
   },
@@ -180,8 +180,8 @@
     "Las filas deterministas no tienen tokens aplicables; no atribuirles tokens0 como consumo medido.",
     "llamada_id de auditoría no es necesariamente el identificador nativo del proveedor.",
     "fecha_utc puede ser el cierre del caso; precision_fecha identifica cuándo no se conservó la hora individual de la llamada.",
-    "duracion_voz_segundos no está medida en ninguna fila. duracion_sesion_segundos tiene datos en6filas: no equivale al tiempo exacto de voz hablada.",
     "Tarifas por tokens no aplican a todos los cargos de plataforma; valores desconocidos permanecen vacíos y requieren leer origen y nota.",
-    "Subtotal conocido no equivale al costo integral. Los campos presentes no acreditan por sí solos completitud de todos los datos."
+    "Subtotal conocido no equivale al costo integral. Los campos presentes no acreditan por sí solos completitud de todos los datos.",
+    "La sesión de voz24nov añade dos componentes: USD0.0228 LLM y1577créditos plataforma sin conversión USD; duración142s de sesión repetida en ambos componentes, no sumar duraciones."
   ]
 }

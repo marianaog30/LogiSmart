@@ -21,7 +21,8 @@ for r in rows:
   agents+=1
 closure=json.loads((P.parent/'evidencias/cierre/Conciliacion_22.json').read_text())
 assert agents==closure['llamadas_conciliadas_csv']
-assert total==D(closure['subtotal_conocido_usd']), 'Subtotal no concilia con evidencia preservada'
+voice24=json.loads((P.parent/'evidencias/cierre/Voz_publica_24.json').read_text())
+assert total==D(closure['subtotal_conocido_usd'])+D(voice24['costos']['llm_usd_reportado']), 'Subtotal no concilia con evidencia preservada'
 for case in closure['casos']:
  selected=[r for r in rows if r['caso_id']==case['caso_id'] and r['proveedor']=='OpenAI' and r['tokens_entrada']]
  assert len(selected)==4 and {r['agente'] for r in selected}=={'Alfa','Beta','Gamma','Omega'}
