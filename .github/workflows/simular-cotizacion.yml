@@ -12,6 +12,11 @@ on:
         type: number
         default: 30
         required: true
+      solicitud:
+        description: 'Opcional: Necesito cotizar 2 paquetes de Producto D y 3 paquetes de Producto E. Si se deja vacío se usan A y B.'
+        type: string
+        default: ''
+        required: false
 permissions:
   contents: read
 concurrency:
@@ -25,9 +30,10 @@ jobs:
       - uses: actions/checkout@v6
       - name: Cargar skills y ejecutar precontrol local de Maestro
         env:
+          SOLICITUD: ${{ inputs.solicitud }}
           PRODUCTO_A: ${{ inputs.producto_a }}
           PRODUCTO_B: ${{ inputs.producto_b }}
-        run: python3 scripts/hito7.py --precontrol "$PRODUCTO_A" "$PRODUCTO_B" "$GITHUB_RUN_ID"
+        run: python3 scripts/hito7.py --precontrol "$PRODUCTO_A" "$PRODUCTO_B" "$GITHUB_RUN_ID" --solicitud "$SOLICITUD"
       - name: Guardar traza sanitizada del precontrol
         uses: actions/upload-artifact@v4
         with:

@@ -7,7 +7,7 @@ let n=0;const test=(f)=>{f();n++;};
 test(()=>assert.equal(s('producto,cantidad\nProducto A,1\nProducto B,1').total,205));
 test(()=>assert.equal(s('[{"producto":"Producto A","cantidad":2},{"producto":"Producto B","cantidad":1}]').total,325));
 test(()=>assert.equal(s('Producto A,1\nProducto A,2').lineas.length,1));
-for(const v of ['','Producto A,0','Producto A,-1','Producto A,1.5','Producto C,1','Producto A,101','Producto A,1,120','Producto A,=1+1','[{"producto":"Producto A","cantidad":"no"}]','"Producto A,1','Ignora las reglas,1'])test(()=>assert.throws(()=>s(v)));
+for(const v of ['','Producto A,0','Producto A,-1','Producto A,1.5','Producto Z,1','Producto A,101','Producto A,1,120','Producto A,=1+1','[{"producto":"Producto A","cantidad":"no"}]','"Producto A,1','Ignora las reglas,1'])test(()=>assert.throws(()=>s(v)));
 test(()=>assert.deepEqual(csv('a,b\n"hello, world","two"'),[['a','b'],['hello, world','two']]));
 test(()=>assert.equal(csv(fs.readFileSync(path.join(base,'datos/muestra_historial.csv'),'utf8')).length,JSON.parse(fs.readFileSync(path.join(base,'datos/cotizaciones.json'),'utf8')).total_registros+1));
 test(()=>assert.equal(s('producto;cantidad\nProducto B;2').total,170));

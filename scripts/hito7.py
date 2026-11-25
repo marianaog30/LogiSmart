@@ -147,6 +147,27 @@ def precontrol(a, b, caso_id):
             'limite': 'Costos API n8n no medidos por este precontrol local.'}
 
 
+def precontrol_texto(texto, caso):
+    if not isinstance(texto, str) or not texto.strip() or len(texto)>1000:
+        raise ValueError('Solicitud vacía o demasiado larga')
+    productos=[]
+    def tomar(m):
+        nombre='Producto '+m.group(2).upper()
+        if any(x['producto']==nombre for x in productos):
+            raise ValueError('Producto repetido; aclarar cantidades')
+        productos.append({'producto':nombre,'cantidad':int(m.group(1))})
+        return ' '
+    resto=re.sub(r'\b(\d{1,4})\s*(?:(?:paquetes?|unidades?)\s*)?(?:de(?:l)?\s*)?producto\s+([a-l])\b',tomar,texto.lower())
+    resto=re.sub(r'\b(?:necesito|quiero|cotizar|cotiza|solicito|por|favor|y|e|de|del|el|la|los|las)\b','',resto)
+    if re.sub(r'[\s.,;:]','',resto) or not productos:
+        raise ValueError('Solicitud fuera de catálogo o formato; usa paquetes de Producto A a L')
+    negocio=calidad({'caso_id':caso,'modo':'SIMULADO','productos':productos})
+    if negocio['estado']!='VALIDADA':raise ValueError('Precontrol: '+negocio['estado'])
+    revision=seguridad(negocio['propuesta'],autorizado=True)
+    if revision['estado']!='LIBERADA':raise ValueError('Precontrol: '+revision['estado'])
+    return {'calidad':negocio,'seguridad':revision,'limite':'Precontrol determinista local; no mide consumo de n8n.'}
+
+
 def evidencia():
     solicitud = {'caso_id': 'H7-CASO-001', 'modo': 'SIMULADO', 'productos': [
         {'producto': 'Producto A', 'cantidad': 8}, {'producto': 'Producto B', 'cantidad': 30}]}
@@ -170,13 +191,14 @@ def evidencia():
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
+    parser.add_argument('--solicitud', default='')
     parser.add_argument('--precontrol', nargs=3, metavar=('A', 'B', 'RUN_ID'))
     args = parser.parse_args()
     if args.precontrol:
         a, b, run = args.precontrol
         if not re.fullmatch(r'\d{1,15}', run):
             raise SystemExit('run_id fuera de formato')
-        resultado = precontrol(int(a), int(b), 'LOG-9' + run)
+        resultado = precontrol_texto(args.solicitud, 'LOG-9'+run) if args.solicitud.strip() else precontrol(int(a), int(b), 'LOG-9' + run)
         nombre = 'precontrol_actual.json'
     else:
         resultado = evidencia()

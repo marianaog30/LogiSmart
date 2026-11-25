@@ -47,7 +47,7 @@ def sanitizar(datos):
         vistos.add(folio)
         if r['fecha_registro'] is not None:
             fecha(r['fecha_registro'])
-        if not isinstance(r['productos'], list) or any(p not in ('Producto A', 'Producto B') for p in r['productos']):
+        if not isinstance(r['productos'], list) or any(p not in tuple('Producto '+chr(c) for c in range(65,77)) for p in r['productos']):
             raise ValueError('Producto fuera de catálogo')
         if r['moneda'] != 'MXN' or r['estado_final'] not in ESTADOS:
             raise ValueError('Moneda o estado inválido')

@@ -8,7 +8,12 @@ def main():
     if not (1<=a<=100 and 1<=b<=80): raise SystemExit('Cantidades fuera del catálogo ficticio.')
     run_id=os.environ['GITHUB_RUN_ID']
     if not run_id.isdigit(): raise SystemExit('Identificador de ejecución inválido.')
-    body={'repository':os.environ['GITHUB_REPOSITORY'],'run_id':run_id,'modo':'SIMULADO','producto_a':a,'producto_b':b}
+    from pathlib import Path
+    control=json.loads(Path('evidencias/precontrol_actual.json').read_text())
+    lineas=control['calidad']['propuesta']['lineas']
+    productos=[{'producto':x['producto'],'cantidad':x['cantidad']} for x in lineas]
+    if control['calidad']['estado']!='VALIDADA' or control['seguridad']['estado']!='LIBERADA': raise SystemExit('Precontrol no superado')
+    body={'repository':os.environ['GITHUB_REPOSITORY'],'run_id':run_id,'modo':'SIMULADO','producto_a':a,'producto_b':b,'productos':productos}
     endpoint='https://orozco08.app.n8n.cloud/webhook/logismart-h7-cotizacion' if os.environ.get('CONTROL_COSTOS')=='true' else 'https://mariana30.app.n8n.cloud/webhook/logismart-github-simulacion'
     request=urllib.request.Request(endpoint,data=json.dumps(body).encode(),headers={'Content-Type':'application/json','LogiSmart-key':key},method='POST')
     try:

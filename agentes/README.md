@@ -10,3 +10,6 @@ Maestro es coordinación determinista de n8n, no una quinta llamada LLM. Valida 
 Los cuatro TXT contienen instrucciones base extraídas de `Preparar llamada 1..4` del export actual. La versión ejecutable completa, incluidos catálogo y guardrails, está en los JSON n8n. `Contratos.json` es la especificación de transporte y evidencia; los contratos particulares de cada especialista están descritos en su prompt y se validan en los nodos de recepción.
 
 No se ejecutan compras, pagos, reservas ni despachos. La aprobación técnica no sustituye el callback autorizado de Telegram.
+
+
+Catálogo vigente: `Catalogo_2_WALL_E.txt` (12 productos A–L). La ampliación no cambia roles, consentimiento, permisos ni aprobación humana. Los contratos de los cuatro agentes conservan sus esquemas; sus prompts actuales se exportan en los workflows ACTUAL.

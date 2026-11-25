@@ -1,0 +1,97 @@
+{
+  "calidad": {
+    "estado": "VALIDADA",
+    "propuesta": {
+      "caso_id": "LOG-999999925",
+      "modo": "SIMULADO",
+      "datos_ficticios": true,
+      "fuente": "catalogo_ficticio_logismart_v2",
+      "moneda": "MXN",
+      "lineas": [
+        {
+          "producto": "Producto D",
+          "cantidad": 2,
+          "precio_centavos": 18000,
+          "subtotal_centavos": 36000
+        },
+        {
+          "producto": "Producto E",
+          "cantidad": 3,
+          "precio_centavos": 9500,
+          "subtotal_centavos": 28500
+        }
+      ],
+      "total_centavos": 64500,
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE"
+    },
+    "traza": [
+      {
+        "evento": "skill_cargado",
+        "responsable": "Maestro",
+        "ruta": "skills/logismart-cotizar/SKILL.md",
+        "version": "2.0.0",
+        "sha256": "dee047b6fc1b71a19b1a07c89066376e10dad81cb2cb69e4036e3d30a46f53e4"
+      },
+      {
+        "caso_id": "LOG-999999925",
+        "version_propuesta": "V1",
+        "iteracion": 1,
+        "diagnostico": [],
+        "validacion": "CORRECTA",
+        "total_centavos": 64500,
+        "costo_api_usd": 0,
+        "costo_adicional_api_usd": 0,
+        "duracion_acumulada_ms": 0.657
+      }
+    ]
+  },
+  "seguridad": {
+    "estado": "LIBERADA",
+    "propuesta": {
+      "caso_id": "LOG-999999925",
+      "modo": "SIMULADO",
+      "datos_ficticios": true,
+      "fuente": "catalogo_ficticio_logismart_v2",
+      "moneda": "MXN",
+      "lineas": [
+        {
+          "producto": "Producto D",
+          "cantidad": 2,
+          "precio_centavos": 18000,
+          "subtotal_centavos": 36000
+        },
+        {
+          "producto": "Producto E",
+          "cantidad": 3,
+          "precio_centavos": 9500,
+          "subtotal_centavos": 28500
+        }
+      ],
+      "total_centavos": 64500,
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE"
+    },
+    "traza": [
+      {
+        "evento": "skill_cargado",
+        "responsable": "Maestro",
+        "ruta": "skills/logismart-revisar/SKILL.md",
+        "version": "1.0.0",
+        "sha256": "b32a27deab9f610b7700cf6acc8a6eb3a81bfe4a13237f8e5032ec140439cce7"
+      },
+      {
+        "caso_id": "LOG-999999925",
+        "iteracion": 1,
+        "decision": "LIBERAR",
+        "campos_extra_eliminados": 0,
+        "lineas_con_extras": false,
+        "operacion_ejecutada": true,
+        "costo_api_usd": 0,
+        "costo_adicional_api_usd": 0,
+        "duracion_acumulada_ms": 0.784
+      }
+    ]
+  },
+  "limite": "Precontrol determinista local; no mide consumo de n8n."
+}

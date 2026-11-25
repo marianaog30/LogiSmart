@@ -1,3 +1,13 @@
-producto,proveedor,origen
+﻿producto,proveedor,origen
 Producto A,Proveedor demo A,ASIGNACION_SINTETICA
 Producto B,Proveedor demo B,ASIGNACION_SINTETICA
+Producto C,Proveedor demo C,ASIGNACION_SINTETICA
+Producto D,Proveedor demo C,ASIGNACION_SINTETICA
+Producto E,Proveedor demo A,ASIGNACION_SINTETICA
+Producto F,Proveedor demo D,ASIGNACION_SINTETICA
+Producto G,Proveedor demo D,ASIGNACION_SINTETICA
+Producto H,Proveedor demo B,ASIGNACION_SINTETICA
+Producto I,Proveedor demo B,ASIGNACION_SINTETICA
+Producto J,Proveedor demo B,ASIGNACION_SINTETICA
+Producto K,Proveedor demo A,ASIGNACION_SINTETICA
+Producto L,Proveedor demo C,ASIGNACION_SINTETICA

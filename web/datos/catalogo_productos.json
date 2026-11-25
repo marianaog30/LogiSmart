@@ -1,0 +1,106 @@
+{
+  "version": "2.0",
+  "vigente_desde": "2026-11-25",
+  "fuente": "catalogo_ficticio_logismart_v2",
+  "csv_sha256": "4d1f991426761a15b3f362883161a6467c787d94f30f7a013c51268cd6693476",
+  "moneda": "MXN",
+  "datos_ficticios": true,
+  "productos": {
+    "a": {
+      "nombre": "Producto A",
+      "descripcion": "Caja corrugada 40 × 30 × 30 cm; paquete de 10 cajas",
+      "precio": 120,
+      "inventario": 100,
+      "unidad": "paquete",
+      "proveedor_demo": "Proveedor demo A"
+    },
+    "b": {
+      "nombre": "Producto B",
+      "descripcion": "Cinta adhesiva 48 mm × 100 m; paquete de 5 rollos",
+      "precio": 85,
+      "inventario": 80,
+      "unidad": "paquete",
+      "proveedor_demo": "Proveedor demo B"
+    },
+    "c": {
+      "nombre": "Producto C",
+      "descripcion": "Película estirable manual; paquete de 2 rollos",
+      "precio": 210,
+      "inventario": 50,
+      "unidad": "paquete",
+      "proveedor_demo": "Proveedor demo C"
+    },
+    "d": {
+      "nombre": "Producto D",
+      "descripcion": "Protección de burbuja; paquete de 1 rollo de 10 m",
+      "precio": 180,
+      "inventario": 40,
+      "unidad": "paquete",
+      "proveedor_demo": "Proveedor demo C"
+    },
+    "e": {
+      "nombre": "Producto E",
+      "descripcion": "Protección de esquinas; paquete de 20 piezas",
+      "precio": 95,
+      "inventario": 120,
+      "unidad": "paquete",
+      "proveedor_demo": "Proveedor demo A"
+    },
+    "f": {
+      "nombre": "Producto F",
+      "descripcion": "Sobres de envío 25 × 35 cm; paquete de 25 sobres",
+      "precio": 160,
+      "inventario": 60,
+      "unidad": "paquete",
+      "proveedor_demo": "Proveedor demo D"
+    },
+    "g": {
+      "nombre": "Producto G",
+      "descripcion": "Bolsas resellables 20 × 30 cm; paquete de 50 bolsas",
+      "precio": 110,
+      "inventario": 70,
+      "unidad": "paquete",
+      "proveedor_demo": "Proveedor demo D"
+    },
+    "h": {
+      "nombre": "Producto H",
+      "descripcion": "Etiquetas adhesivas 10 × 15 cm; paquete de 100 etiquetas",
+      "precio": 75,
+      "inventario": 50,
+      "unidad": "paquete",
+      "proveedor_demo": "Proveedor demo B"
+    },
+    "i": {
+      "nombre": "Producto I",
+      "descripcion": "Fleje de polipropileno; paquete de 1 rollo de 500 m",
+      "precio": 320,
+      "inventario": 30,
+      "unidad": "paquete",
+      "proveedor_demo": "Proveedor demo B"
+    },
+    "j": {
+      "nombre": "Producto J",
+      "descripcion": "Hebillas plásticas para fleje; paquete de 100 piezas",
+      "precio": 140,
+      "inventario": 100,
+      "unidad": "paquete",
+      "proveedor_demo": "Proveedor demo B"
+    },
+    "k": {
+      "nombre": "Producto K",
+      "descripcion": "Papel kraft protector; paquete de 1 rollo de 20 m",
+      "precio": 225,
+      "inventario": 35,
+      "unidad": "paquete",
+      "proveedor_demo": "Proveedor demo A"
+    },
+    "l": {
+      "nombre": "Producto L",
+      "descripcion": "Relleno de papel para protección; paquete de 2 kg",
+      "precio": 195,
+      "inventario": 45,
+      "unidad": "paquete",
+      "proveedor_demo": "Proveedor demo C"
+    }
+  }
+}

@@ -1,5 +1,7 @@
 # LogiSmart Solutions
 
+> **Versión de catálogo 2.0 (25 noviembre 2026):** 12 productos A–L. Consulta [catálogo y reproducción](docs/Catalogo_2.md). Históricos y prueba A+B de $205 se conservan. Catálogo CSV y solicitud CSV son archivos diferentes.
+
 Mariana Orozco · Proyecto individual AI Tools · Corte de revisión 22 de noviembre de 2026.
 
 **Abrir primero `ABRIR_PRIMERO.html`.** Este es el punto único de revisión docente. No confundir esta carpeta con los respaldos privados anteriores. El paquete no está declarado 100% aprobado: la auditoría identifica pruebas parciales y pendientes de integración, video y defensa.

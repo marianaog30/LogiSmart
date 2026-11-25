@@ -45,6 +45,10 @@ jobs:
         run: node tests/probar_archivos.cjs
       - name: Verificar análisis comercial y asignaciones demo
         run: node tests/probar_ventas.cjs
+      - name: Comprobar catalogo ampliado y compatibilidad A-B
+        run: |
+          python3 scripts/sincronizar_catalogo.py --check
+          node tests/probar_catalogo.cjs
       - name: Auditar costos sin duplicaciones
         run: python3 scripts/auditar_costos.py
       - name: Comprobar archivos esenciales y enlaces de entrega

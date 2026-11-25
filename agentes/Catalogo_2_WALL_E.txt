@@ -1,0 +1,20 @@
+LOGISMART SOLUTIONS — CATÁLOGO FICTICIO AUTORIZADO 2.0
+Vigencia descriptiva: 25 de noviembre de 2026. Documento académico, sin precios de mercado ni inventario físico.
+Esta versión amplía el catálogo de A/B a doce productos A–L. No cambia precios ni existencias anteriores de A y B. Sustituye las limitaciones del catálogo descriptivo 1.1 para solicitudes nuevas; no reinterpreta ni recalcula cotizaciones históricas.
+Todas las cantidades se expresan en paquetes de venta. No convertir cajas, rollos o piezas sueltas sin aclaración. Para crear una cotización se usa Telegram autorizado. WALL-E solo explica y consulta; no aprueba, modifica, envía pedidos ni reserva inventario.
+Los precios siguientes son referencias del catálogo de prueba, no cotizaciones vigentes de un folio. Para informar importe, estado o decisión de un folio, usar siempre consultar_logismart y su respuesta verificada. No sumar flete, impuestos ni descuentos: no hay políticas autorizadas para esos conceptos.
+
+Producto A | Caja corrugada 40 × 30 × 30 cm; paquete de 10 cajas | precio ficticio 120 MXN por paquete | inventario ficticio 100 paquetes | Proveedor demo A
+Producto B | Cinta adhesiva 48 mm × 100 m; paquete de 5 rollos | precio ficticio 85 MXN por paquete | inventario ficticio 80 paquetes | Proveedor demo B
+Producto C | Película estirable manual; paquete de 2 rollos | precio ficticio 210 MXN por paquete | inventario ficticio 50 paquetes | Proveedor demo C
+Producto D | Protección de burbuja; paquete de 1 rollo de 10 m | precio ficticio 180 MXN por paquete | inventario ficticio 40 paquetes | Proveedor demo C
+Producto E | Protección de esquinas; paquete de 20 piezas | precio ficticio 95 MXN por paquete | inventario ficticio 120 paquetes | Proveedor demo A
+Producto F | Sobres de envío 25 × 35 cm; paquete de 25 sobres | precio ficticio 160 MXN por paquete | inventario ficticio 60 paquetes | Proveedor demo D
+Producto G | Bolsas resellables 20 × 30 cm; paquete de 50 bolsas | precio ficticio 110 MXN por paquete | inventario ficticio 70 paquetes | Proveedor demo D
+Producto H | Etiquetas adhesivas 10 × 15 cm; paquete de 100 etiquetas | precio ficticio 75 MXN por paquete | inventario ficticio 50 paquetes | Proveedor demo B
+Producto I | Fleje de polipropileno; paquete de 1 rollo de 500 m | precio ficticio 320 MXN por paquete | inventario ficticio 30 paquetes | Proveedor demo B
+Producto J | Hebillas plásticas para fleje; paquete de 100 piezas | precio ficticio 140 MXN por paquete | inventario ficticio 100 paquetes | Proveedor demo B
+Producto K | Papel kraft protector; paquete de 1 rollo de 20 m | precio ficticio 225 MXN por paquete | inventario ficticio 35 paquetes | Proveedor demo A
+Producto L | Relleno de papel para protección; paquete de 2 kg | precio ficticio 195 MXN por paquete | inventario ficticio 45 paquetes | Proveedor demo C
+
+Los proveedores demo son asignaciones sintéticas para análisis. No son empresas reales ni prueban compras. El dashboard muestra presencia de proveedores por cotización: una cotización con dos proveedores cuenta una vez en cada uno, por lo que esas barras no se suman como cotizaciones únicas. En una propuesta local, el importe por proveedor sí se obtiene sumando sus líneas verificadas. El catálogo CSV, el historial CSV y la solicitud CSV tienen granularidades diferentes; no confundirlos.

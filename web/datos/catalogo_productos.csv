@@ -1,0 +1,13 @@
+﻿producto_id,producto,nombre,descripcion,unidad_venta,precio_mxn,inventario_ficticio,proveedor_demo,origen,version_catalogo
+A,Producto A,Cajas de cartón,Caja corrugada 40 × 30 × 30 cm; paquete de 10 cajas,paquete,120,100,Proveedor demo A,SINTETICO_DEMOSTRACION,2.0
+B,Producto B,Cinta de empaque,Cinta adhesiva 48 mm × 100 m; paquete de 5 rollos,paquete,85,80,Proveedor demo B,SINTETICO_DEMOSTRACION,2.0
+C,Producto C,Película estirable,Película estirable manual; paquete de 2 rollos,paquete,210,50,Proveedor demo C,SINTETICO_DEMOSTRACION,2.0
+D,Producto D,Plástico de burbuja,Protección de burbuja; paquete de 1 rollo de 10 m,paquete,180,40,Proveedor demo C,SINTETICO_DEMOSTRACION,2.0
+E,Producto E,Cantoneras de cartón,Protección de esquinas; paquete de 20 piezas,paquete,95,120,Proveedor demo A,SINTETICO_DEMOSTRACION,2.0
+F,Producto F,Sobres de envío,Sobres de envío 25 × 35 cm; paquete de 25 sobres,paquete,160,60,Proveedor demo D,SINTETICO_DEMOSTRACION,2.0
+G,Producto G,Bolsas resellables,Bolsas resellables 20 × 30 cm; paquete de 50 bolsas,paquete,110,70,Proveedor demo D,SINTETICO_DEMOSTRACION,2.0
+H,Producto H,Etiquetas de envío,Etiquetas adhesivas 10 × 15 cm; paquete de 100 etiquetas,paquete,75,50,Proveedor demo B,SINTETICO_DEMOSTRACION,2.0
+I,Producto I,Fleje plástico,Fleje de polipropileno; paquete de 1 rollo de 500 m,paquete,320,30,Proveedor demo B,SINTETICO_DEMOSTRACION,2.0
+J,Producto J,Hebillas para fleje,Hebillas plásticas para fleje; paquete de 100 piezas,paquete,140,100,Proveedor demo B,SINTETICO_DEMOSTRACION,2.0
+K,Producto K,Papel kraft,Papel kraft protector; paquete de 1 rollo de 20 m,paquete,225,35,Proveedor demo A,SINTETICO_DEMOSTRACION,2.0
+L,Producto L,Relleno de papel,Relleno de papel para protección; paquete de 2 kg,paquete,195,45,Proveedor demo C,SINTETICO_DEMOSTRACION,2.0
