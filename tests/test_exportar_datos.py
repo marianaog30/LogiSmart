@@ -1,5 +1,7 @@
 import copy
+import csv
 import importlib.util
+import io
 from pathlib import Path
 import unittest
 
@@ -39,6 +41,26 @@ class Exportacion(unittest.TestCase):
         self.d['total_registros'] = 2
         with self.assertRaises(ValueError):
             m.sanitizar(self.d)
+
+    def test_csv_del_mismo_corte_y_sin_datos_privados(self):
+        segundo = copy.deepcopy(self.d['registros'][0])
+        segundo.update(folio_publico='MUESTRA-002', productos=['Producto A', 'Producto B'],
+                       importe_total=205, origen='DEMO_IMPORTADA_H5',
+                       completa_primer_intento=True, sin_correcciones_auditoria=False)
+        self.d['registros'].append(segundo)
+        self.d['total_registros'] = 2
+        self.d['registros'][0]['chat_de_prueba'] = 'NO_PUBLICAR'
+        publico = m.sanitizar(self.d)
+        contenido = m.historial_csv(publico)
+        filas = list(csv.DictReader(io.StringIO(contenido)))
+        self.assertEqual(len(filas), publico['total_registros'])
+        self.assertEqual(tuple(filas[0]), m.CAMPOS)
+        self.assertEqual(filas[0]['importe_total'], '')
+        self.assertEqual(filas[1]['productos'], 'Producto A|Producto B')
+        self.assertEqual(filas[1]['importe_total'], '205')
+        self.assertEqual(filas[1]['completa_primer_intento'], 'true')
+        self.assertEqual(filas[1]['sin_correcciones_auditoria'], 'false')
+        self.assertNotIn('NO_PUBLICAR', contenido)
 
 
 if __name__ == '__main__':

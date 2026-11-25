@@ -1,6 +1,8 @@
 """Exportación pública de LogiSmart; no solicita ni almacena credenciales."""
 import argparse
+import csv
 from datetime import datetime
+import io
 import json
 from pathlib import Path
 import re
@@ -75,6 +77,21 @@ def sanitizar(datos):
             'total_registros': len(salida), 'registros_excluidos': excluidos, 'registros': salida}
 
 
+def historial_csv(publico):
+    """Representación CSV del mismo corte público; null permanece vacío."""
+    buffer = io.StringIO(newline='')
+    writer = csv.DictWriter(buffer, fieldnames=CAMPOS)
+    writer.writeheader()
+    for registro in publico['registros']:
+        fila = dict(registro)
+        fila['productos'] = '|'.join(fila['productos'])
+        for campo in ('completa_primer_intento', 'sin_correcciones_auditoria'):
+            if type(fila[campo]) is bool:
+                fila[campo] = str(fila[campo]).lower()
+        writer.writerow(fila)
+    return buffer.getvalue()
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--archivo', type=Path, help='JSON local previamente exportado para revisión sin red')
@@ -99,7 +116,12 @@ def main():
     args.salida.parent.mkdir(parents=True, exist_ok=True)
     temporal = args.salida.with_suffix('.tmp')
     temporal.write_text(contenido)
+    csv_salida = args.salida.with_name('muestra_historial.csv')
+    csv_temporal = csv_salida.with_suffix('.tmp')
+    with csv_temporal.open('w', encoding='utf-8-sig', newline='') as archivo_csv:
+        archivo_csv.write(historial_csv(publico))
     temporal.replace(args.salida)
+    csv_temporal.replace(csv_salida)
     print(f'Exportación sanitizada: {publico["total_registros"]} registros; consultado_en={publico["consultado_en"]}.')
 
 
