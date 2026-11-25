@@ -1,9 +1,9 @@
 {
   "fuente": "Data Table LogiSmart",
   "datos_ficticios": true,
-  "consultado_en": "2026-11-25T02:30:05.134Z",
+  "consultado_en": "2026-11-25T23:57:58.637Z",
   "zona_horaria": "America/Mexico_City",
-  "total_registros": 202,
+  "total_registros": 203,
   "registros_excluidos": 4,
   "registros": [
     {
@@ -3114,6 +3114,22 @@
       "estado_final": "APROBADA",
       "aprobacion_humana": "APROBADA",
       "duracion_total_ms": 15923,
+      "origen": "WORKFLOW",
+      "completa_primer_intento": null,
+      "sin_correcciones_auditoria": null
+    },
+    {
+      "folio_publico": "MUESTRA-203",
+      "fecha_registro": "2026-11-25T23:55:32.999Z",
+      "productos": [
+        "Producto D",
+        "Producto E"
+      ],
+      "importe_total": 645,
+      "moneda": "MXN",
+      "estado_final": "PENDIENTE_APROBACION",
+      "aprobacion_humana": "PENDIENTE",
+      "duracion_total_ms": 14552,
       "origen": "WORKFLOW",
       "completa_primer_intento": null,
       "sin_correcciones_auditoria": null
