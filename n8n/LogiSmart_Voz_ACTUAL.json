@@ -14,8 +14,7 @@
         0,
         0
       ],
-      "typeVersion": 2.1,
-      "id": "18cd7c8f-2eed-4707-ab15-93fecf3ad845"
+      "typeVersion": 2.1
     },
     {
       "name": "Validar consulta voz",
@@ -27,8 +26,7 @@
         230,
         0
       ],
-      "typeVersion": 2,
-      "id": "04c69321-ac22-4348-9525-3edc75ad0cee"
+      "typeVersion": 2
     },
     {
       "name": "Consulta permitida",
@@ -60,14 +58,13 @@
         460,
         0
       ],
-      "typeVersion": 2.4,
-      "id": "955f2783-2c68-4672-aea0-123da9c7aff3"
+      "typeVersion": 2.4
     },
     {
       "name": "Consultar registro sanitizado",
       "type": "n8n-nodes-base.httpRequest",
       "parameters": {
-        "url": "https://orozco08.app.n8n.cloud/webhook/logismart-dashboard",
+        "url": "https://CONFIGURAR_HOST_N8N/webhook/logismart-dashboard",
         "sendQuery": true,
         "queryParameters": {
           "parameters": [
@@ -86,22 +83,19 @@
         -100
       ],
       "typeVersion": 4.2,
-      "id": "7dcbca2f-70e8-492d-b5e0-f82435461e9c",
-      "onError": "continueRegularOutput",
-      "retryOnFail": false
+      "onError": "continueRegularOutput"
     },
     {
       "name": "Verificar respuesta publica",
       "type": "n8n-nodes-base.code",
       "parameters": {
-        "jsCode": "const p=$input.first().json;\nconst fail=()=>[{json:{status:503,body:{datos_ficticios:true,tipo:'error',encontrado:false,error:'FUENTE_NO_DISPONIBLE',mensaje:'No se pudo verificar la consulta. Usa el dashboard o Telegram; no se confirma un estado.'}}}];\nconst states=['PENDIENTE_APROBACION','APROBADA','RECHAZADA','DETENIDO','ACLARACION_REQUERIDA','DEVUELTO','ERROR_INCONSISTENTE'];\nconst allowed=['fuente','datos_ficticios','consultado_en','zona_horaria','tipo','encontrado','registro','nota','total_registros','por_estado','importados_simulados','error','mensaje'];\nif(!p||p.datos_ficticios!==true||p.fuente!=='Data Table LogiSmart'||!Number.isFinite(Date.parse(p.consultado_en))||Object.keys(p).some(k=>!allowed.includes(k)))return fail();\nif(p.tipo==='consulta_folio'){\n if(typeof p.encontrado!=='boolean'||(p.encontrado&&!p.registro)||(!p.encontrado&&p.registro!==null))return fail();\n if(p.registro){\n  const r=p.registro;const fields=['folio_publico','fecha_registro','productos','importe_total','moneda','estado_final','aprobacion_humana','duracion_total_ms','origen','completa_primer_intento','sin_correcciones_auditoria'];\n  if(Object.keys(r).some(k=>!fields.includes(k))||!/^MUESTRA-[0-9]{3,}$/.test(r.folio_publico)||!states.includes(r.estado_final)||!Array.isArray(r.productos)||!r.productos.every(x=>['Producto A','Producto B'].includes(x)))return fail();\n }\n}else if(p.tipo==='resumen'){\n if(!Number.isSafeInteger(p.total_registros)||p.total_registros<0||!p.por_estado||Object.keys(p.por_estado).some(k=>!states.includes(k))||Object.values(p.por_estado).some(v=>!Number.isSafeInteger(v)||v<0)||Object.values(p.por_estado).reduce((a,b)=>a+b,0)!==p.total_registros)return fail();\n}else return fail();\nreturn [{json:{status:200,body:p}}];"
+        "jsCode": "const p=$input.first().json;\nconst fail=()=>[{json:{status:503,body:{datos_ficticios:true,tipo:'error',encontrado:false,error:'FUENTE_NO_DISPONIBLE',mensaje:'No se pudo verificar la consulta. Usa el dashboard o Telegram; no se confirma un estado.'}}}];\nconst states=['PENDIENTE_APROBACION','APROBADA','RECHAZADA','DETENIDO','ACLARACION_REQUERIDA','DEVUELTO','ERROR_INCONSISTENTE'];\nconst allowed=['fuente','datos_ficticios','consultado_en','zona_horaria','tipo','encontrado','registro','nota','total_registros','por_estado','importados_simulados','error','mensaje'];\nif(!p||p.datos_ficticios!==true||p.fuente!=='Data Table LogiSmart'||!Number.isFinite(Date.parse(p.consultado_en))||Object.keys(p).some(k=>!allowed.includes(k)))return fail();\nif(p.tipo==='consulta_folio'){\n if(typeof p.encontrado!=='boolean'||(p.encontrado&&!p.registro)||(!p.encontrado&&p.registro!==null))return fail();\n if(p.registro){\n  const r=p.registro;const fields=['folio_publico','fecha_registro','productos','importe_total','moneda','estado_final','aprobacion_humana','duracion_total_ms','origen','completa_primer_intento','sin_correcciones_auditoria'];\n  if(Object.keys(r).some(k=>!fields.includes(k))||!/^MUESTRA-[0-9]{3,}$/.test(r.folio_publico)||!states.includes(r.estado_final)||!Array.isArray(r.productos)||!r.productos.every(x=>[\"Producto A\", \"Producto B\", \"Producto C\", \"Producto D\", \"Producto E\", \"Producto F\", \"Producto G\", \"Producto H\", \"Producto I\", \"Producto J\", \"Producto K\", \"Producto L\"].includes(x)))return fail();\n }\n}else if(p.tipo==='resumen'){\n if(!Number.isSafeInteger(p.total_registros)||p.total_registros<0||!p.por_estado||Object.keys(p.por_estado).some(k=>!states.includes(k))||Object.values(p.por_estado).some(v=>!Number.isSafeInteger(v)||v<0)||Object.values(p.por_estado).reduce((a,b)=>a+b,0)!==p.total_registros)return fail();\n}else return fail();\nreturn [{json:{status:200,body:p}}];"
       },
       "position": [
         920,
         -100
       ],
-      "typeVersion": 2,
-      "id": "93698337-8b61-4c10-852c-7a60ff65d8c2"
+      "typeVersion": 2
     },
     {
       "name": "Responder consulta voz",
@@ -125,8 +119,7 @@
         1150,
         -100
       ],
-      "typeVersion": 1.4,
-      "id": "0a49645e-2bb3-464b-ab12-4f31a7ac58ab"
+      "typeVersion": 1.4
     },
     {
       "name": "Rechazar consulta invalida",
@@ -150,8 +143,7 @@
         690,
         140
       ],
-      "typeVersion": 1.4,
-      "id": "2c5b7ce1-2915-43c6-8d81-058fc0397272"
+      "typeVersion": 1.4
     }
   ],
   "connections": {
@@ -221,6 +213,5 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "active": false,
-  "pinData": {}
+  "active": false
 }

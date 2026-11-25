@@ -9,6 +9,12 @@ Usar únicamente estos cuatro archivos para una nueva instalación:
 
 Los demás JSON de esta carpeta y de hitos/ son versiones históricas y laboratorios; no activarlos como receptores del mismo bot.
 
+## Catálogo 2.0
+
+Los dos flujos de cotización aceptan los doce productos A–L del catálogo sintético `web/datos/catalogo_productos.csv`. A y B conservan los precios anteriores; D×2 + E×3 produce $645 MXN en la prueba determinista. Los exports se entregan desactivados y sin identificadores de nodos, credenciales, webhooks ni datos fijados. Al importar, vincular la tabla y las credenciales nuevas antes de publicar. La ampliación ya se publicó en la instancia de demostración; importar estos JSON en otra cuenta requiere configurar sus dependencias y volver a verificar.
+
+En el flujo de voz, `Consultar registro sanitizado` contiene el marcador `https://CONFIGURAR_HOST_N8N/webhook/logismart-dashboard`. Sustituirlo por el host del webhook público sanitizado de la cuenta donde se importe. El marcador evita publicar una dirección interna de instancia en el export.
+
 ## Importar y configurar
 
 1. Importar los cuatro JSON sin publicar todavía. Los archivos se exportaron sanitizados; sus nombres originales pueden ser confusos, por lo que deben identificarse por esta guía y por sus nodos.
