@@ -26,11 +26,11 @@ jobs:
         run: python3 scripts/exportar_datos.py
       - name: Validar datos, fórmulas y archivos antes de guardar o publicar
         run: node scripts/validar.mjs
-      - name: Versionar únicamente la exportación sanitizada
+      - name: Versionar exportación sanitizada JSON y CSV del mismo corte
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add web/datos/cotizaciones.json
+          git add web/datos/cotizaciones.json web/datos/muestra_historial.csv
           if ! git diff --cached --quiet; then
             git commit -m 'Actualizar exportación sanitizada de LogiSmart'
             git push origin HEAD:main
